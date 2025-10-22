@@ -3,33 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Page</title>
+    <title>My Website - Home</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #8a2be2;
+            text-decoration: underline;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        span {
+            color: #00e5ff;
+        }
+        tiger {
+            color: #0080ff;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about_me.html">About me</a></li>
-                <li><a href="https://climbthesearches.com/about_me">My personal website</a></li>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="about_me.html"><span>About Me</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+                <li><a href="folder/file_folder.html"><span>Projects</span></a></li>
+                <li><a href="https://github.com/ircorona" target="_blank" rel="noopener"><span>My GitHub</span></a></li>
+                <li><a href="https://climbthesearches.com/" target="_blank" rel="noopener"><span>Personal Website</span></a></li>
             </ul>
         </nav>
     </header>
     
-    <!-- This is a comment -->
+    <section id="hero-section">
+        <h1 class="h1-small">Welcome to <span>My Website</span></h1>
+        <div title="Animated loading image">
+            <img src="images/loading-hero-banner.webp" alt="Loading screen showing progress bar at 77 percent with blue and purple gradient background" width="800" height="450">
+        </div>
+    </section>
     
-    <section id="hero-section"> 
-        <h1 class="h1small">Page Title</h1>
+    <section>
+        <h2>About this project</h2>
+        <p>This is my <b>HTML</b> project where I'm learning to create <a href="about_me.html"><span>web pages</span></a>.</p>
         
-        <div title="hover me to read me"> 
-            <img src="image.jpg" alt="Description">
+        <!-- Custom tiger tag (only in index.html) -->
+        <tiger>This is my personalized tag - a unique element!</tiger>
+        
+        <h3>Technologies I'm learning:</h3>
+        <ul>
+            <li><span>HTML5</span> - The structure of web pages</li>
+            <li><span>CSS3</span> - Styling and design</li>
+            <li><span>JavaScript</span> - Interactivity and logic</li>
+            <li><span>Git and GitHub</span> - Version control</li>
+        </ul>
+        
+        <div>
+            A div tag <span>with a span inside</span> to show the <span>difference</span>
         </div>
         
-        <tiger>A personalize tag</tiger>
-        
-        <p>Some text <b>Hello</b> <a href="/index.html">word</a></p>
-        
-        <div>A div tag <span>with a span inside</span></div>
+        <p>Here's an example: <span>This span is inline</span> and stays on the same line with the text.</p>
     </section>
+    
+    <section>
+        <h2>More about <span>HTML elements</span></h2>
+        <p>Learning HTML is <span>fun</span> and <span>exciting</span>! Every day I discover <span>new things</span>.</p>
+        
+        <div>
+            <p>This paragraph is inside a div. It has <span>several</span> span tags to <span>highlight</span> important <span>words</span>.</p>
+        </div>
+        
+        <p>Visit my <a href="https://climbthesearches.com/" target="_blank" rel="noopener"><span>personal website</span></a> to see more of my work!</p>
+    </section>
+    
+    <footer>
+        <p>&copy; <span>2025</span> <span>Irmin Corona</span>. All rights reserved.</p>
+    </footer>
 </body>
 </html>
