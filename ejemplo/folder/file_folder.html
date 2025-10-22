@@ -41,6 +41,35 @@
         span {
             color: #00e5ff;
         }
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background-color: #00bfff;
+            color: black;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #00bfff;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #333;
+        }
+        tr:hover {
+            background-color: #111;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #00bfff;
+        }
+        address {
+            font-style: normal;
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +89,35 @@
     <main>
         <h1>My <span>Projects</span></h1>
         <p>Here are some of the <span>projects</span> I'm working on and <span>learning</span> from.</p>
+        
+        <!-- Simple Table with 4 rows including header -->
+        <h2>Projects <span>Summary Table</span></h2>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Technology</th>
+                <th>Status</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Personal Website</td>
+                <td>HTML5</td>
+                <td>In Progress</td>
+                <td><a href="https://github.com/ircorona" target="_blank" rel="noopener">GitHub</a></td>
+            </tr>
+            <tr>
+                <td>HTML Elements</td>
+                <td>HTML5, CSS3</td>
+                <td>Completed</td>
+                <td><a href="https://github.com/ircorona" target="_blank" rel="noopener">GitHub</a></td>
+            </tr>
+            <tr>
+                <td>Git Practice</td>
+                <td>Git, GitHub</td>
+                <td>In Progress</td>
+                <td><a href="https://github.com/ircorona" target="_blank" rel="noopener">GitHub</a></td>
+            </tr>
+        </table>
         
         <div class="project-card">
             <h3>Project 1: <span>Personal Website</span></h3>
@@ -130,7 +188,10 @@
     
     <footer>
         <p><a href="../index.html"><span>Back to home</span></a></p>
-        <p>&copy; <span>2025</span> <span>Irmin Corona</span>. All rights reserved.</p>
+        <address>
+            &copy; <span>2025</span> <a href="mailto:irminorta@gmail.com">Irmin Corona</a><br>
+            <span>Mexico City, Mexico</span>
+        </address>
     </footer>
 </body>
 </html>

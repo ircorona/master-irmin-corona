@@ -40,6 +40,37 @@
             font-weight: bold;
             font-style: italic;
         }
+        /* FAQ Styles */
+        details {
+            background-color: #111;
+            border: 1px solid #00bfff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        summary {
+            color: #00bfff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        summary:hover {
+            color: #8a2be2;
+        }
+        details p {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        /* Footer Styles */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #00bfff;
+        }
+        address {
+            font-style: normal;
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
@@ -96,8 +127,36 @@
         <p>Visit my <a href="https://climbthesearches.com/" target="_blank" rel="noopener"><span>personal website</span></a> to see more of my work!</p>
     </section>
     
+    <!-- FAQ Section -->
+    <section id="FAQs">
+        <h2><span>FAQs</span> - Frequently Asked Questions</h2>
+        
+        <details>
+            <summary>What is this website about?</summary>
+            <p>This is my personal learning project where I'm practicing HTML, CSS, and web development fundamentals. It's a space where I document my journey and showcase what I'm learning.</p>
+        </details>
+        
+        <details>
+            <summary>What technologies are you learning?</summary>
+            <p>I'm currently focused on <span>HTML5</span> for structure, <span>CSS3</span> for styling, <span>JavaScript</span> for interactivity, and <span>Git/GitHub</span> for version control. You can see my progress in the <a href="folder/file_folder.html">Projects</a> section.</p>
+        </details>
+        
+        <details>
+            <summary>How can I contact you?</summary>
+            <p>You can reach me through multiple channels! Visit my <a href="contact.html">Contact page</a> for all the details, or email me directly at <a href="mailto:irminorta@gmail.com">irminorta@gmail.com</a>.</p>
+        </details>
+        
+        <details>
+            <summary>Are you available for collaboration?</summary>
+            <p>Yes! I'm always interested in learning opportunities and collaborations. Feel free to reach out through <a href="https://github.com/ircorona" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/irmin-corona/" target="_blank" rel="noopener">LinkedIn</a>, or visit my <a href="https://climbthesearches.com/" target="_blank" rel="noopener">personal website</a>.</p>
+        </details>
+    </section>
+    
     <footer>
-        <p>&copy; <span>2025</span> <span>Irmin Corona</span>. All rights reserved.</p>
+        <address>
+            &copy; <span>2025</span> <a href="mailto:irminorta@gmail.com">Irmin Corona</a><br>
+            <span>Mexico City, Mexico</span>
+        </address>
     </footer>
 </body>
 </html>

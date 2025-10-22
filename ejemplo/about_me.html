@@ -31,6 +31,41 @@
         span {
             color: #00e5ff;
         }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #00bfff;
+        }
+        address {
+            font-style: normal;
+            line-height: 1.8;
+        }
+        /* Blockquote styles */
+        blockquote {
+            background-color: #111;
+            border-left: 4px solid #00bfff;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        blockquote cite {
+            display: block;
+            margin-top: 10px;
+            color: #00e5ff;
+            font-style: normal;
+            font-weight: bold;
+        }
+        /* Code styles */
+        code {
+            background-color: #111;
+            color: #00e5ff;
+            padding: 10px;
+            display: block;
+            border: 1px solid #00bfff;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -54,6 +89,12 @@
             <h2>Who am I?</h2>
             <p>I'm <b><span>Irmin Corona</span></b>, a student learning <b>web development</b> and creating my first <span>HTML pages</span>.</p>
             
+            <!-- Blockquote section -->
+            <blockquote cite="https://climbthesearches.com">
+                "The journey of a thousand miles begins with a single step. Every line of code I write is a step towards mastering web development and creating meaningful digital experiences."
+                <cite>Irmin Corona</cite>
+            </blockquote>
+            
             <h3>My <span>interests</span>:</h3>
             <ol>
                 <li><span>Programming</span> - Writing code to solve problems</li>
@@ -71,6 +112,17 @@
                 <li><span>Using semantic tags</span> - Meaningful markup</li>
                 <li><span>Version control with Git</span> - Tracking changes</li>
             </ul>
+        </section>
+        
+        <!-- Code example section -->
+        <section>
+            <h2>Code <span>Example</span></h2>
+            <p>Here's a simple example of HTML code:</p>
+            <div>
+                <code>
+                    &lt;div&gt; This is a code inside the code &lt;/div&gt;
+                </code>
+            </div>
         </section>
         
         <section>
@@ -93,7 +145,10 @@
     
     <footer>
         <p><a href="index.html"><span>Back to home</span></a></p>
-        <p>&copy; <span>2025</span> <span>Irmin Corona</span></p>
+        <address>
+            &copy; <span>2025</span> <a href="mailto:irminorta@gmail.com">Irmin Corona</a><br>
+            <span>Mexico City, Mexico</span>
+        </address>
     </footer>
 </body>
 </html>
