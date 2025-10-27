@@ -2,174 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website - Home</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        a {
-            color: #00bfff;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #8a2be2;
-            text-decoration: underline;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        span {
-            color: #00e5ff;
-        }
-        tiger {
-            color: #0080ff;
-            font-weight: bold;
-            font-style: italic;
-        }
-        /* FAQ Styles */
-        details {
-            background-color: #111;
-            border: 1px solid #00bfff;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-        }
-        summary {
-            color: #00bfff;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        summary:hover {
-            color: #8a2be2;
-        }
-        details p {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-        /* Footer Styles */
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #00bfff;
-        }
-        address {
-            font-style: normal;
-            line-height: 1.8;
-        }
-    </style>
+    <title>Irmin's Website</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html"><span>Home</span></a></li>
-                <li><a href="about_me.html"><span>About Me</span></a></li>
-                <li><a href="contact.html"><span>Contact</span></a></li>
-                <li><a href="folder/file_folder.html"><span>Projects</span></a></li>
-                <li><a href="https://github.com/ircorona" target="_blank" rel="noopener"><span>My GitHub</span></a></li>
-                <li><a href="https://climbthesearches.com/" target="_blank" rel="noopener"><span>Personal Website</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>Welcome to My Website</h1>
     
-    <section id="hero-section">
-        <h1 class="h1-small">Welcome to <span>My Website</span></h1>
-        <div title="Animated loading image">
-            <img src="images/loading-hero-banner.webp" alt="Loading screen showing progress bar at 77 percent with blue and purple gradient background" width="800" height="450" title="Animated loading image">
-        </div>
-    </section>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about_me.html">About Me</a>
+        <a href="contact.html">Contact</a>
+        <a href="folder/file_folder.html">Projects</a>
+        <a href="https://github.com/ircorona">My GitHub</a>
+    </nav>
     
-    <section>
-        <h2>About this project</h2>
-        <p>This is my <b>HTML</b> project where I'm learning to create <a href="about_me.html"><span>web pages</span></a>.</p>
-        
-        <!-- Custom tiger tag (only in index.html) -->
-        <tiger>This is my personalized tag - a unique element!</tiger>
-        
-        <h3>Technologies I'm learning:</h3>
-        <ul>
-            <li><span>HTML5</span> - The structure of web pages</li>
-            <li><span>CSS3</span> - Styling and design</li>
-            <li><span>JavaScript</span> - Interactivity and logic</li>
-            <li><span>Git and GitHub</span> - Version control</li>
-        </ul>
-        
-        <div>
-            A div tag <span>with a span inside</span> to show the <span>difference</span>
-        </div>
-        
-        <p>Here's an example: <span>This span is inline</span> and stays on the same line with the text.</p>
-    </section>
+    <img src="images/loading-hero-banner.webp" alt="Loading banner" width="800" height="450">
     
-    <section>
-        <h2>More about <span>HTML elements</span></h2>
-        <p>Learning HTML is <span>fun</span> and <span>exciting</span>! Every day I discover <span>new things</span>.</p>
-        
-        <div>
-            <p>This paragraph is inside a div. It has <span>several</span> span tags to <span>highlight</span> important <span>words</span>.</p>
-        </div>
-        
-        <p>Visit my <a href="https://climbthesearches.com/" target="_blank" rel="noopener"><span>personal website</span></a> to see more of my work!</p>
-    </section>
+    <h2>About this project</h2>
+    <p>This is my <b>HTML</b> project where I'm learning how to build <a href="about_me.html">web pages</a>.</p>
+    
+    <!-- This is personalized tag -->
+    <tiger>This is my personalized tag - just playing around with HTML!</tiger>
+    
+    <h3>What I'm learning:</h3>
+    <p><span>Important:</span> These are the basics I'm working on right now.</p>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Git and GitHub</li>
+    </ul>
     
     <!-- FAQ Section -->
-    <section id="FAQs">
-        <h2><span>FAQs</span> - Frequently Asked Questions</h2>
-        
-        <details>
-            <summary>What is this website about?</summary>
-            <p>This is my personal learning project where I'm practicing HTML, CSS, and web development fundamentals. It's a space where I document my journey and showcase what I'm learning.</p>
-        </details>
-        
-        <details>
-            <summary>What technologies are you learning?</summary>
-            <p>I'm currently focused on <span>HTML5</span> for structure, <span>CSS3</span> for styling, <span>JavaScript</span> for interactivity, and <span>Git/GitHub</span> for version control. You can see my progress in the <a href="folder/file_folder.html">Projects</a> section.</p>
-        </details>
-        
-        <details>
-            <summary>How can I contact you?</summary>
-            <p>You can reach me through multiple channels! Visit my <a href="contact.html">Contact page</a> for all the details, or email me directly at <a href="mailto:irminorta@gmail.com">irminorta@gmail.com</a>.</p>
-        </details>
-        
-        <details>
-            <summary>Are you available for collaboration?</summary>
-            <p>Yes! I'm always interested in learning opportunities and collaborations. Feel free to reach out through <a href="https://github.com/ircorona" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/irmin-corona/" target="_blank" rel="noopener">LinkedIn</a>, or visit my <a href="https://climbthesearches.com/" target="_blank" rel="noopener">personal website</a>.</p>
-        </details>
-    </section>
-
-    <section id="cheatsheet">
-        <h2><span>HTML Reference</span></h2>
-        <picture>
-            <source type="image/jpg" srcset="images/Ultimate-HTML-Cheatsheet.jpg">
-            <img src="images/Ultimate-HTML-Cheatsheet.jpg" loading="lazy" title="HTML Cheatsheet" width="600" height="450" alt="Comprehensive HTML cheatsheet displaying common HTML tags, elements, and their syntax">
-        </picture>
-        <video width="400" controls autoplay poster="https://climbthesearches.com/wp-content/uploads/2025/03/Hero-Climb-the-Searches.jpg" preload="metadata">
-            <source src="video/technology video.mp4" type="video/mp4">
-            <source src="video/technology video.mp4" type="video/ogg">
-            Your browser does not support HTML video.
-        </video>
-    </section>
+    <h2>FAQs</h2>
+    
+    <details>
+        <summary>What is this website about?</summary>
+        <p>It's just my learning project where I'm practicing HTML and figuring out how web development works.</p>
+    </details>
+    
+    <details>
+        <summary>How can I contact you?</summary>
+        <p>Just shoot me an email at <a href="mailto:irminorta@gmail.com">irminorta@gmail.com</a></p>
+    </details>
+    
+    <h2>HTML Reference</h2>
+    <img src="images/Ultimate-HTML-Cheatsheet.jpg" alt="HTML cheatsheet" width="600" height="450">
+    
+    <video width="400" controls>
+        <source src="video/technology video.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
     
     <footer>
-        <address>
-            &copy; <span>2025</span> <a href="mailto:irminorta@gmail.com">Irmin Corona</a><br>
-            <span>Mexico City, Mexico</span>
-        </address>
+        <p>&copy; 2025 Irmin Corona</p>
+        <p>Mexico City, Mexico</p>
     </footer>
 </body>
 </html>
