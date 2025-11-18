@@ -6,3 +6,5 @@
 - Nota: Se nota la reducción de IA
 - Te cambio las _ en los archivos, pues los espacios en las URLs deben ser con - (te lo explico en clase si quieres)
 - Te cambio también las URLs relativas con / al principio
+
+## 18/11/2025 Ejercicio Revisado
