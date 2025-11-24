@@ -8,3 +8,5 @@
 - Te cambio también las URLs relativas con / al principio
 
 ## 18/11/2025 Ejercicio Revisado
+
+## 24/11/2025 Ejercicio Revisado
