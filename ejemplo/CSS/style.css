@@ -1,0 +1,194 @@
+nav>ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+    background: whitesmoke;
+    margin: 0px;
+    top: 0;
+    height: 30px;
+}
+
+body {
+    margin-top: 40px;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+/* CLASS SELECTOR - Selects any element with class="medidas"
+   Example: <section class="medidas"> */
+section.medidas {
+    margin-bottom: 60px;
+    margin: 10px 0;
+}
+
+/* ID selector (index.html)*/
+#main-header {
+    background: #0066cc;
+    color: white;
+    padding: 1rem;
+    height: 80px;
+}
+
+/* ABSOLUTE UNITS (file-folder.html)*/
+.cm {
+    background: burlywood;
+    width: 10cm;
+    height: 10cm;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mm {
+    background: green;
+    width: 100mm;
+    height: 100mm;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+.in {
+    background: red;
+    width: 3.94in;
+    height: 3.94in;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+.px {
+    background: yellow;
+    width: 377px;
+    height: 377px;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pt {
+    background: chocolate;
+    width: 285pt;
+    height: 285pt;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+.pc {
+    background: violet;
+    width: 24pc;
+    height: 24pc;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+/* RELATIVE UNITS (file-folder.html)*/
+.relative-sizes {
+    font-size: 16px; /* Base size for em comparison */
+}
+
+.em {
+    background: lightblue;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 2em; /* 2x parent font size */
+    border: 3px solid #0066cc;
+}
+
+.rem {
+    background: lightcoral;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 2rem; /* 2x root font size */
+    border: 3px solid #cc0066;
+}
+
+.vh {
+    background: lightgreen;
+    padding: 20px;
+    margin: 20px 0;
+    height: 20vh; /* 20% of viewport height */
+    border: 3px solid #00cc66;
+}
+
+.vw {
+    background: lightyellow;
+    padding: 20px;
+    margin: 20px 0;
+    width: 50vw; /* 50% of viewport width */
+    border: 3px solid #cccc00;
+}
+
+.percent {
+    background: lavender;
+    padding: 20px;
+    margin: 20px 0;
+    width: 75%; /* 75% of parent width */
+    border: 3px solid #6600cc;
+}
+
+/* ============================================
+   NESTED SELECTOR - Makes text bold inside boxes
+   ============================================ */
+
+/* This selects <p> elements INSIDE elements with these classes
+   Example: .cm p means "paragraphs inside .cm boxes"
+   The comma separates multiple selectors (applies to all) */
+.cm p, .mm p, .in p, .px p, .pt p, .pc p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+
+/* Esta parte no estoy seguro ⬇️
+
+/* ELEMENTO CON 2 CLASES - Element with BOTH classes at once
+   Example: <div class="intro highlight">
+   Note: NO SPACE between .intro.highlight means BOTH on same element */
+.intro.highlight {
+    background: orange;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* CLASE EN ELEMENTO CONCRETO - Specific element with specific class
+   Example: <p class="intro"> (only paragraphs, not divs)
+   This is MORE SPECIFIC than just .intro */
+p.intro {
+    border-left: 4px solid #0066cc;  /* Blue left border */
+    padding-left: 20px;              /* Space from border to text */
+    background: lightblue;
+    margin: 15px 0;
+}
+
+/* CLASE QUE DESCIENDA - Descendant selector
+   Example: <div class="container">
+              <div class="highlight">This is selected</div>
+            </div>
+   The SPACE means "find .highlight INSIDE .container" */
+.container .highlight {
+    border: 2px dashed red;   /* Red dashed border */
+    margin: 10px;
+    padding: 15px;
+    background: yellow;
+}

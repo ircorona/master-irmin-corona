@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/ejemplo/CSS/style.css">
     <title>My Projects</title>
 </head>
 <body>
     <h1>My Projects</h1>
     
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about-me.html">About Me</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/file-folder.html">Projects</a>
-        <a href="https://github.com/ircorona">My GitHub</a>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-me.html">About Me</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/folder/file-folder.html">Projects</a></li>
+                <li><a href="https://github.com/ircorona">My GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
     
     <p>Just a few things I'm working on right now.</p>
     
@@ -43,6 +48,12 @@
             <td>Daily work</td>
             <td>2024</td>
         </tr>
+        <tr>
+            <td>CSS Units Guide</td>
+            <td>HTML5, CSS3</td>
+            <td>Learning</td>
+            <td>November 2025</td>
+        </tr>
     </table>
     
     <h3>This Website</h3>
@@ -54,12 +65,109 @@
         <li>Learn more JavaScript</li>
         <li>Keep practicing</li>
     </ul>
+
+    <!-- CSS UNITS SECTION -->
+    <hr>
+    <h2>CSS Units Guide</h2>
+    
+    <!-- ABSOLUTE UNITS -->
+    <section class="medidas">
+        <h2>Medidas Absolutas (Absolute Units)</h2>
+        <p>These units are fixed and don't change based on other elements:</p>
+        
+        <div class="cm">
+            <p>cm - Centimeters</p>
+            <p>10cm x 10cm</p>
+        </div>
+
+        <div class="mm">
+            <p>mm - Millimeters</p>
+            <p>100mm x 100mm</p>
+        </div>
+
+        <div class="in">
+            <p>in - Inches</p>
+            <p>3.94in x 3.94in</p>
+        </div>
+
+        <div class="px">
+            <p>px - Pixels</p>
+            <p>377px x 377px</p>
+        </div>
+
+        <div class="pt">
+            <p>pt - Points</p>
+            <p>285pt x 285pt</p>
+            <small>(1pt = 1/72 inch - used for print)</small>
+        </div>
+
+        <div class="pc">
+            <p>pc - Picas</p>
+            <p>24pc x 24pc</p>
+            <small>(1pc = 12pt = 1/6 inch - old print unit)</small>
+        </div>
+    </section>
+
+    <!-- RELATIVE UNITS -->
+    <section class="medidas">
+        <h2>Medidas Relativas (Relative Units)</h2>
+        <p>These units change based on parent elements or viewport:</p>
+        
+        <div class="relative-sizes">
+            <div class="em">
+                <p><strong>em</strong> - Multiplies parent font size</p>
+                <p>2em = 2x parent size</p>
+            </div>
+
+            <div class="rem">
+                <p><strong>rem</strong> - Multiplies root font size</p>
+                <p>2rem = 2x html font size</p>
+            </div>
+
+            <div class="vh">
+                <p><strong>vh</strong> - Viewport Height</p>
+                <p>50vh = 50% of screen height</p>
+            </div>
+
+            <div class="vw">
+                <p><strong>vw</strong> - Viewport Width</p>
+                <p>50vw = 50% of screen width</p>
+            </div>
+
+            <div class="percent">
+                <p><strong>%</strong> - Percentage</p>
+                <p>50% = 50% of parent size</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esta parte no me quedo Claro ⬇️ -->
+    <!-- ELEMENTO CON 2 CLASES - Element with BOTH classes -->
+    <!-- This will match .intro.highlight selector (no space!) -->
+    <div class="intro highlight">
+        This uses EXTERNAL CSS with TWO classes: "intro" and "highlight"
+    </div>
+    
+    <!-- CLASE EN ELEMENTO CONCRETO - Specific element with class -->
+    <!-- This will match p.intro selector (paragraph with intro class) -->
+    <p class="intro">
+        This is a paragraph with class "intro" (p.intro selector)
+    </p>
+    
+    <!-- CLASE QUE DESCIENDA - Descendant selector -->
+    <!-- The .highlight INSIDE .container matches .container .highlight -->
+    <div class="container">
+        <div class="highlight">
+            This "highlight" is INSIDE "container" (.container .highlight)
+        </div>
+    </div>
     
     <p>Check out my <a href="https://github.com/ircorona">GitHub</a> or visit my <a href="https://climbthesearches.com/">personal website</a> for more.</p>
     
     <footer>
-        <p><a href="../index.html">Back to home</a></p>
+        <p><a href="/">Back to home</a></p>
         <p>&copy; 2025 Irmin Corona</p>
+        <p>Mexico City, Mexico</p>
     </footer>
 </body>
 </html>

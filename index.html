@@ -2,19 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/ejemplo/CSS/style.css">
+    <!-- INTERNAL CSS -->
+    <style>
+        .internal-example {
+            background: lightgreen;
+            padding: 20px;
+            margin: 15px 0;
+            border: 3px solid green;
+            font-size: 1.2rem;
+        }
+    </style>
     <title>Irmin's Website</title>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
+    <h1 id="main-header">Welcome to My Website</h1>
+  
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-me.html">About Me</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/folder/file-folder.html">Projects</a></li>
+                <li><a href="https://github.com/ircorona">My GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
     
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about-me.html">About Me</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/folder/file-folder.html">Projects</a>
-        <a href="https://github.com/ircorona">My GitHub</a>
-    </nav>
-    
+    <div class="CSS">This is a tag div <span>that has a span inside</span></div>
+    <!-- INLINE CSS -->
+    <div style="background: pink; padding: 15px; margin: 10px; color: darkred; font-size: 20px;">
+        This is an INLINE CSS example
+    </div>
+    <!-- INTERNAL CSS -->
+    <div class="internal-example">
+        This is an INTERNAL CSS example (from style tag in head)
+    </div>
+
     <img src="images/loading-hero-banner.webp" alt="Loading banner" width="800" height="450">
     
     <h2>About this project</h2>
