@@ -109,7 +109,7 @@
     </section>
 
     <!-- RELATIVE UNITS -->
-    <section class="medidas">
+    <section class="medidas opacity60 funciona">
         <h2>Medidas Relativas (Relative Units)</h2>
         <p>These units change based on parent elements or viewport:</p>
         
@@ -144,20 +144,26 @@
     <!-- Esta parte no me quedo Claro ⬇️ -->
     <!-- ELEMENTO CON 2 CLASES - Element with BOTH classes -->
     <!-- This will match .intro.highlight selector (no space!) -->
-    <div class="intro highlight">
+    <div class="intro highlight opacity60">
         This uses EXTERNAL CSS with TWO classes: "intro" and "highlight"
     </div>
     
     <!-- CLASE EN ELEMENTO CONCRETO - Specific element with class -->
     <!-- This will match p.intro selector (paragraph with intro class) -->
-    <p class="intro">
+    <p class="intro opacity60 cabeza">
         This is a paragraph with class "intro" (p.intro selector)
     </p>
-    
+
+    <div class="exodia">
+        <div class="oculto p-derecha p-izquierda b-derecho b-izquierdo cabeza">
+            GANASTE LA PARTIDA
+        </div>
+    </div>
+
     <!-- CLASE QUE DESCIENDA - Descendant selector -->
     <!-- The .highlight INSIDE .container matches .container .highlight -->
     <div class="container">
-        <div class="highlight">
+        <div class="highlight opacity60">
             This "highlight" is INSIDE "container" (.container .highlight)
         </div>
     </div>
