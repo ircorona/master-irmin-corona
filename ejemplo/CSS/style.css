@@ -192,3 +192,215 @@ p.intro {
     padding: 15px;
     background: yellow;
 }
+
+/* ============================================
+   DISPLAY PROPERTY EXAMPLES
+   ============================================ */
+
+/* DISPLAY: BLOCK - Takes full width, starts on new line */
+.display-block {
+    display: block;
+    background: lightcoral;
+    padding: 15px;
+    margin: 10px 0;
+    width: 100%;  /* Takes full width available */
+}
+
+/* DISPLAY: INLINE - Sits next to other elements, ignores width/height */
+.display-inline {
+    display: inline;
+    background: lightblue;
+    padding: 5px 10px;
+    margin: 5px;  /* Note: top/bottom margin doesn't work on inline! */
+}
+
+/* DISPLAY: INLINE-BLOCK - Best of both: sits inline but respects width/height */
+.display-inline-block {
+    display: inline-block;
+    background: lightgreen;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+/* DISPLAY: FLEX - Modern layout, items arrange horizontally by default */
+.display-flex {
+    display: flex;
+    background: lightyellow;
+    padding: 20px;
+    margin: 20px 0;
+    gap: 10px;  /* Space between flex items */
+    justify-content: space-between;  /* Spreads items apart */
+}
+
+.flex-item {
+    background: orange;
+    padding: 15px;
+    flex: 1;  /* All items take equal space */
+}
+
+/* DISPLAY: GRID - 2D layout system */
+.display-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
+    gap: 15px;  /* Space between grid items */
+    background: lavender;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.grid-item {
+    background: purple;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* DISPLAY: NONE - Completely removes element (doesn't take space) */
+.display-none {
+    display: none;  /* Element exists in HTML but invisible */
+}
+
+/* DISPLAY: CONTENTS - Element disappears but children remain */
+.display-contents {
+    display: contents;
+    /* The div itself won't show, but its children will */
+}
+
+/* DISPLAY: LIST-ITEM - Makes element behave like <li> */
+.display-list-item {
+    display: list-item;
+    list-style-type: square;
+    margin-left: 40px;
+    padding: 5px;
+}
+
+/* ============================================
+   POSITION PROPERTY EXAMPLES
+   ============================================ */
+
+/* POSITION: STATIC - Default, normal document flow */
+.position-static {
+    position: static;  /* This is default, doesn't need to be specified */
+    background: #f0f0f0;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* POSITION: RELATIVE - Positioned relative to its normal position */
+.position-relative {
+    position: relative;
+    top: 20px;  /* Moves 20px DOWN from where it would normally be */
+    left: 30px;  /* Moves 30px RIGHT from normal position */
+    background: lightblue;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* POSITION: ABSOLUTE - Positioned relative to nearest positioned ancestor */
+.position-container {
+    position: relative;  /* Creates positioning context for absolute child */
+    background: #ddd;
+    padding: 60px 20px 20px 20px;
+    margin: 20px 0;
+    height: 200px;
+}
+
+.position-absolute {
+    position: absolute;
+    top: 10px;  /* 10px from top of .position-container */
+    right: 10px;  /* 10px from right of .position-container */
+    background: coral;
+    padding: 10px;
+    width: 150px;
+}
+
+/* POSITION: FIXED - Positioned relative to viewport (browser window) */
+.position-fixed {
+    position: fixed;
+    bottom: 20px;  /* 20px from bottom of screen */
+    right: 20px;   /* 20px from right of screen */
+    background: #ff6b6b;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;  /* Stays on top of other elements */
+}
+
+/* POSITION: STICKY - Hybrid of relative and fixed */
+.position-sticky {
+    position: sticky;
+    top: 0;  /* Sticks to top when you scroll past it */
+    background: #4ecdc4;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    z-index: 100;
+}
+
+/* COMBINING POSITION AND DISPLAY */
+.combo-example {
+    display: flex;
+    position: relative;
+    background: #95e1d3;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.combo-item {
+    display: inline-block;
+    position: relative;
+    background: #f38181;
+    padding: 15px;
+    margin: 10px;
+}
+
+.opacity60.funciona
+ {
+    opacity: 0.6;
+}
+
+.highlight.opacity60 {
+    opacity: 1;
+}
+
+
+.oculto {
+    display: none;
+}
+
+.p-derecha.p-izquierda.b-derecho.b-izquierdo.cabeza
+{
+    display: block;
+    
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    padding: 9em;
+    border-radius: 20px;
+    border: 1px solid;
+    box-shadow: 3px 7px 14px 4px black;
+}
+
+.exodia .cabeza {
+    color: blue;
+}
+
+.highlight, .p-izquierda {
+    filter: blur(1px);
+}
+
+/*
+Quiero que pongas 3 cambios de CSS:
+
+1- Quiero que hagas un cambio en dos clases que tienen que
+estar SI o SI en el mismo elemento. #209
+
+2- Otro cambio en una clase que esté dentro de otra clase. #224
+
+3- Otro cambio que afecte a 2 clases totalmente distintas #228
+*/
