@@ -66,62 +66,374 @@
         <li>Keep practicing</li>
     </ul>
 
-    <!-- CSS UNITS SECTION -->
-    <hr>
-    <h2>CSS Units Guide</h2>
+    <!-- ========================================
+         GUÍA VISUAL DE SELECTORES CSS
+         ======================================== -->
+    <hr style="border: none; border-top: 3px solid #667eea; margin: 50px 0;">
     
-    <!-- ABSOLUTE UNITS -->
-    <section class="medidas">
-        <h2>Medidas Absolutas (Absolute Units)</h2>
-        <p>These units are fixed and don't change based on other elements:</p>
+    <h1 class="guia-titulo">📚 Guía Visual de Selectores CSS</h1>
+
+    <!-- EJEMPLO 1: DOS CLASES EN EL MISMO ELEMENTO -->
+    <div class="ejemplo">
+        <div class="titulo-selector">
+            1️⃣ Selector: .class1.class2 (SIN ESPACIO)
+        </div>
+
+        <div class="codigo">
+            <span class="selector-clase">.caja.especial</span> <span class="selector-syntax">{</span><br>
+            &nbsp;&nbsp;background: pink;<br>
+            &nbsp;&nbsp;border: 5px solid red;<br>
+            <span class="selector-syntax">}</span>
+        </div>
+
+        <div class="nota">
+            <strong>📌 Regla:</strong> El elemento debe tener AMBAS clases al mismo tiempo.<br>
+            <strong>Sin espacio</strong> entre las clases = mismo elemento.
+        </div>
+
+        <div class="visual-demo">
+            <div class="html-structure">
+                <h3>🔍 Estructura HTML:</h3>
+                <div class="estructura-arbol">
+                    <div class="nivel-1">&lt;div class="caja"&gt;</div>
+                    <div class="nivel-2">Solo tiene .caja <span class="no">❌</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                    <br>
+                    <div class="nivel-1">&lt;div class="especial"&gt;</div>
+                    <div class="nivel-2">Solo tiene .especial <span class="no">❌</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                    <br>
+                    <div class="nivel-1">&lt;div class="caja especial"&gt;</div>
+                    <div class="nivel-2">Tiene AMBAS clases <span class="si">✅</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                </div>
+            </div>
+            
+            <div class="css-structure">
+                <h3 style="margin-top: 0;">🎨 Código CSS:</h3>
+                <div class="estructura-arbol">
+                    <div class="nivel-1"><span style="color: #a6e22e;">.caja.especial</span> <span style="color: #66d9ef;">{</span></div>
+                    <div class="nivel-2"><span style="color: #66d9ef;">background:</span> <span style="color: #ae81ff;">linear-gradient(135deg, #f093fb 0%, #f5576c 100%)</span>;</div>
+                    <div class="nivel-2"><span style="color: #66d9ef;">color:</span> <span style="color: #ae81ff;">white</span>;</div>
+                    <div class="nivel-2"><span style="color: #66d9ef;">font-weight:</span> <span style="color: #ae81ff;">bold</span>;</div>
+                    <div class="nivel-2"><span style="color: #66d9ef;">border:</span> <span style="color: #ae81ff;">5px solid #ff0080</span>;</div>
+                    <div class="nivel-2"><span style="color: #66d9ef;">transform:</span> <span style="color: #ae81ff;">scale(1.05)</span>;</div>
+                    <div class="nivel-1"><span style="color: #66d9ef;">}</span></div>
+                </div>
+            </div>
+
+            <div class="flecha">→</div>
+
+            <div class="resultado">
+                <h3>✨ Resultado Visual:</h3>
+                <div class="caja">
+                    Solo clase "caja" - sin estilo especial
+                </div>
+                <div class="especial">
+                    Solo clase "especial" - sin estilo especial
+                </div>
+                <div class="caja especial">
+                    ¡AMBAS clases! - ¡Estilo aplicado!
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <div class="etiqueta">.caja</div>
+            <span style="font-size: 24px;">+</span>
+            <div class="etiqueta">.especial</div>
+            <span style="font-size: 24px;">=</span>
+            <div class="etiqueta">.caja.especial</div>
+        </div>
+    </div>
+
+    <!-- EJEMPLO 2: CLASE DENTRO DE OTRA -->
+    <div class="ejemplo">
+        <div class="titulo-selector">
+            2️⃣ Selector: .parent .child (CON ESPACIO)
+        </div>
+
+        <div class="codigo">
+            <span class="selector-clase">.contenedor-demo .destacado-demo</span> <span class="selector-syntax">{</span><br>
+            &nbsp;&nbsp;background: blue;<br>
+            &nbsp;&nbsp;color: white;<br>
+            <span class="selector-syntax">}</span>
+        </div>
+
+        <div class="nota">
+            <strong>📌 Regla:</strong> El elemento con clase .destacado-demo debe estar DENTRO de un elemento con clase .contenedor-demo.<br>
+            <strong>Con espacio</strong> entre las clases = relación padre-hijo (descendiente).
+        </div>
+
+        <div class="visual-demo">
+            <div class="html-structure">
+                <h3>🔍 Estructura HTML:</h3>
+                <div class="estructura-arbol">
+                    <div class="nivel-1">&lt;div class="contenedor-demo"&gt;</div>
+                    <div class="nivel-2">&lt;div class="destacado-demo"&gt;</div>
+                    <div class="nivel-3">Dentro del contenedor <span class="si">✅</span></div>
+                    <div class="nivel-2">&lt;/div&gt;</div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                    <br>
+                    <div class="nivel-1">&lt;div class="destacado-demo"&gt;</div>
+                    <div class="nivel-2">Fuera del contenedor <span class="no">❌</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                </div>
+            </div>
+
+            <div class="flecha">→</div>
+
+            <div class="resultado">
+                <h3>✨ Resultado Visual:</h3>
+                <div class="contenedor-demo">
+                    <strong>Contenedor (padre)</strong>
+                    <div class="destacado-demo">
+                        ¡Destacado DENTRO del contenedor! ✅
+                    </div>
+                </div>
+                <div class="destacado-demo">
+                    Destacado FUERA del contenedor - sin estilo especial ❌
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <div style="display: inline-block; text-align: left;">
+                <div class="etiqueta">.contenedor-demo</div>
+                <div style="margin-left: 40px; margin-top: 10px;">
+                    ↳ <div class="etiqueta" style="display: inline-block;">.destacado-demo</div>
+                    <span style="margin-left: 10px;">= <strong>.contenedor-demo .destacado-demo</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EJEMPLO 3: SELECTOR DE GRUPO -->
+    <div class="ejemplo">
+        <div class="titulo-selector">
+            3️⃣ Selector: .class1, .class2 (CON COMA)
+        </div>
+
+        <div class="codigo">
+            <span class="selector-clase">.rojo-demo</span><span class="selector-syntax">,</span> <span class="selector-clase">.azul-demo</span> <span class="selector-syntax">{</span><br>
+            &nbsp;&nbsp;background: purple;<br>
+            &nbsp;&nbsp;border: 5px solid gold;<br>
+            <span class="selector-syntax">}</span>
+        </div>
+
+        <div class="nota">
+            <strong>📌 Regla:</strong> Aplica el MISMO estilo a elementos con .rojo-demo Y a elementos con .azul-demo.<br>
+            <strong>Con coma</strong> = selector de grupo (clases independientes).
+        </div>
+
+        <div class="visual-demo">
+            <div class="html-structure">
+                <h3>🔍 Estructura HTML:</h3>
+                <div class="estructura-arbol">
+                    <div class="nivel-1">&lt;div class="rojo-demo"&gt;</div>
+                    <div class="nivel-2">Tiene estilo <span class="si">✅</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                    <br>
+                    <div class="nivel-1">&lt;div class="azul-demo"&gt;</div>
+                    <div class="nivel-2">Tiene el MISMO estilo <span class="si">✅</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                    <br>
+                    <div class="nivel-1">&lt;div class="verde-demo"&gt;</div>
+                    <div class="nivel-2">No tiene estilo <span class="no">❌</span></div>
+                    <div class="nivel-1">&lt;/div&gt;</div>
+                </div>
+            </div>
+
+            <div class="flecha">→</div>
+
+            <div class="resultado">
+                <h3>✨ Resultado Visual:</h3>
+                <div class="rojo-demo">
+                    Elemento con clase "rojo-demo" ✅
+                </div>
+                <div class="azul-demo">
+                    Elemento con clase "azul-demo" ✅
+                </div>
+                <div style="background: #ccc; padding: 20px; margin: 10px 0; border-radius: 10px;">
+                    Elemento con clase "verde-demo" - sin estilo ❌
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <div class="etiqueta">.rojo-demo</div>
+            <span style="font-size: 24px; color: #667eea;">,</span>
+            <div class="etiqueta">.azul-demo</div>
+            <span style="font-size: 24px;">=</span>
+            <span style="font-weight: bold;">Ambos reciben el mismo estilo</span>
+        </div>
+    </div>
+
+    <!-- RESUMEN FINAL -->
+    <div class="ejemplo" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="text-align: center; font-size: 32px; margin-bottom: 30px;">📋 Resumen Rápido</h2>
         
-        <div class="cm">
-            <p>cm - Centimeters</p>
-            <p>10cm x 10cm</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="font-size: 24px; margin-top: 0;">🔗 SIN ESPACIO</h3>
+                <div class="codigo" style="background: rgba(0,0,0,0.3);">
+                    .clase1.clase2
+                </div>
+                <p style="font-size: 16px;">= Mismo elemento con AMBAS clases</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="font-size: 24px; margin-top: 0;">👨‍👦 CON ESPACIO</h3>
+                <div class="codigo" style="background: rgba(0,0,0,0.3);">
+                    .padre .hijo
+                </div>
+                <p style="font-size: 16px;">= .hijo DENTRO de .padre (descendiente)</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h3 style="font-size: 24px; margin-top: 0;">📝 CON COMA</h3>
+                <div class="codigo" style="background: rgba(0,0,0,0.3);">
+                    .clase1, .clase2
+                </div>
+                <p style="font-size: 16px;">= Ambas clases reciben el MISMO estilo</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border: none; border-top: 3px solid #667eea; margin: 50px 0;">
+
+    <!-- ========================================
+     EJEMPLO 4: Z-INDEX CON EXODIA
+     ======================================== -->
+    <div class="ejemplo">
+        <div class="titulo-selector">
+            4️⃣ Z-Index: Controlando las Capas con Exodia
         </div>
 
-        <div class="mm">
-            <p>mm - Millimeters</p>
-            <p>100mm x 100mm</p>
+        <div class="nota">
+            <strong>📌 Concepto:</strong> El z-index controla qué elementos aparecen "encima" de otros.<br>
+            <strong>Números más altos</strong> = aparecen más arriba (más cerca de ti).<br>
+            <strong>Requiere:</strong> position debe ser relative, absolute, fixed, o sticky.
         </div>
 
-        <div class="in">
-            <p>in - Inches</p>
-            <p>3.94in x 3.94in</p>
+        <!-- HTML -->
+        <div class="html-structure">
+            <h3>🔍 Estructura HTML:</h3>
+            <div class="estructura-arbol">
+                <div class="nivel-1">&lt;header&gt;</div>
+                <div class="nivel-2">z-index: 1000 <span class="si">⬆️ MÁS ALTO</span></div>
+                <div class="nivel-1">&lt;/header&gt;</div>
+                <br>
+                <div class="nivel-1">&lt;img src="/images/Exodia.webp" class="exodia-flotante"&gt;</div>
+                <div class="nivel-2">z-index: 500 <span style="color: #ff9800;">⬆️ MEDIO</span></div>
+                <div class="nivel-1">&lt;/img&gt;</div>
+                <br>
+                <div class="nivel-1">&lt;div class="contenido"&gt;</div>
+                <div class="nivel-2">z-index: 1 <span style="color: #999;">⬇️ BAJO</span></div>
+                <div class="nivel-1">&lt;/div&gt;</div>
+            </div>
         </div>
 
-        <div class="px">
-            <p>px - Pixels</p>
-            <p>377px x 377px</p>
+        <!-- CSS -->
+        <div class="css-structure" style="margin-top: 20px;">
+            <h3>🎨 Código CSS:</h3>
+            <div class="estructura-arbol">
+                <div class="nivel-1"><span style="color: #a6e22e;">header</span> <span style="color: #66d9ef;">{</span></div>
+                <div class="nivel-2"><span style="color: #66d9ef;">position:</span> <span style="color: #ae81ff;">relative</span>;</div>
+                <div class="nivel-2"><span style="color: #66d9ef;">z-index:</span> <span style="color: #ae81ff;">1000</span>; <span style="color: #75715e;">/* Siempre visible */</span></div>
+                <div class="nivel-1"><span style="color: #66d9ef;">}</span></div>
+                <br>
+                <div class="nivel-1"><span style="color: #a6e22e;">.exodia-flotante</span> <span style="color: #66d9ef;">{</span></div>
+                <div class="nivel-2"><span style="color: #66d9ef;">position:</span> <span style="color: #ae81ff;">fixed</span>; <span style="color: #75715e;">/* Se queda fijo al hacer scroll */</span></div>
+                <div class="nivel-2"><span style="color: #66d9ef;">bottom:</span> <span style="color: #ae81ff;">20px</span>;</div>
+                <div class="nivel-2"><span style="color: #66d9ef;">right:</span> <span style="color: #ae81ff;">20px</span>;</div>
+                <div class="nivel-2"><span style="color: #66d9ef;">z-index:</span> <span style="color: #ae81ff;">500</span>; <span style="color: #75715e;">/* Debajo del header */</span></div>
+                <div class="nivel-2"><span style="color: #66d9ef;">width:</span> <span style="color: #ae81ff;">200px</span>;</div>
+                <div class="nivel-1"><span style="color: #66d9ef;">}</span></div>
+                <br>
+                <div class="nivel-1"><span style="color: #a6e22e;">body > *</span> <span style="color: #66d9ef;">{</span></div>
+                <div class="nivel-2"><span style="color: #66d9ef;">position:</span> <span style="color: #ae81ff;">relative</span>;</div>
+                <div class="nivel-2"><span style="color: #66d9ef;">z-index:</span> <span style="color: #ae81ff;">1</span>; <span style="color: #75715e;">/* Contenido normal */</span></div>
+                <div class="nivel-1"><span style="color: #66d9ef;">}</span></div>
+            </div>
         </div>
 
-        <div class="pt">
-            <p>pt - Points</p>
-            <p>285pt x 285pt</p>
-            <small>(1pt = 1/72 inch - used for print)</small>
+        <!-- Diagrama Visual -->
+        <div style="margin-top: 30px;">
+            <h3>✨ Capas Visualizadas (Vista Lateral):</h3>
+            <div style="position: relative; height: 280px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; padding: 20px; overflow: hidden;">
+                
+                <!-- Capa 1 (Fondo) - Contenido -->
+                <div style="position: absolute; bottom: 30px; left: 40px; width: 250px; height: 120px; background: #e0e0e0; border: 3px solid #999; border-radius: 8px; padding: 15px; z-index: 1; box-shadow: 0 3px 10px rgba(0,0,0,0.2);">
+                    <strong style="font-size: 18px;">z-index: 1</strong><br>
+                    <span style="color: #666;">📄 Contenido Normal</span><br>
+                    <small>(Capa más baja)</small>
+                </div>
+
+                <!-- Capa 2 (Medio) - Exodia -->
+                <div style="position: absolute; bottom: 60px; left: 120px; width: 250px; height: 140px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: 4px solid #ffd700; border-radius: 8px; padding: 15px; z-index: 500; box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                    <strong style="font-size: 20px;">z-index: 500</strong><br>
+                    <span style="font-size: 24px;">🎴 Exodia</span><br>
+                    <small>Flotante pero respeta el header</small>
+                </div>
+
+                <!-- Capa 3 (Arriba) - Header -->
+                <div style="position: absolute; top: 25px; left: 200px; width: 280px; height: 70px; background: #0066cc; color: white; border: 3px solid #004499; border-radius: 8px; padding: 15px; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+                    <strong style="font-size: 20px;">z-index: 1000</strong><br>
+                    <span style="font-size: 18px;">📱 Header Navigation</span>
+                </div>
+
+            </div>
         </div>
 
-        <div class="pc">
-            <p>pc - Picas</p>
-            <p>24pc x 24pc</p>
-            <small>(1pc = 12pt = 1/6 inch - old print unit)</small>
+        <div style="margin-top: 20px; padding: 20px; background: #fff3cd; border-left: 5px solid #ffc107; border-radius: 5px;">
+            <strong style="font-size: 18px;">💡 ¿Cómo funciona?</strong>
+            <ul style="margin: 10px 0; padding-left: 20px; line-height: 1.8;">
+                <li><strong>Header (z-index: 1000)</strong> - El menú de navegación siempre está visible y nunca es tapado por nada</li>
+                <li><strong>Exodia (z-index: 500)</strong> - Flota sobre el contenido normal pero pasa DEBAJO del header cuando haces scroll hacia arriba</li>
+                <li><strong>Contenido (z-index: 1)</strong> - Todo el contenido normal de la página está en la capa base</li>
+            </ul>
+            <p style="margin: 10px 0 0 0; padding: 10px; background: rgba(255,255,255,0.7); border-radius: 5px;"><strong>⚠️ Regla importante:</strong> Para usar z-index, el elemento DEBE tener position: relative, absolute, fixed, o sticky. Si tiene position: static (el default), z-index no funciona.</p>
         </div>
-    </section>
 
+        <div style="text-align: center; margin-top: 25px; font-size: 20px; font-weight: bold;">
+            <span style="padding: 10px 20px; background: #0066cc; color: white; border-radius: 8px;">Header (1000)</span>
+            <span style="font-size: 30px; color: #ffd700; margin: 0 10px;"> &gt; </span>
+            <span style="padding: 10px 20px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 8px;">Exodia (500)</span>
+            <span style="font-size: 30px; color: #ffd700; margin: 0 10px;"> &gt; </span>
+            <span style="padding: 10px 20px; background: #e0e0e0; color: #333; border-radius: 8px;">Contenido (1)</span>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-left: 5px solid #2196f3; border-radius: 5px;">
+            <strong>🎯 Pruébalo:</strong> Mira la esquina inferior derecha de tu pantalla. ¡Ahí está Exodia flotando! Haz scroll hacia arriba y verás cómo pasa DEBAJO del header. Pasa el mouse sobre él para ver el efecto hover.
+        </div>
+    </div>
+
+<hr style="border: none; border-top: 3px solid #667eea; margin: 50px 0;">
+
+    <!-- CONTINÚA CON TU CONTENIDO ORIGINAL -->
+    
     <!-- RELATIVE UNITS -->
+    <!-- SELECTOR 1: Este section tiene DOS clases: "medidas" Y "opacity60" -->
+    <!-- Esto activa el selector .medidas.opacity60 (SIN ESPACIO) -->
     <section class="medidas opacity60 funciona">
         <h2>Medidas Relativas (Relative Units)</h2>
-        <p>These units change based on parent elements or viewport:</p>
+        <p>⭐ Esta sección tiene las clases "medidas" Y "opacity60" JUNTAS ⭐</p>
+        <p>Mira el borde morado y el fondo degradado - eso viene del selector .medidas.opacity60</p>
         
         <div class="relative-sizes">
+            <!-- SELECTOR 3: Estos dos divs (.em y .rem) usan el selector de GRUPO -->
+            <!-- El CSS afecta a .em, .rem (CON COMA) -->
             <div class="em">
                 <p><strong>em</strong> - Multiplies parent font size</p>
                 <p>2em = 2x parent size</p>
+                <p>⭐ Fíjate en el degradado azul y borde amarillo ⭐</p>
             </div>
 
             <div class="rem">
                 <p><strong>rem</strong> - Multiplies root font size</p>
                 <p>2rem = 2x html font size</p>
+                <p>⭐ Mismo estilo que .em porque están en el mismo selector de grupo ⭐</p>
             </div>
 
             <div class="vh">
@@ -154,17 +466,16 @@
         This is a paragraph with class "intro" (p.intro selector)
     </p>
 
-    <div class="exodia">
-        <div class="oculto p-derecha p-izquierda b-derecho b-izquierdo cabeza">
-            GANASTE LA PARTIDA
-        </div>
-    </div>
-
-    <!-- CLASE QUE DESCIENDA - Descendant selector -->
-    <!-- The .highlight INSIDE .container matches .container .highlight -->
+    <!-- SELECTOR 2: CLASE DENTRO DE OTRA CLASE -->
+    <!-- El div "highlight" está DENTRO del div "container" -->
+    <!-- Esto activa el selector .container .highlight (CON ESPACIO) -->
     <div class="container">
-        <div class="highlight opacity60">
-            This "highlight" is INSIDE "container" (.container .highlight)
+        <h3>🎯 Ejemplo de Selector Descendiente 🎯</h3>
+        <p>El siguiente div tiene clase "highlight" y está DENTRO de "container":</p>
+        <div class="highlight">
+            ⭐ ¡Este elemento PULSA! ⭐<br>
+            Selector: .container .highlight<br>
+            (con espacio = descendiente)
         </div>
     </div>
     
@@ -182,7 +493,7 @@
         Another BLOCK element - each one is on its own line
     </div>
 
-    <!-- DISPLAY: INLINE Cual es la diferencia de un DIV y un Span--> 
+    <!-- DISPLAY: INLINE -->
     <h3>Display: Inline</h3>
     <div>
         <span class="display-inline">Inline 1</span>
@@ -191,97 +502,11 @@
         <span class="display-inline">All sit next to each other!</span>
     </div>
 
-    <!-- DISPLAY: INLINE-BLOCK -->
-    <h3>Display: Inline-Block</h3>
-    <div class="display-inline-block">Box 1</div>
-    <div class="display-inline-block">Box 2</div>
-    <div class="display-inline-block">Box 3</div>
-
-    <!-- DISPLAY: FLEX -->
-    <h3>Display: Flex</h3>
-    <div class="display-flex">
-        <div class="flex-item">Flex Item 1</div>
-        <div class="flex-item">Flex Item 2</div>
-        <div class="flex-item">Flex Item 3</div>
-    </div>
-
-    <!-- DISPLAY: GRID -->
-    <h3>Display: Grid</h3>
-    <div class="display-grid">
-        <div class="grid-item">Grid 1</div>
-        <div class="grid-item">Grid 2</div>
-        <div class="grid-item">Grid 3</div>
-        <div class="grid-item">Grid 4</div>
-        <div class="grid-item">Grid 5</div>
-        <div class="grid-item">Grid 6</div>
-    </div>
-
-    <!-- DISPLAY: LIST-ITEM -->
-    <h3>Display: List-Item</h3>
-    <div class="display-list-item">This div acts like a list item with bullet</div>
-    <div class="display-list-item">Another list-item div</div>
-
-    <!-- DISPLAY: NONE -->
-    <h3>Display: None</h3>
-    <p>The element below has display: none (you won't see it!):</p>
-    <div class="display-none">I'm invisible! Display: none removes me completely.</div>
-    <p>The invisible element doesn't take any space.</p>
-
-    <!-- ============================================
-         POSITION PROPERTY EXAMPLES
-         ============================================ -->
-    <h2>Position Property Examples</h2>
-
-    <!-- POSITION: STATIC -->
-    <h3>Position: Static (Default)</h3>
-    <div class="position-static">
-        This is STATIC positioning - normal document flow (default)
-    </div>
-
-    <!-- POSITION: RELATIVE -->
-    <h3>Position: Relative</h3>
-    <div class="position-relative">
-        This is RELATIVE - moved 20px down and 30px right from its normal position
-    </div>
-
-    <!-- POSITION: ABSOLUTE -->
-    <h3>Position: Absolute</h3>
-    <div class="position-container">
-        This gray box is the positioned parent (position: relative)
-        <div class="position-absolute">
-            I'm ABSOLUTE - positioned at top-right of my parent!
-        </div>
-    </div>
-
-    <!-- POSITION: STICKY -->
-    <h3>Position: Sticky</h3>
-    <div class="position-sticky">
-        I'm STICKY - I act normal until you scroll, then I stick to the top! Scroll down to see the effect.
-    </div>
-    
-    <!-- Add some content to make sticky work -->
-    <p>Scroll down to see the sticky element stick to the top...</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p>More content here...</p>
-    <p>Keep scrolling...</p>
-    <p>The sticky element should be stuck at the top now!</p>
-
-    <!-- POSITION: FIXED - This one appears in bottom-right corner -->
-    <div class="position-fixed">
-        I'm FIXED! I stay here even when you scroll 📌
-    </div>
-
-    <!-- COMBINING POSITION AND DISPLAY -->
-    <h3>Combining Position and Display</h3>
-    <div class="combo-example">
-        <div class="combo-item">Flex + Relative 1</div>
-        <div class="combo-item">Flex + Relative 2</div>
-        <div class="combo-item">Flex + Relative 3</div>
-    </div>
-
-
     <p>Check out my <a href="https://github.com/ircorona">GitHub</a> or visit my <a href="https://climbthesearches.com/">personal website</a> for more.</p>
     
+    <!-- EXODIA FLOTANTE CON Z-INDEX -->
+    <img src="/images/Exodia.webp" alt="Exodia" class="exodia-flotante">
+
     <footer>
         <p><a href="/">Back to home</a></p>
         <p>&copy; 2025 Irmin Corona</p>

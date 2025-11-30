@@ -359,11 +359,11 @@ p.intro {
 
 .opacity60.funciona
  {
-    opacity: 0.6;
+    opacity: 0.80;
 }
 
 .highlight.opacity60 {
-    opacity: 1;
+    opacity: 0.80;
 }
 
 
@@ -375,7 +375,7 @@ p.intro {
 {
     display: block;
     
-    position: fixed;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -391,7 +391,7 @@ p.intro {
 }
 
 .highlight, .p-izquierda {
-    filter: blur(1px);
+    filter: blur(0%);
 }
 
 /*
@@ -404,3 +404,389 @@ estar SI o SI en el mismo elemento. #209
 
 3- Otro cambio que afecte a 2 clases totalmente distintas #228
 */
+
+
+/* TAREA 1 - Realiza los cambios solicitados */
+/* 1- Quiero que hagas un cambio en dos clases que tienen que
+estar SI o SI en el mismo elemento. #209 */
+
+/* un elemento tiene AMBAS clases */
+
+.medidas.opacity60 {
+    border: 8px solid #ff00ff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(255, 0, 255, 0.6);
+    transform: scale(1.02);
+}
+
+/* 2- Otro cambio en una clase que esté dentro de otra clase. #224
+/* Afecta a elementos con clase highlight que esten DENTRO de container */
+.container .highlight {
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    border: 5px dashed #ff0080;
+    padding: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/*3- Otro cambio que afecte a 2 clases totalmente distintas #228
+*/
+/* aplica el mismo estilo a ambas clases por separado */
+.em, .rem {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) !important;
+    border: 6px solid #ffff00;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+}
+
+.em:hover, .rem:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 210, 255, 0.8);
+}
+
+/* ============================================
+   ESTILOS PARA LA GUÍA VISUAL DE SELECTORES
+   ============================================ */
+
+.ejemplo {
+    background: white;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.titulo-selector {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.codigo {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    margin: 15px 0;
+    border-left: 5px solid #667eea;
+}
+
+.selector-clase {
+    color: #a6e22e;
+}
+
+.selector-syntax {
+    color: #66d9ef;
+}
+
+.visual-demo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.html-structure {
+    flex: 1;
+    min-width: 300px;
+}
+
+.resultado {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* EJEMPLO 1: .class1.class2 */
+.caja {
+    border: 3px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.caja.especial {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    font-weight: bold;
+    border: 5px solid #ff0080;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+/* EJEMPLO 2: .parent .child */
+.contenedor-demo {
+    border: 4px dashed #0066cc;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.contenedor-demo .destacado-demo {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 4px solid #ffeb3b;
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.5);
+}
+
+.destacado-demo {
+    background: #ffcccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* EJEMPLO 3: .class1, .class2 */
+.rojo-demo, .azul-demo {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 5px solid #ffd700;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+
+.estructura-arbol {
+    font-family: monospace;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    line-height: 2;
+}
+
+.nivel-1 { 
+    color: #0066cc; 
+    font-weight: bold; 
+}
+
+.nivel-2 { 
+    color: #cc0066; 
+    margin-left: 30px; 
+}
+
+.nivel-3 { 
+    color: #00cc66; 
+    margin-left: 60px; 
+}
+
+.si { 
+    color: #00cc00; 
+    font-weight: bold; 
+}
+
+.no { 
+    color: #cc0000; 
+    font-weight: bold; 
+}
+
+.nota {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.flecha {
+    font-size: 40px;
+    color: #667eea;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 3px;
+}
+
+.guia-titulo {
+    text-align: center;
+    color: #667eea;
+    font-size: 42px;
+    margin: 40px 0;
+}
+
+
+/* ============================================
+   Z-INDEX EXAMPLE - EXODIA FLOTANTE
+   ============================================ */
+
+/* Header debe tener z-index alto para estar arriba */
+header {
+    position: relative;
+    z-index: 1000; /* Más alto que Exodia */
+}
+
+nav>ul {
+    z-index: 1001; /* Asegura que el nav esté arriba del header */
+}
+
+/* Exodia flotante que te sigue */
+.exodia-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: auto;
+    z-index: 500; /* Menor que el header (1000) pero mayor que el contenido normal */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.exodia-flotante:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
+}
+
+/* Contenido normal tiene z-index bajo */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+#imagen-falsa {
+    width: 600px;
+    height: 600px;
+    background: url('/images/CSS_image.png');
+    background-size: 300px;
+    background-attachment: fixed;
+    margin:auto;
+    background-color: black;
+    background-position-x:200px;
+}
+
+/* ============================================
+   EJERCICIO: IMÁGENES POR CSS ) contact.html
+    File: ejemplo/CSS/style.css
+   ============================================ */
+
+/* IMAGEN 1: Con repeat (se repite como patrón) */
+.imagen-css-1 {
+    width: 100%;
+    height: 300px;
+    background-image: url('/images/CSS_image.png');
+    background-size: 100px 100px; /* Tamaño de cada repetición */
+    background-repeat: repeat; /* Se repite en todas direcciones */
+    margin: 20px 0;
+    border: 3px solid #0066cc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGEN 2: Sin repeat (imagen única) */
+.imagen-css-2 {
+    width: 100%;
+    height: 400px;
+    background-image: url('/images/Exodia.webp');
+    background-size: contain; /* La imagen completa cabe sin cortarse */
+    background-repeat: no-repeat; /* NO se repite - solo una vez */
+    background-position: center; /* Centrada */
+    margin: 20px 0;
+    border: 3px solid #cc0066;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   EJERCICIO: Enlaces Externos Distinguibles
+   ============================================ */
+
+/* Selecciona TODOS los enlaces que empiezan con "http://" o "https://" 
+   Estos son enlaces EXTERNOS (fuera de tu sitio) */
+a[href^="http://"],
+a[href^="https://"] {
+    color: #00ff00; /* Verde neón - color distintivo */
+    text-decoration: underline;
+    font-weight: bold;
+    position: relative;
+    padding-right: 20px; /* Espacio para el ícono */
+}
+
+/* Añade un ícono "↗" después de enlaces externos */
+a[href^="http://"]::after,
+a[href^="https://"]::after {
+    content: " ↗"; /* Flecha hacia arriba-derecha */
+    font-size: 0.8em;
+    margin-left: 3px;
+    color: #00ff00;
+}
+
+/* Efecto hover para enlaces externos */
+a[href^="http://"]:hover,
+a[href^="https://"]:hover {
+    color: #00ffff; /* Cyan al hacer hover */
+    text-shadow: 0 0 10px #00ff00; /* Efecto glow */
+    transition: all 0.3s ease;
+}
+
+/* OPCIONAL: Excluir mailto: de ser tratado como externo */
+a[href^="mailto:"] {
+    color: #ff00ff; /* Magenta para emails */
+    font-weight: normal;
+    padding-right: 0;
+}
+
+a[href^="mailto:"]::after {
+    content: " ✉"; /* Ícono de sobre */
+    font-size: 0.9em;
+}
+
+/* ============================================
+   COMPARACIÓN VISUAL
+   ============================================ */
+
+/* Enlaces internos (sin http/https) mantienen estilo normal */
+a:not([href^="http"]):not([href^="mailto:"]) {
+    color: #ffffff; /* Blanco para enlaces internos */
+    text-decoration: none;
+}
+
+a:not([href^="http"]):not([href^="mailto:"]):hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
