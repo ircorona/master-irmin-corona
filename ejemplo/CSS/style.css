@@ -1,5 +1,6 @@
 nav>ul {
     list-style-type: none;
+    list-style: black;
     display: flex;
     padding: 0;
     align-items: center;
@@ -10,6 +11,8 @@ nav>ul {
     margin: 0px;
     top: 0;
     height: 30px;
+    font-style: italic;
+    font-palette: black;
 }
 
 body {
@@ -782,7 +785,7 @@ a[href^="mailto:"]::after {
 
 /* Enlaces internos (sin http/https) mantienen estilo normal */
 a:not([href^="http"]):not([href^="mailto:"]) {
-    color: #ffffff; /* Blanco para enlaces internos */
+    color: black; /* Blanco para enlaces internos */
     text-decoration: none;
 }
 
@@ -790,3 +793,4 @@ a:not([href^="http"]):not([href^="mailto:"]):hover {
     color: #cccccc;
     text-decoration: underline;
 }
+
