@@ -8,7 +8,7 @@
 
 nav>ul {
     list-style-type: none;
-    list-style: black;
+    list-style: black; /*No admite color*/      
     display: flex;
     padding: 0;
     align-items: center;
@@ -20,7 +20,7 @@ nav>ul {
     top: 0;
     height: 30px;
     font-style: italic;
-    font-palette: black;
+    font-palette: black; /*No admite black*/
 }
 
 body {
@@ -443,7 +443,7 @@ estar SI o SI en el mismo elemento. #209 */
     transform: scale(1.02);
 }
 
-/* 2- Otro cambio en una clase que esté dentro de otra clase. #224
+/* 2- Otro cambio en una clase que esté dentro de otra clase. #224 */
 /* Afecta a elementos con clase highlight que esten DENTRO de container */
 .container .highlight {
     background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
