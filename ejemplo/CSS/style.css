@@ -1,6 +1,6 @@
 nav>ul {
     list-style-type: none;
-    list-style: black;
+    list-style: black; /*No admite color*/      
     display: flex;
     padding: 0;
     align-items: center;
