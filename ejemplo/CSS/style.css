@@ -1,26 +1,34 @@
+/* ============================================
+   CSS VARIABLES - Color Palette
+   ============================================ */
 :root {
   --main: lightgrey;
-  --secondary: #667eea; /* Blue-purple (your current main blue) */
-  --tertiary: #4ecdc4;  /* Blue-cyan (analogous - adjacent on color wheel) */
-  --accent: #764ba2;    /* Purple (analogous - adjacent on color wheel) */
- --gradient-primary: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+  --secondary: #667eea; /* Blue-purple */
+  --tertiary: #4ecdc4;  /* Blue-cyan (analogous) */
+  --accent: #764ba2;    /* Purple (analogous) */
+  --gradient-primary: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 }
 
-nav>ul {
-    list-style-type: none;
-    list-style: black; /*No admite color*/      
-    display: flex;
-    padding: 0;
-    align-items: center;
-    justify-content: space-evenly;
+/* ============================================
+   NAVIGATION - Fixed Header
+   ============================================ */
+nav {
     position: fixed;
     width: 100%;
-    background: whitesmoke;
-    margin: 0px;
     top: 0;
+    z-index: 1001;
+    background: whitesmoke;
+}
+
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
     height: 30px;
+    align-items: center;
+    justify-content: space-evenly;
     font-style: italic;
-    font-palette: black; /*No admite black*/
 }
 
 body {
@@ -28,25 +36,19 @@ body {
 }
 
 /* ============================================
-   SECTIONS
+   HEADER - Position for z-index
    ============================================ */
-
-/* CLASS SELECTOR - Selects any element with class="medidas"
-   Example: <section class="medidas"> */
-section.medidas {
-    margin-bottom: 60px;
-    margin: 10px 0;
+header {
+    position: relative;
+    z-index: 1000;
 }
 
-/* ID selector (index.html)*/
-/* #main-header {
-    background: var(--accent);
-    color: white;
-    padding: 1rem;
-    height: 80px; 
-} */
+/* ============================================
+   HEADINGS
+   ============================================ */
 
-h1:not(#main-header) {
+/* Gradient applied to ALL H1 elements */
+h1 {
     background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
@@ -57,7 +59,17 @@ h1:not(#main-header) {
     padding: 20px 0;
 }
 
-/* ABSOLUTE UNITS (file-folder.html)*/
+/* ============================================
+   SECTIONS
+   ============================================ */
+section.medidas {
+    margin-bottom: 60px;
+    margin: 10px 0;
+}
+
+/* ============================================
+   ABSOLUTE UNITS EXAMPLES (file-folder.html)
+   ============================================ */
 .cm {
     background: burlywood;
     width: 10cm;
@@ -122,7 +134,15 @@ h1:not(#main-header) {
     color: white;
 }
 
-/* RELATIVE UNITS (file-folder.html)*/
+/* Nested selector - Makes text bold inside boxes */
+.cm p, .mm p, .in p, .px p, .pt p, .pc p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* ============================================
+   RELATIVE UNITS EXAMPLES (file-folder.html)
+   ============================================ */
 .relative-sizes {
     font-size: 16px; /* Base size for em comparison */
 }
@@ -168,19 +188,8 @@ h1:not(#main-header) {
 }
 
 /* ============================================
-   NESTED SELECTOR - Makes text bold inside boxes
+   ADVANCED SELECTOR EXAMPLES
    ============================================ */
-
-/* This selects <p> elements INSIDE elements with these classes
-   Example: .cm p means "paragraphs inside .cm boxes"
-   The comma separates multiple selectors (applies to all) */
-.cm p, .mm p, .in p, .px p, .pt p, .pc p {
-    margin: 5px 0;
-    font-weight: bold;
-}
-
-
-/* Esta parte no estoy seguro ⬇️
 
 /* ELEMENTO CON 2 CLASES - Element with BOTH classes at once
    Example: <div class="intro highlight">
@@ -197,22 +206,27 @@ h1:not(#main-header) {
    Example: <p class="intro"> (only paragraphs, not divs)
    This is MORE SPECIFIC than just .intro */
 p.intro {
-    border-left: 4px solid #0066cc;  /* Blue left border */
-    padding-left: 20px;              /* Space from border to text */
+    border-left: 4px solid #0066cc;
+    padding-left: 20px;
     background: lightblue;
     margin: 15px 0;
 }
 
-/* CLASE QUE DESCIENDA - Descendant selector
+/* CLASE QUE DESCIENDA - Descendant selector (CONSOLIDATED)
    Example: <div class="container">
               <div class="highlight">This is selected</div>
             </div>
    The SPACE means "find .highlight INSIDE .container" */
 .container .highlight {
-    border: 2px dashed red;   /* Red dashed border */
-    margin: 10px;
-    padding: 15px;
-    background: yellow;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    border: 5px dashed #ff0080;
+    padding: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
 }
 
 /* ============================================
@@ -225,7 +239,7 @@ p.intro {
     background: lightcoral;
     padding: 15px;
     margin: 10px 0;
-    width: 100%;  /* Takes full width available */
+    width: 100%;
 }
 
 /* DISPLAY: INLINE - Sits next to other elements, ignores width/height */
@@ -233,7 +247,7 @@ p.intro {
     display: inline;
     background: lightblue;
     padding: 5px 10px;
-    margin: 5px;  /* Note: top/bottom margin doesn't work on inline! */
+    margin: 5px;
 }
 
 /* DISPLAY: INLINE-BLOCK - Best of both: sits inline but respects width/height */
@@ -252,21 +266,21 @@ p.intro {
     background: lightyellow;
     padding: 20px;
     margin: 20px 0;
-    gap: 10px;  /* Space between flex items */
-    justify-content: space-between;  /* Spreads items apart */
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .flex-item {
     background: orange;
     padding: 15px;
-    flex: 1;  /* All items take equal space */
+    flex: 1;
 }
 
 /* DISPLAY: GRID - 2D layout system */
 .display-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
-    gap: 15px;  /* Space between grid items */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
     background: lavender;
     padding: 20px;
     margin: 20px 0;
@@ -281,13 +295,12 @@ p.intro {
 
 /* DISPLAY: NONE - Completely removes element (doesn't take space) */
 .display-none {
-    display: none;  /* Element exists in HTML but invisible */
+    display: none;
 }
 
 /* DISPLAY: CONTENTS - Element disappears but children remain */
 .display-contents {
     display: contents;
-    /* The div itself won't show, but its children will */
 }
 
 /* DISPLAY: LIST-ITEM - Makes element behave like <li> */
@@ -304,7 +317,7 @@ p.intro {
 
 /* POSITION: STATIC - Default, normal document flow */
 .position-static {
-    position: static;  /* This is default, doesn't need to be specified */
+    position: static;
     background: #f0f0f0;
     padding: 15px;
     margin: 10px 0;
@@ -313,8 +326,8 @@ p.intro {
 /* POSITION: RELATIVE - Positioned relative to its normal position */
 .position-relative {
     position: relative;
-    top: 20px;  /* Moves 20px DOWN from where it would normally be */
-    left: 30px;  /* Moves 30px RIGHT from normal position */
+    top: 20px;
+    left: 30px;
     background: lightblue;
     padding: 15px;
     margin: 10px 0;
@@ -322,7 +335,7 @@ p.intro {
 
 /* POSITION: ABSOLUTE - Positioned relative to nearest positioned ancestor */
 .position-container {
-    position: relative;  /* Creates positioning context for absolute child */
+    position: relative;
     background: #ddd;
     padding: 60px 20px 20px 20px;
     margin: 20px 0;
@@ -331,8 +344,8 @@ p.intro {
 
 .position-absolute {
     position: absolute;
-    top: 10px;  /* 10px from top of .position-container */
-    right: 10px;  /* 10px from right of .position-container */
+    top: 10px;
+    right: 10px;
     background: coral;
     padding: 10px;
     width: 150px;
@@ -341,20 +354,20 @@ p.intro {
 /* POSITION: FIXED - Positioned relative to viewport (browser window) */
 .position-fixed {
     position: fixed;
-    bottom: 20px;  /* 20px from bottom of screen */
-    right: 20px;   /* 20px from right of screen */
+    bottom: 20px;
+    right: 20px;
     background: #ff6b6b;
     color: white;
     padding: 15px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    z-index: 1000;  /* Stays on top of other elements */
+    z-index: 1000;
 }
 
 /* POSITION: STICKY - Hybrid of relative and fixed */
 .position-sticky {
     position: sticky;
-    top: 0;  /* Sticks to top when you scroll past it */
+    top: 0;
     background: #4ecdc4;
     color: white;
     padding: 15px;
@@ -379,8 +392,10 @@ p.intro {
     margin: 10px;
 }
 
-.opacity60.funciona
- {
+/* ============================================
+   OPACITY AND VISIBILITY
+   ============================================ */
+.opacity60.funciona {
     opacity: 0.80;
 }
 
@@ -388,15 +403,15 @@ p.intro {
     opacity: 0.80;
 }
 
-
 .oculto {
     display: none;
 }
 
-.p-derecha.p-izquierda.b-derecho.b-izquierdo.cabeza
-{
+/* ============================================
+   COMPLEX POSITIONING EXAMPLE
+   ============================================ */
+.p-derecha.p-izquierda.b-derecho.b-izquierdo.cabeza {
     display: block;
-    
     position: relative;
     left: 50%;
     top: 50%;
@@ -416,24 +431,11 @@ p.intro {
     filter: blur(0%);
 }
 
-/*
-Quiero que pongas 3 cambios de CSS:
+/* ============================================
+   EJERCICIO 08 - SELECTORES AVANZADOS
+   ============================================ */
 
-1- Quiero que hagas un cambio en dos clases que tienen que
-estar SI o SI en el mismo elemento. #209
-
-2- Otro cambio en una clase que esté dentro de otra clase. #224
-
-3- Otro cambio que afecte a 2 clases totalmente distintas #228
-*/
-
-
-/* TAREA 1 - Realiza los cambios solicitados */
-/* 1- Quiero que hagas un cambio en dos clases que tienen que
-estar SI o SI en el mismo elemento. #209 */
-
-/* un elemento tiene AMBAS clases */
-
+/* 1️⃣ Selector: DOS CLASES en el MISMO ELEMENTO (.medidas.opacity60) */
 .medidas.opacity60 {
     border: 8px solid #ff00ff;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -443,23 +445,10 @@ estar SI o SI en el mismo elemento. #209 */
     transform: scale(1.02);
 }
 
-/* 2- Otro cambio en una clase que esté dentro de otra clase. #224 */
-/* Afecta a elementos con clase highlight que esten DENTRO de container */
-.container .highlight {
-    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
-    border: 5px dashed #ff0080;
-    padding: 25px;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: pulse 2s infinite;
-}
+/* 2️⃣ Selector: CLASE DENTRO DE OTRA (.container .highlight) 
+   Ya consolidado arriba en línea ~206 */
 
-/*3- Otro cambio que afecte a 2 clases totalmente distintas #228
-*/
-/* aplica el mismo estilo a ambas clases por separado */
+/* 3️⃣ Selector: GRUPO de clases (.em, .rem) - Mismo estilo para ambas */
 .em, .rem {
     background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) !important;
     border: 6px solid #ffff00;
@@ -476,9 +465,8 @@ estar SI o SI en el mismo elemento. #209 */
 }
 
 /* ============================================
-   ESTILOS PARA LA GUÍA VISUAL DE SELECTORES
+   GUÍA VISUAL DE SELECTORES CSS
    ============================================ */
-
 .ejemplo {
     background: white;
     padding: 30px;
@@ -529,12 +517,21 @@ estar SI o SI en el mismo elemento. #209 */
     min-width: 300px;
 }
 
+.css-structure {
+    flex: 1;
+    min-width: 300px;
+}
+
 .resultado {
     flex: 1;
     min-width: 300px;
 }
 
-/* EJEMPLO 1: .class1.class2 */
+/* ============================================
+   EJEMPLOS DE SELECTORES - Visual Demos
+   ============================================ */
+
+/* EJEMPLO 1: .class1.class2 (sin espacio) */
 .caja {
     border: 3px solid #ccc;
     padding: 15px;
@@ -552,7 +549,11 @@ estar SI o SI en el mismo elemento. #209 */
     box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
 }
 
-/* EJEMPLO 2: .parent .child */
+.especial {
+    background: #f0f0f0;
+}
+
+/* EJEMPLO 2: .parent .child (con espacio) */
 .contenedor-demo {
     border: 4px dashed #0066cc;
     padding: 20px;
@@ -578,7 +579,7 @@ estar SI o SI en el mismo elemento. #209 */
     margin: 10px 0;
 }
 
-/* EJEMPLO 3: .class1, .class2 */
+/* EJEMPLO 3: .class1, .class2 (con coma) */
 .rojo-demo, .azul-demo {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -590,6 +591,9 @@ estar SI o SI en el mismo elemento. #209 */
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
 }
 
+/* ============================================
+   ESTRUCTURA VISUAL - Componentes de la Guía
+   ============================================ */
 .estructura-arbol {
     font-family: monospace;
     background: #f5f5f5;
@@ -657,20 +661,9 @@ estar SI o SI en el mismo elemento. #209 */
     margin: 40px 0;
 }
 
-
 /* ============================================
    Z-INDEX EXAMPLE - EXODIA FLOTANTE
    ============================================ */
-
-/* Header debe tener z-index alto para estar arriba */
-header {
-    position: relative;
-    z-index: 1000; /* Más alto que Exodia */
-}
-
-nav>ul {
-    z-index: 1001; /* Asegura que el nav esté arriba del header */
-}
 
 /* Exodia flotante que te sigue */
 .exodia-flotante {
@@ -679,7 +672,7 @@ nav>ul {
     right: 20px;
     width: 200px;
     height: auto;
-    z-index: 500; /* Menor que el header (1000) pero mayor que el contenido normal */
+    z-index: 500;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
@@ -701,35 +694,43 @@ nav>ul {
     filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
 }
 
+/* Animación pulse para .container .highlight */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 /* Contenido normal tiene z-index bajo */
 body > * {
     position: relative;
     z-index: 1;
 }
 
+/* ============================================
+   BACKGROUND IMAGES - CSS Exercises
+   ============================================ */
 #imagen-falsa {
     width: 600px;
     height: 600px;
     background: url('/images/CSS_image.png');
     background-size: 300px;
     background-attachment: fixed;
-    margin:auto;
+    margin: auto;
     background-color: black;
-    background-position-x:200px;
+    background-position-x: 200px;
 }
-
-/* ============================================
-   EJERCICIO: IMÁGENES POR CSS ) contact.html
-    File: ejemplo/CSS/style.css
-   ============================================ */
 
 /* IMAGEN 1: Con repeat (se repite como patrón) */
 .imagen-css-1 {
     width: 100%;
     height: 300px;
     background-image: url('/images/CSS_image.png');
-    background-size: 100px 100px; /* Tamaño de cada repetición */
-    background-repeat: repeat; /* Se repite en todas direcciones */
+    background-size: 100px 100px;
+    background-repeat: repeat;
     margin: 20px 0;
     border: 3px solid #0066cc;
     border-radius: 10px;
@@ -743,9 +744,9 @@ body > * {
     width: 100%;
     height: 400px;
     background-image: url('/images/Exodia.webp');
-    background-size: contain; /* La imagen completa cabe sin cortarse */
-    background-repeat: no-repeat; /* NO se repite - solo una vez */
-    background-position: center; /* Centrada */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 20px 0;
     border: 3px solid #cc0066;
     border-radius: 10px;
@@ -755,24 +756,23 @@ body > * {
 }
 
 /* ============================================
-   EJERCICIO: Enlaces Externos Distinguibles
+   ATTRIBUTE SELECTORS - Enlaces Externos
    ============================================ */
 
-/* Selecciona TODOS los enlaces que empiezan con "http://" o "https://" 
-   Estos son enlaces EXTERNOS (fuera de tu sitio) */
+/* Enlaces externos (empiezan con http:// o https://) */
 a[href^="http://"],
 a[href^="https://"] {
-    color: #00ff00; /* Verde neón - color distintivo */
+    color: #00ff00;
     text-decoration: underline;
     font-weight: bold;
     position: relative;
-    padding-right: 20px; /* Espacio para el ícono */
+    padding-right: 20px;
 }
 
-/* Añade un ícono "↗" después de enlaces externos */
+/* Ícono para enlaces externos */
 a[href^="http://"]::after,
 a[href^="https://"]::after {
-    content: " ↗"; /* Flecha hacia arriba-derecha */
+    content: " ↗";
     font-size: 0.8em;
     margin-left: 3px;
     color: #00ff00;
@@ -781,30 +781,26 @@ a[href^="https://"]::after {
 /* Efecto hover para enlaces externos */
 a[href^="http://"]:hover,
 a[href^="https://"]:hover {
-    color: #00ffff; /* Cyan al hacer hover */
-    text-shadow: 0 0 10px #00ff00; /* Efecto glow */
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ff00;
     transition: all 0.3s ease;
 }
 
-/* OPCIONAL: Excluir mailto: de ser tratado como externo */
+/* Enlaces mailto: */
 a[href^="mailto:"] {
-    color: #ff00ff; /* Magenta para emails */
+    color: #ff00ff;
     font-weight: normal;
     padding-right: 0;
 }
 
 a[href^="mailto:"]::after {
-    content: " ✉"; /* Ícono de sobre */
+    content: " ✉";
     font-size: 0.9em;
 }
 
-/* ============================================
-   COMPARACIÓN VISUAL
-   ============================================ */
-
-/* Enlaces internos (sin http/https) mantienen estilo normal */
+/* Enlaces internos (sin http/https) */
 a:not([href^="http"]):not([href^="mailto:"]) {
-    color: black; /* Blanco para enlaces internos */
+    color: black;
     text-decoration: none;
 }
 
@@ -813,44 +809,24 @@ a:not([href^="http"]):not([href^="mailto:"]):hover {
     text-decoration: underline;
 }
 
+/* ============================================
+   TABLE STYLING - Con counter y calc()
+   ============================================ */
+
+/* Counter para numerar filas automáticamente */
 table {
     counter-reset: row;
+    width: calc(100% - 40px);  /* 100% del padre menos 40px */
+    max-width: max(600px, 50vw); /* Lo que sea MAYOR: 600px o 50% del viewport */
+    margin: 20px auto;
+    border-collapse: collapse;
 }
 
-
-/* function to add row numbers */
-/* Skip the first tr (header) */
+/* Skip the first tr (header) y añade número de fila */
 tr:not(:first-child):before {
     content: "Row " counter(row) ":";
     counter-increment: row;
     display: table-cell;
     padding-right: 10px;
     font-weight: normal;
-}
-
-/* 2️⃣ Elemento con ancho del 100% menos 40 píxeles */
-table {
-    width: calc(100% - 40px);  /* 100% del padre menos 40px */
-    margin: 20px auto;         /* Centrado */
-    border-collapse: collapse;
-}
-
-/* 3️⃣ Añade una función max al ancho de un elemento */
-table {
-    width: calc(100% - 40px);
-    max-width: max(600px, 50vw); /* Lo que sea MAYOR: 600px o 50% del viewport */
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-/* 4️⃣ Gradient a TODOS los H1 */
-h1 {
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px 0;
 }
