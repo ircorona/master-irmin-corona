@@ -12,7 +12,7 @@ nav>ul {
     top: 0;
     height: 30px;
     font-style: italic;
-    font-palette: black;
+    font-palette: black; /*No admite black*/
 }
 
 body {
