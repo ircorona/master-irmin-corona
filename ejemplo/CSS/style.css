@@ -1,3 +1,11 @@
+:root {
+  --main: lightgrey;
+  --secondary: #667eea; /* Blue-purple (your current main blue) */
+  --tertiary: #4ecdc4;  /* Blue-cyan (analogous - adjacent on color wheel) */
+  --accent: #764ba2;    /* Purple (analogous - adjacent on color wheel) */
+ --gradient-primary: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+}
+
 nav>ul {
     list-style-type: none;
     list-style: black;
@@ -31,11 +39,22 @@ section.medidas {
 }
 
 /* ID selector (index.html)*/
-#main-header {
-    background: #0066cc;
+/* #main-header {
+    background: var(--accent);
     color: white;
     padding: 1rem;
-    height: 80px;
+    height: 80px; 
+} */
+
+h1:not(#main-header) {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
 }
 
 /* ABSOLUTE UNITS (file-folder.html)*/
@@ -794,3 +813,44 @@ a:not([href^="http"]):not([href^="mailto:"]):hover {
     text-decoration: underline;
 }
 
+table {
+    counter-reset: row;
+}
+
+
+/* function to add row numbers */
+/* Skip the first tr (header) */
+tr:not(:first-child):before {
+    content: "Row " counter(row) ":";
+    counter-increment: row;
+    display: table-cell;
+    padding-right: 10px;
+    font-weight: normal;
+}
+
+/* 2️⃣ Elemento con ancho del 100% menos 40 píxeles */
+table {
+    width: calc(100% - 40px);  /* 100% del padre menos 40px */
+    margin: 20px auto;         /* Centrado */
+    border-collapse: collapse;
+}
+
+/* 3️⃣ Añade una función max al ancho de un elemento */
+table {
+    width: calc(100% - 40px);
+    max-width: max(600px, 50vw); /* Lo que sea MAYOR: 600px o 50% del viewport */
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+/* 4️⃣ Gradient a TODOS los H1 */
+h1 {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+}
