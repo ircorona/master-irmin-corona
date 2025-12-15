@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/ejemplo/CSS/style.css">
+
+    <!-- no me funciono mi Roboto Mono -->
+    <link href="/CSS/fonts.css" rel="stylesheet"> 
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <!-- INTERNAL CSS -->
     <style>
         .internal-example {
@@ -16,7 +24,7 @@
     <title>Irmin's Website</title>
 </head>
 <body>
-    <h1 id="main-header">Welcome to My Website</h1>
+    <h1 id="main-header">Welcome to My Website <?php echo date("Y/M/d");?></h1>
   
     <header>
         <nav>

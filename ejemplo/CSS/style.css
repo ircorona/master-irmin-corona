@@ -1,12 +1,23 @@
+/* @import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Science+Gothic:wght@100..900&display=swap'); */
+
 /* ============================================
    CSS VARIABLES - Color Palette
    ============================================ */
 :root {
-  --main: lightgrey;
-  --secondary: #667eea; /* Blue-purple */
-  --tertiary: #4ecdc4;  /* Blue-cyan (analogous) */
-  --accent: #764ba2;    /* Purple (analogous) */
+  --main: rgb(232, 228, 228);
+  --secondary: #667eea;
+  --tertiary: #4ecdc4;
+  --accent: #764ba2;
   --gradient-primary: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+}
+
+body > *:not(h1) {
+    font-family: 'Roboto Mono', sans-serif;
+    background: var(--main);
+    margin: 0;
+    margin-top: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* ============================================
@@ -31,10 +42,6 @@ nav > ul {
     font-style: italic;
 }
 
-body {
-    margin-top: 40px;
-}
-
 /* ============================================
    HEADER - Position for z-index
    ============================================ */
@@ -48,15 +55,19 @@ header {
    ============================================ */
 
 /* Gradient applied to ALL H1 elements */
+/* No puede agregar Catamaran */
+
 h1 {
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: 'Catamaran', sans-serif;
     font-size: 48px;
     font-weight: bold;
     text-align: center;
     padding: 20px 0;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Add this as fallback */
 }
 
 /* ============================================
