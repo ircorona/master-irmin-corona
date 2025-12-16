@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/ejemplo/CSS/style.css">
-    <title>About Me</title>
-</head>
-<body>
-    <h1>About Me</h1>
-    
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about-me.html">About Me</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/folder/file-folder.html">Projects</a></li>
-                <li><a href="https://github.com/ircorona">My GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
+?>
     
     <iframe width="560" height="315" 
     src="https://www.youtube.com/embed/tO4T3G2GRn8?si=-F8SX-Xfxr9HgFUF&amp;start=1" 
@@ -65,7 +47,7 @@
         <li><b>Website:</b> <a href="https://climbthesearches.com/">climbthesearches.com</a></li>
     </ul>
     
-    <p>Check out my <a href="/folder/file-folder.html"><span>projects page</span></a> to see what I'm working on, or visit my <a href="https://climbthesearches.com/">personal website</a> for more.</p>
+    <p>Check out my <a href="/folder/file-folder.php"><span>projects page</span></a> to see what I'm working on, or visit my <a href="https://climbthesearches.com/">personal website</a> for more.</p>
     
     <footer>
         <p><a href="/">Back to home</a></p>

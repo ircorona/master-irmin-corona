@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/ejemplo/CSS/style.css">
-    <title>Contact</title>
-</head>
-<body>
-    <h1>Contact</h1>
-    
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about-me.html">About Me</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/folder/file-folder.html">Projects</a></li>
-                <li><a href="https://github.com/ircorona">My GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
+?>
     
     <h2>Get in touch</h2>
     <p>Feel free to reach out through any of these:</p>
