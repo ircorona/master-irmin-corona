@@ -282,10 +282,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     <!-- EXODIA FLOTANTE -->
     <img src="/images/Exodia.webp" alt="Exodia" class="exodia-flotante">
 
-    <footer>
-        <p><a href="/">Back to home</a></p>
-        <p>&copy; 2025 Irmin Corona</p>
-        <p>Mexico City, Mexico</p>
-    </footer>
-</body>
-</html>
+    
+    
+    <?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
+?>

@@ -49,10 +49,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     
     <p>Check out my <a href="/folder/file-folder.php"><span>projects page</span></a> to see what I'm working on, or visit my <a href="https://climbthesearches.com/">personal website</a> for more.</p>
     
-    <footer>
-        <p><a href="/">Back to home</a></p>
-        <p>&copy; 2025 Irmin Corona</p>
-        <p>Mexico City, Mexico</p>
-    </footer>
-</body>
-</html>
+    <?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
+?>

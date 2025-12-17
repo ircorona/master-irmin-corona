@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/ejemplo/CSS/style.css">
 
-        <!-- no me funciono mi Roboto Mono -->
-        <link href="/CSS/fonts.css" rel="stylesheet"> 
+        <!-- CUSTOM FONTS -->
+        <link href="/CSS/fonts.css" rel="stylesheet">
 
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

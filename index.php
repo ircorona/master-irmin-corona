@@ -1,5 +1,8 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
 ?>
 <?php
 echo $_SERVER['DOCUMENT_ROOT'];
@@ -56,9 +59,6 @@ echo $_SERVER['DOCUMENT_ROOT'];
             Your browser does not support HTML video.
         </video>
         
-        <footer>
-            <p>&copy; 2025 Irmin Corona</p>
-            <p>Mexico City, Mexico</p>
-        </footer>
-    </body>
-</html>
+        <?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
+?>
