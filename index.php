@@ -1,11 +1,13 @@
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
-include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
-require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
+# include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+# require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+# require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
 ?>
 <?php
 echo $_SERVER['DOCUMENT_ROOT'];
+$tiger = "Roarrrr!";
+echo "<p>$tiger</p>";
 ?>
 
         <section>
