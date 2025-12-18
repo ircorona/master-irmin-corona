@@ -4,11 +4,27 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
 ?>
-<?php
-echo $_SERVER['DOCUMENT_ROOT'];
-$tiger = "Roarrrr!";
-echo "<p>$tiger</p>";
-?>
+
+<p>
+    <?php
+    echo $_SERVER['DOCUMENT_ROOT'];
+    ?>
+    <?php
+    $tiger = "Roarrrr!";
+    $seo = "google";
+    $posicionamiento = "bing";
+    if ($seo == $posicionamiento) {
+        echo "<p>No tiger for you!</p>";
+    } 
+    elseif($posicionamiento == "bing") {
+        echo "<p>Hola! Aquí está tu tigre:</p>";
+    }
+    else     
+    {
+    echo "<p>$tiger</p>";
+    }
+    ?>
+</p>
 
         <section>
             <h1 id="main-header">Welcome to My Website <?php echo date("Y/M/d");?></h1>
