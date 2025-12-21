@@ -1,4 +1,5 @@
 <?php 
+# header("Location: https://auramip.com");
 $pagina = "home";  // Define qué página es
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
