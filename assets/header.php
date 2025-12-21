@@ -2,7 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/ejemplo/CSS/style.css">
+        <?php 
+        include_once $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
+        // Usar variable en lugar de constante
+        if (!isset($pagina)) {
+            $pagina = "default";
+        }
+
+        switch ($pagina){
+            case 'home':
+                $titulo = "Home - My PHP Website";
+                break;
+            case 'about':
+                $titulo = "About Me - My PHP Website";
+                break;
+            case 'contact':
+                $titulo = "Contact - My PHP Website";
+                break;
+            default:
+                $titulo = "My PHP Website";
+        }
+        ?>
 
         <!-- CUSTOM FONTS -->
         <link href="/CSS/fonts.css" rel="stylesheet">
@@ -21,7 +43,14 @@
                 font-size: 1.2rem;
             }
         </style>
-        <title>Irmin's Website</title>
+        <title>
+            <?php 
+            if (empty($titulo)) {
+                $titulo = "Default Title - My PHP Website";
+            }
+            echo $titulo; 
+            ?>         
+        </title>
     </head>
     <body>
         <header>

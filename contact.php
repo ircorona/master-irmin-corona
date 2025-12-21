@@ -1,5 +1,6 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
+$pagina = "contact";  // ← Define la página
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  // ← Solo UNA vez
 ?>
     
     <h2>Get in touch</h2>

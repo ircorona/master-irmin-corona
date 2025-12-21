@@ -1,7 +1,7 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
+$pagina = "about";  // ← Define PRIMERO qué página es
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  // ← Solo UNA inclusión
 ?>
-    
     <iframe width="560" height="315" 
     src="https://www.youtube.com/embed/tO4T3G2GRn8?si=-F8SX-Xfxr9HgFUF&amp;start=1" 
     title="YouTube video player" 
@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     allowfullscreen>
     </iframe>
     
-    <h2>Who am I?</h2>
+    <!-- <h1>Who am I?</h1> --> <h1><?php echo $titulo; ?></h1>
     <p>I'm <b>Irmin Corona</b>, learning web development and building my first HTML pages. Still figuring things out but enjoying the process.</p>
     
     <blockquote cite="https://climbthesearches.com">

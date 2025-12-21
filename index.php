@@ -1,15 +1,18 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
+$pagina = "home";  // Define qué página es
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
 ?>
-
 <p>
     <?php
     echo $_SERVER['DOCUMENT_ROOT'];
     ?>
     <?php
+
+    /* Example of conditional statements in PHP
+    */
     $tiger = "Roarrrr!";
     $seo = "google";
     $posicionamiento = "bing";
@@ -58,6 +61,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         
         <!-- FAQ Section -->
         <h2>FAQs</h2>
+        <?php ctas(); 
+        how_do_you_turn_this_on();
+        ?>
         
         <details>
             <summary>What is this website about?</summary>

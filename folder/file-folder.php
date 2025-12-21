@@ -1,4 +1,5 @@
 <?php 
+$pagina = "projects";  // ← Define la página (necesitas agregar este caso en header.php)
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  
 ?>
     
