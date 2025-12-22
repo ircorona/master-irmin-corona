@@ -12,15 +12,15 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     ?>
     <?php
 
-    /* Example of conditional statements in PHP
+    /* Example of variables in PHP
     */
     $tiger = "Roarrrr!";
     $seo = "google";
-    $posicionamiento = "bing";
+    $posicionamiento = "google";
     if ($seo == $posicionamiento) {
         echo "<p>No tiger for you!</p>";
     } 
-    elseif($posicionamiento == "bing") {
+    elseif($posicionamiento == "google") {
         echo "<p>Hola! Aquí está tu tigre:</p>";
     }
     else     

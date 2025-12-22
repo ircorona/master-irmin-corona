@@ -4,22 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/ejemplo/CSS/style.css">
-        <?php 
-        include_once $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
-        // Usar variable en lugar de constante
-        if (!isset($pagina)) {
-            $pagina = "default";
-        }
+       <?php 
+        $uri = $_SERVER['REQUEST_URI'];
 
-        switch ($pagina){
-            case 'home':
-                $titulo = "Home - My PHP Website";
+        // Limpiar la URI (quitar .php si existe)
+        $uri_clean = str_replace('.php', '', $uri);
+
+        switch (true) {
+            case strpos($uri_clean, '/contact') !== false:
+                $titulo = "He conseguido poner el título en base a una variable de la URL";
                 break;
-            case 'about':
+            case strpos($uri_clean, '/about-me') !== false:
                 $titulo = "About Me - My PHP Website";
                 break;
-            case 'contact':
-                $titulo = "Contact - My PHP Website";
+            case strpos($uri_clean, '/folder/file-folder') !== false:
+                $titulo = "My Projects - My PHP Website";
+                break;
+            case $uri_clean == '/' || strpos($uri_clean, '/index') !== false:
+                $titulo = "Home - My PHP Website";
                 break;
             default:
                 $titulo = "My PHP Website";
@@ -57,9 +59,9 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/about-me.php">About Me</a></li>
-                    <li><a href="/contact.php">Contact</a></li>
-                    <li><a href="/folder/file-folder.php">Projects</a></li>
+                    <li><a href="/about-me">About Me</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/folder/file-folder">Projects</a></li>
                     <li><a href="https://github.com/ircorona">My GitHub</a></li>
                 </ul>
             </nav>
