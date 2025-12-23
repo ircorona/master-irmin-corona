@@ -64,10 +64,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         <h2>FAQs</h2>
         <?php
         /* 
-        Esta función te da un 5XX
         
-        ctas(); 
-        how_do_you_turn_this_on();
+        Estas funciones te da un 5XX
+        ¿Puedes arreglarlas porfi?
+        
+            ctas(); 
+            how_do_you_turn_this_on();
         
         */
         ?>
@@ -93,4 +95,3 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
 ?>
-<script src="/scripts/pruebas.js"></script> 

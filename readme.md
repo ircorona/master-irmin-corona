@@ -13,8 +13,13 @@
 
 ## 26/11/2025 Ejercicio Revisado
 
-## 23/12/2025
+## 23/12/2025 Ejercicio Revisado
 1 - Comentar las funciones que daban 5XX en la home
 2 - Solución del htaccess (daba 403 cuando era sin .php)
 3 - Cambio Pass DDBB
 4- Solución rutas CSS
+
+        Si tienes dudas de cómo puede funcionar encima del
+        elemento con un defer
+        lo podemos ver en clase
+
