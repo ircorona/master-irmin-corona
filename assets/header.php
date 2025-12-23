@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/ejemplo/CSS/style.css">
+        <link rel="stylesheet" href="/css/style.css">
        <?php 
         $uri = $_SERVER['REQUEST_URI'];
 
@@ -29,7 +29,7 @@
         ?>
 
         <!-- CUSTOM FONTS -->
-        <link href="/CSS/fonts.css" rel="stylesheet">
+        <link href="/css/fonts.css" rel="stylesheet">
 
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

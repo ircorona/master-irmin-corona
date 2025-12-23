@@ -62,8 +62,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         
         <!-- FAQ Section -->
         <h2>FAQs</h2>
-        <?php ctas(); 
+        <?php
+        /* 
+        Esta función te da un 5XX
+        
+        ctas(); 
         how_do_you_turn_this_on();
+        
+        */
         ?>
         
         <details>
