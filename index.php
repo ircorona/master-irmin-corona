@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 </p>
 
         <section>
-            <h1 id="main-header">Welcome to My Website <?php echo date("Y/M/d");?></h1>
+            <h1 id="heading1">Welcome to My Website <?php echo date("Y/M/d");?></h1>
             <div class="CSS">This is a tag div <span>that has a span inside</span></div>
             <!-- INLINE CSS -->
             <div style="background: pink; padding: 15px; margin: 10px; color: darkred; font-size: 20px;">
@@ -87,3 +87,4 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
 ?>
+<script src="/scripts/pruebas.js"></script> 

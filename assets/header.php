@@ -28,8 +28,8 @@
         }
         ?>
 
-        <!-- CUSTOM FONTS -->
-        <link href="/CSS/fonts.css" rel="stylesheet">
+        <!-- CUSTOM FONTS 
+        <link href="/CSS/fonts.css" rel="stylesheet"> -->
 
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
