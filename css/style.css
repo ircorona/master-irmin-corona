@@ -3,8 +3,10 @@
 /* ============================================
    CSS VARIABLES - Color Palette
    ============================================ */
+
+/*  porque no actualiza my:root al momentor de cambiar color */
 :root {
-  --main: rgb(232, 228, 228);
+  --main: rgb(252, 252, 252);
   --secondary: #667eea;
   --tertiary: #4ecdc4;
   --accent: #764ba2;
@@ -28,7 +30,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1001;
-    background: whitesmoke;
+    background: rgb(255, 255, 255);
 }
 
 nav > ul {
@@ -840,4 +842,14 @@ tr:not(:first-child):before {
     display: table-cell;
     padding-right: 10px;
     font-weight: normal;
+}
+
+#firstonclick {
+    background: lightcoral;
+    padding: 10px 15px;  /* ⬅️ Más pequeño */
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 14px;  /* ⬅️ Texto más pequeño */
+    display: inline-block;  /* ⬅️ No ocupa todo el ancho */
+    width: auto;  /* ⬅️ Solo el ancho necesario */
 }

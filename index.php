@@ -2,6 +2,7 @@
 # header("Location: https://auramip.com");
 $pagina = "home";  // Define qué página es
 include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
 # include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
@@ -29,9 +30,50 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     }
     ?>
 </p>
+    <p id="firstonclick">My first onclick</p>
+    <button onclick="
+    document.getElementById('firstonclick').innerHTML = '¡Cambié TODO!';
+    document.getElementById('firstonclick').style.color = 'blue';
+    document.getElementById('firstonclick').style.fontSize = '40px';
+    ">
+        Change Everything!
+    </button>
+
+    <h2>Testing JavaScript getElementsByTagName</h2>
+    <!-- Por que cuando es [0] solo trae el primero? <div> -->
+  <!--   <div id="demo" class="demo-div">-->
+    <p id="demo2" class="demo-div">The date and time is:</p>
+    <p id="demo3" class="demo-div">The date and time is:</p>
+    <p id="demo4" class="demo-div">The date and time is:</p>
+        <script>
+        // document.getElementById("demo").innerHTML = Date();
+
+        // document.getElementsByClassName("demo-div")[0].innerHTML = Date();
+
+
+        //const collections = document.getElementsByClassName("demo-div"); 
+        //for (let i = 0; i < collections.length; i++) {
+        //    collections[i].innerHTML = Date();
+        //} 
+
+        //document.getElementsByTagName("h2")[0].innerHTML = Date();
+
+        const elements = document.getElementsByTagName("h2");
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = Date();
+        }   
+        </script>
+    </div>
+
 
         <section>
             <h1 id="heading1">Welcome to My Website <?php echo date("Y/M/d");?></h1>
+            <noscript>
+                <p style="color: red; font-weight: bold;">
+                    JavaScript is disabled in your browser. Some features may not work as intended.
+                     <?php echo date("Y/M/d");?>
+                </p>    
+            </noscript>
             <div class="CSS">This is a tag div <span>that has a span inside</span></div>
             <!-- INLINE CSS -->
             <div style="background: pink; padding: 15px; margin: 10px; color: darkred; font-size: 20px;">
@@ -63,17 +105,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
         <!-- FAQ Section -->
         <h2>FAQs</h2>
         <?php
-        /* 
-        
-        Estas funciones te da un 5XX
-        ¿Puedes arreglarlas porfi?
-        
             ctas(); 
             how_do_you_turn_this_on();
-        
-        */
-        ?>
-        
+        ?>     
         <details>
             <summary>What is this website about?</summary>
             <p>It's just my learning project where I'm practicing HTML and figuring out how web development works.</p>
