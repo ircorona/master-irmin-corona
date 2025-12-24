@@ -50,18 +50,26 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
 
         // document.getElementsByClassName("demo-div")[0].innerHTML = Date();
 
-
         //const collections = document.getElementsByClassName("demo-div"); 
         //for (let i = 0; i < collections.length; i++) {
         //    collections[i].innerHTML = Date();
         //} 
 
+        // document.querySelectorAll(".demo-div").innerHTML = Date();
+
+        const elements = document.querySelectorAll(".demo-div");
+        elements.forEach((el, index) => {
+            el.style.color = "blue";
+            el.innerHTML = `🔵 Elemento ${index + 1}: ${Date()}`;
+        });
+
         //document.getElementsByTagName("h2")[0].innerHTML = Date();
 
-        const elements = document.getElementsByTagName("h2");
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].innerHTML = Date();
-        }   
+        //const elements = document.getElementsByTagName("h2");
+        //for (let i = 0; i < elements.length; i++) {
+         //   elements[i].innerHTML = Date();
+        //}  
+        
         </script>
     </div>
 
