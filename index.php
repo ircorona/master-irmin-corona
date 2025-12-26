@@ -31,10 +31,30 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
     ?>
 </p>
     <p id="firstonclick">My first onclick</p>
+
+    <script> 
+    let ejemplo = 'Variable with let';
+    var testing = 'Variable with var';
+    const pi = 3.1416;
+    let arrayExample = [1, 2, 3, 4, 5];
+    let masterseo = {
+        name: "Irmin Corona",
+        role: "Web Developer",
+        country: "Thailand"
+    };
+
+    </script>
+
     <button onclick="
-    document.getElementById('firstonclick').innerHTML = '¡Cambié TODO!';
-    document.getElementById('firstonclick').style.color = 'blue';
-    document.getElementById('firstonclick').style.fontSize = '40px';
+    document.getElementById('firstonclick').
+    innerHTML = '¡Cambié TODO!' + ejemplo 
+    + ' - ' + testing 
+    + ' - Pi es ' 
+    + pi + ' - Array example: ' 
+    + arrayExample
+    + ' - Name: ' + masterseo.name;  
+    document.getElementById('firstonclick').style.color = 'white';
+    document.getElementById('firstonclick').style.fontSize = '20px';
     ">
         Change Everything!
     </button>
@@ -62,6 +82,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
             el.style.color = "blue";
             el.innerHTML = `🔵 Elemento ${index + 1}: ${Date()}`;
         });
+
+
 
         //document.getElementsByTagName("h2")[0].innerHTML = Date();
 
