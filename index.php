@@ -31,20 +31,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
     ?>
 </p>
     <p id="firstonclick">My first onclick</p>
-
-    <script> 
-    let ejemplo = 'Variable with let';
-    var testing = 'Variable with var';
-    const pi = 3.1416;
-    let arrayExample = [1, 2, 3, 4, 5];
-    let masterseo = {
-        name: "Irmin Corona",
-        role: "Web Developer",
-        country: "Thailand"
-    };
-
-    </script>
-
     <button onclick="
     document.getElementById('firstonclick').
     innerHTML = '¡Cambié TODO!' + ejemplo 
@@ -59,6 +45,87 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
         Change Everything!
     </button>
 
+    <p id="js-test">
+    This text will be changed by JavaScript based on the time of day.
+    </p>
+    <p id="js-day">
+    This will show the current day.
+    </p>
+    <div class = "js-test-div" onclick=functionIrmin()>
+    Click me amigo!
+    </div>
+    
+    <script> 
+    let time = new Date().getHours();
+    let greeting;
+
+    if (time < 12) {
+        greeting = "Good morning! ☀️";
+    } 
+    else if (time < 18) {
+        greeting = "Good afternoon! 🌤️";
+    } 
+    else {
+        greeting = "Good evening! 🌙";
+    }
+
+    document.getElementById("js-test").innerHTML = greeting;
+    </script>
+    <script> 
+// SWITCH PARA EL DÍA DE LA SEMANA
+// ============================================
+    let dayNumber = new Date().getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+    let dayName;
+    let dayMessage;
+
+    switch (dayNumber) {
+        case 0:
+            dayName = "Sunday";
+            dayMessage = "¡Relax! It's Sunday! 😴";
+            break;
+        case 1:
+            dayName = "Monday";
+            dayMessage = "Start of the week! 💪";
+            break;
+        case 2:
+            dayName = "Tuesday";
+            dayMessage = "Keep pushing! 🚀";
+            break;
+        case 3:
+            dayName = "Wednesday";
+            dayMessage = "Midweek! You're halfway there! 🎯";
+            break;
+        case 4:
+            dayName = "Thursday";
+            dayMessage = "Almost there! 🏃";
+            break;
+        case 5:
+            dayName = "Friday";
+            dayMessage = "TGIF! Weekend is near! 🎉";
+            break;
+        case 6:
+            dayName = "Saturday";
+            dayMessage = "Weekend vibes! 🎊";
+            break;
+        default:
+            dayName = "Unknown";
+            dayMessage = "Something went wrong!";
+    }
+
+    document.getElementById("js-day").innerHTML = `Today is <strong>${dayName}</strong>: ${dayMessage}`;
+    </script>
+
+    <script> 
+    let ejemplo = 'Variable with let';
+    var testing = 'Variable with var';
+    const pi = 3.1416;
+    let arrayExample = [1, 2, 3, 4, 5];
+    let masterseo = {
+        name: "Irmin Corona",
+        role: "Web Developer",
+        country: "Thailand"
+    };
+    </script>
     <h2>Testing JavaScript getElementsByTagName</h2>
     <!-- Por que cuando es [0] solo trae el primero? <div> -->
   <!--   <div id="demo" class="demo-div">-->
@@ -70,18 +137,22 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
 
         // document.getElementsByClassName("demo-div")[0].innerHTML = Date();
 
-        //const collections = document.getElementsByClassName("demo-div"); 
-        //for (let i = 0; i < collections.length; i++) {
-        //    collections[i].innerHTML = Date();
-        //} 
-
+        const activador = document.querySelector(".js-test-div");
+        activador.addEventListener("click", functionIrmin);
+        function functionIrmin(){
+        const collections = document.getElementsByClassName("demo-div"); 
+        for (let i = 0; i < collections.length; i++) {
+            collections[i].innerHTML = Date();
+        } 
+        }
         // document.querySelectorAll(".demo-div").innerHTML = Date();
 
-        const elements = document.querySelectorAll(".demo-div");
-        elements.forEach((el, index) => {
-            el.style.color = "blue";
-            el.innerHTML = `🔵 Elemento ${index + 1}: ${Date()}`;
-        });
+        // Pero querySelectorAll necesita un loop para recorrer todos los elementos
+        // const elements = document.querySelectorAll(".demo-div");
+        // elements.forEach((el, index) => {
+        //    el.style.color = "blue";
+        //    el.innerHTML = `🔵 Elemento ${index + 1}: ${Date()}`;
+        //});
 
 
 
@@ -135,9 +206,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
         <!-- FAQ Section -->
         <h2>FAQs</h2>
         <?php
-            ctas(); 
+            ctas();
             how_do_you_turn_this_on();
-        ?>     
+        ?>
         <details>
             <summary>What is this website about?</summary>
             <p>It's just my learning project where I'm practicing HTML and figuring out how web development works.</p>

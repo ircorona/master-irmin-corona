@@ -853,3 +853,16 @@ tr:not(:first-child):before {
     display: inline-block;  /* ⬅️ No ocupa todo el ancho */
     width: auto;  /* ⬅️ Solo el ancho necesario */
 }
+
+.js-test-div {
+    margin: auto;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0066cc;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
