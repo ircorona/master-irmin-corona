@@ -1,0 +1,35 @@
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#imagen-hero {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+#mensaje-hora {
+    color: white;
+    font-size: 48px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+.hero-section p {
+    color: white;
+    font-size: 24px;
+}
+
+#hora-actual {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    color: #00ffff;
+}

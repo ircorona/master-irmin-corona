@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo PHP</title>
-</head>
-<body>
+<?php 
+$pagina = "ejemplo2";
+include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
+?>
 
-    
+<link rel="stylesheet" href="/css/ejemplo2.css">
 
-</body> 
-</html> 
+<div class="hero-section">
+    <img id="imagen-hero" src="/images/morning.webp" alt="Hero image">
+    <h1 id="mensaje-hora">Good Morning! ☀️</h1>
+    <p>La hora actual es: <span id="hora-actual"></span></p>
+</div>
+
+<!-- ✅ Script AL FINAL, después del HTML -->
+<script src="/scripts/ejemplo2.js"></script>
+
+<?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';
+?>
