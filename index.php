@@ -1,8 +1,8 @@
 <?php 
 # header("Location: https://auramip.com");
 $pagina = "home";  // Define qué página es
-include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
-include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
+include __DIR__.'/assets/header.php';
+include __DIR__.'/assets/functions.php';
 # include_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
 # require_once $_SERVER['DOCUMENT_ROOT'].'/assets/header.php'; 
@@ -228,5 +228,5 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/functions.php';
         </video>
         
         <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';  
+include __DIR__.'/assets/footer.php';  
 ?>
