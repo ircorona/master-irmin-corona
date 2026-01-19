@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php wp_head(); ?>
+    </head>
+    <body <?php body_class(); ?>>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about-me">About Me</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/folder/file-folder">Projects</a></li>
+                    <li><a href="https://github.com/ircorona">My GitHub</a></li>
+                    <li><a href="/ejemplo2">Time Demo</a></li>
+                </ul>
+            </nav>
+        </header>
