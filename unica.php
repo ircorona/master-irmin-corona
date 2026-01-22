@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- <meta http-equiv="refresh " content="30; url=https://google.com/" /> -->
+        <!-- <meta http-equiv="refresh " content="3" /> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
         <title>This is an example | climbthesearches.com </title>
@@ -15,7 +17,9 @@
         <meta name="robots" content="index, follow" />
         <meta name="robots" content="none" />
         <meta name="robots" content="max-snippet:-1" /> -- cabe todo el snippet completo pero si es 0 = nosnippet
+        
         -->
+        <meta name="raiting" content="adult" />
 
     </head>
 
