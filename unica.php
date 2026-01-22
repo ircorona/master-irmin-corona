@@ -6,7 +6,7 @@
         <title>This is an example | climbthesearches.com </title>
         <meta name="description" content="blablabla" />
         <meta name="robots" content="all, noarchieve, nositelinkssearchbox, nosnippet, max-snippet:20, notranslate " />
-        <meta name="Googlebot" content="all" />
+        <meta name="googlebot" content="index, follow, max-snippet:25, noimageindex, unavailable_after: 2033-09-27">
         <!--
         <meta name="robots" content="unavailable_after: 2020-09-21" />
         <meta name="robots" content="all" />
