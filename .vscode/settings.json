@@ -2,5 +2,14 @@
     "files.associations": {
         "*.php": "php",
         "**/templates/*.php": "php"
-    }
+    },
+    "cSpell.words": [
+        "cómo",
+        "dudas",
+        "elemento",
+        "metas",
+        "podemos",
+        "pruebas",
+        "tienes"
+    ]
 }
