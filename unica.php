@@ -2,13 +2,36 @@
 <html lang="en">
     <head>
         <!-- <meta http-equiv="refresh " content="30; url=https://google.com/" /> -->
-        <!-- <meta http-equiv="refresh " content="3" /> -->
+        <!-- <nonscript> <meta http-equiv="refresh " content="3" /> </nonscript>-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
+
         <title>This is an example | climbthesearches.com </title>
+        <meta property="og:title" content="This is an example | climbthesearches.com" />
+        <meta property="twitter:title" content="This is an example | climbthesearches.com" />
+
+        <meta property="og:url" content="https://master-irmin-corona.test" />
+        <meta property="twitter:url" content="https://master-irmin-corona.test" />
+
+        <meta property="og:image" content="https://master-irmin-corona/images/how_do_you_turn_this_on.jpg" />
+        <meta property="og:image:secure_url" content="https://master-irmin-corona/images/how_do_you_turn_this_on.jpg" />
+        <meta property="og:image:alt" content="How do you turn this one?"/>
+        <meta property="twitter:image" content="https://master-irmin-corona/images/how_do_you_turn_this_on.jpg" />
+
+
         <meta name="description" content="blablabla" />
+        <meta name="og:description" content="blablabla" />
+        <meta name="twitter:description" content="blablabla" />
+
         <meta name="robots" content="all, noarchieve, nositelinkssearchbox, nosnippet, max-snippet:20, notranslate " />
         <meta name="googlebot" content="index, follow, max-snippet:25, noimageindex, unavailable_after: 2033-09-27">
+
+         <meta property="og:type" content="website" />
+         <meta property="twitter:card" content="summary_large_image" />
+
+         <meta name="twitter:site" content="@climbthesearches" />
+         <meta name="twitter:creator" content="@irmincorona" />
+
         <!--
         <meta name="robots" content="unavailable_after: 2020-09-21" />
         <meta name="robots" content="all" />
