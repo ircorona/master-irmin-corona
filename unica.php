@@ -23,8 +23,10 @@
         <meta name="og:description" content="blablabla" />
         <meta name="twitter:description" content="blablabla" />
 
-        <meta name="robots" content="all, noarchieve, nositelinkssearchbox, nosnippet, max-snippet:20, notranslate " />
+        <meta name="robots" content="all, indexifembedded, noarchieve, nositelinkssearchbox, nosnippet, max-snippet:20, notranslate " />
         <meta name="googlebot" content="index, follow, max-snippet:25, noimageindex, unavailable_after: 2033-09-27">
+
+         <!-- Ask what is indexifembedded -->
 
          <meta property="og:type" content="website" />
          <meta property="twitter:card" content="summary_large_image" />

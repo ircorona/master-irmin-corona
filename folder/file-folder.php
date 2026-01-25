@@ -6,6 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
     <p>Just a few things I'm working on right now.</p>
     
     <h2>What I'm building</h2>
+<div data-nonsnippet>   
     <table border="1">
         <tr>
             <th>Project</th>
@@ -38,6 +39,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
             <td>November 2025</td>
         </tr>
     </table>
+</div>
     
     <h3>What's next</h3>
     <ul>
