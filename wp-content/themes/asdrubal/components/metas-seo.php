@@ -6,29 +6,35 @@ $term = get_queried_object();
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<!-- end of metas-seo.php -->
 
-<!-- <meta http-equiv="refresh " content="30; url=https://google.com/" /> -->
-<!-- <nonscript> <meta http-equiv="refresh " content="3" /> </nonscript>-->
-<?php the_field('custom_meta', $term);?>
+<!-- Custom Meta Tags -->
+<?php the_field('custom_meta', $term); ?>
 
-<meta name="robots" content="" />
-    <title></title>
-    <meta property="og:title" content=""/>
-    <meta property="twitter:title" content="" />
+<title><?php the_field('title', $term); ?></title>
 
-    <meta property="og:url" content="" />
-    <meta property="twitter:url" content="" />
+<meta name="description" content="<?php the_field('metadescription', $term); ?>" />
+<link rel="canonical" href="<?php the_field('canonical', $term); ?>" />
 
-    <meta property="og:image" content="" />
-    <meta property="og:image:secure_url" content="" />
-    <meta property="og:image:alt" content=""/>
-    <meta property="twitter:image" content="" />
+<?php if (get_field('og_image', $term)) : ?>
+    <meta property="og:image" content="<?php the_field('og_image', $term); ?>" />
+    <meta property="og:image:secure_url" content="<?php the_field('og_image', $term); ?>" />
+    <meta property="twitter:image" content="<?php the_field('og_image', $term); ?>" />
+<?php endif; ?>
 
+<?php if (get_field('social_network', $term) == 1) : ?>
+    <meta property="og:title" content="<?php the_field('og_title', $term); ?>" />
+    <meta property="twitter:title" content="<?php the_field('twitter_title', $term); ?>" />
+    <meta property="og:description" content="<?php the_field('og_description', $term); ?>" />
+    <meta property="twitter:description" content="<?php the_field('twitter_description', $term); ?>" />
+<?php else : ?>
+    <meta property="og:title" content="<?php the_field('title', $term); ?>" />
+    <meta property="twitter:title" content="<?php the_field('title', $term); ?>" />
+    <meta property="og:description" content="<?php the_field('metadescription', $term); ?>" />
+    <meta property="twitter:description" content="<?php the_field('metadescription', $term); ?>" />
+<?php endif; ?>
 
-    <meta name="description" content="" />
-    <meta name="og:description" content="" />
-    <meta name="twitter:description" content="" />
+<meta property="og:url" content="<?php echo get_permalink(); ?>" />
+<meta property="twitter:url" content="<?php echo get_permalink(); ?>" />
 
     <!-- Ask what is indexifembedded -->
 
