@@ -4,7 +4,7 @@
         
         <?php  
 
-        //include 'components/metas-seo.php';
+        include 'components/metas-seo.php';
         wp_head();
         ?>
     </head>
