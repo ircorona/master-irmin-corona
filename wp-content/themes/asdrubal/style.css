@@ -881,22 +881,23 @@ a:not([href^="http"]):not([href^="mailto:"]):hover {
    TABLE STYLING - Con counter y calc()
    ============================================ */
 
-/* Counter para numerar filas automáticamente */
 table {
-    counter-reset: row;
-    width: calc(100% - 40px);  /* 100% del padre menos 40px */
-    max-width: max(600px, 50vw); /* Lo que sea MAYOR: 600px o 50% del viewport */
+    width: calc(100% - 40px);
+    max-width: max(600px, 50vw);
     margin: 20px auto;
     border-collapse: collapse;
+    border: 1px solid #667eea;
 }
 
-/* Skip the first tr (header) y añade número de fila */
-tr:not(:first-child):before {
-    content: "Row " counter(row) ":";
-    counter-increment: row;
-    display: table-cell;
-    padding-right: 10px;
-    font-weight: normal;
+th, td {
+    padding: 10px 15px;
+    border: 1px solid #667eea;
+    text-align: left;
+}
+
+th {
+    background: #667eea;
+    color: #fff;
 }
 
 #firstonclick {

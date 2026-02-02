@@ -56,7 +56,7 @@ function asdrubal_enqueue_styles() {
         'asdrubal-style',
         get_stylesheet_uri(),
         array(),
-        '2.0',
+        '2.1',
         'all'
     );
 }
