@@ -1,5 +1,12 @@
 <?php
-$term = get_queried_object();
+if ( is_category() || is_tag() || is_tax() ) {
+    $term = get_queried_object();
+} else {
+    $term = get_the_ID();
+}
+
+$protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
+$url_sin_string = $protocol . '://' . $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"], '?');
 ?>
 
 <!-- metas-seo.php -->
@@ -12,14 +19,16 @@ $term = get_queried_object();
 
 <title><?php the_field('title', $term); ?></title>
 
-<meta name="description" content="<?php the_field('metadescription', $term); ?>" />
-<link rel="canonical" href="<?php the_field('canonical', $term); ?>" />
+<meta name="description" content="<?php the_field('meta_description', $term); ?>" />
+<link rel="canonical" href="<?php if (get_field('canonical', $term)) { the_field('canonical', $term); } else { echo $url_sin_string; } ?>" />
 
-<?php if (get_field('og_image', $term)) : ?>
-    <meta property="og:image" content="<?php the_field('og_image', $term); ?>" />
-    <meta property="og:image:secure_url" content="<?php the_field('og_image', $term); ?>" />
-    <meta property="twitter:image" content="<?php the_field('og_image', $term); ?>" />
-<?php endif; ?>
+<?php
+$og_image = get_field('og_image', $term) ? get_field('og_image', $term) : get_template_directory_uri() . '/asdrubal.jpg';
+?>
+    <meta property="og:image" content="<?php echo $og_image; ?>" />
+    <meta property="og:image:secure_url" content="<?php echo $og_image; ?>" />
+    <meta property="og:image:alt" content="<?php the_field('title', $term); ?>" />
+    <meta property="twitter:image" content="<?php echo $og_image; ?>" />
 
 <?php if (get_field('social_network', $term) == 1) : ?>
     <meta property="og:title" content="<?php the_field('og_title', $term); ?>" />
@@ -29,12 +38,12 @@ $term = get_queried_object();
 <?php else : ?>
     <meta property="og:title" content="<?php the_field('title', $term); ?>" />
     <meta property="twitter:title" content="<?php the_field('title', $term); ?>" />
-    <meta property="og:description" content="<?php the_field('metadescription', $term); ?>" />
-    <meta property="twitter:description" content="<?php the_field('metadescription', $term); ?>" />
+    <meta property="og:description" content="<?php the_field('meta_description', $term); ?>" />
+    <meta property="twitter:description" content="<?php the_field('meta_description', $term); ?>" />
 <?php endif; ?>
 
-<meta property="og:url" content="<?php echo get_permalink(); ?>" />
-<meta property="twitter:url" content="<?php echo get_permalink(); ?>" />
+<meta property="og:url" content="<?php if (get_field('canonical', $term)) { the_field('canonical', $term); } else { echo $url_sin_string; } ?>" />
+<meta property="twitter:url" content="<?php if (get_field('canonical', $term)) { the_field('canonical', $term); } else { echo $url_sin_string; } ?>" />
 
     <!-- Ask what is indexifembedded -->
 
