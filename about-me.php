@@ -17,7 +17,22 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  // ← Solo UNA inclusi
         "My professor Carlos told me I was using too much AI, so here I am using less AI and more manual code. But this is how you learn, right?"
         <cite>Irmin Corona</cite>
     </blockquote>
-    
+
+    <h2>Image with CSS</h2>
+    <style>
+        .imagenclase{
+           background-image: url('/images/Exodia.webp');
+           background-size: cover;
+           width: 250px;
+           height: 360px;
+           margin: 0 auto;
+        }
+    </style>
+    <div class="imagenclase"></div>
+    <h2>Image with image and src</h2>
+    <image src="/images/Exodia.webp" alt="Exodia the Forbidden One" 
+    title="Exodia the Forbidden One"
+    width="250" height="360">
     <h3>What I'm into:</h3>
     <ol>
         <li>Programming - I like to code to make my life easier</li>
