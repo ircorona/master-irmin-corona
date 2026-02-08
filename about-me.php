@@ -23,6 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  // ← Solo UNA inclusi
         .imagenclase{
            background-image: url('/images/Exodia.webp');
            background-size: cover;
+           aspect-ratio: 9/13;  
            width: 250px;
            height: 360px;
            margin: 0 auto;
@@ -30,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';  // ← Solo UNA inclusi
     </style>
     <div class="imagenclase"></div>
     <h2>Image with image and src</h2>
-    <image src="/images/Exodia.webp" alt="Exodia the Forbidden One" 
+    <img src="/images/Exodia.webp" alt="Exodia the Forbidden One" 
     title="Exodia the Forbidden One"
     width="250" height="360">
     <h3>What I'm into:</h3>
