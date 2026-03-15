@@ -17,3 +17,4 @@ Applied in two projects:
 | [06-seo-meta-tags.md](06-seo-meta-tags.md) | Open Graph, Twitter Cards, robots, data-nosnippet | Metaetiquetas |
 | [07-auramip-applied.md](07-auramip-applied.md) | How these concepts apply in the Auramip production project | Cross-project |
 | [08-url-buenas-practicas.md](08-url-buenas-practicas.md) | URL best practices: no caps, no spaces, no prepositions, hyphens | URL: Buenas Prácticas |
+| [09-url-qr-codes.md](09-url-qr-codes.md) | QR codes: tracking with parameters, timed promotions | URL: QR (Extra) |

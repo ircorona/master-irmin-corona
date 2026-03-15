@@ -68,4 +68,11 @@
                     <li><a href="/ejemplo2">Time Demo</a></li>
                 </ul>
             </nav>
+            <?php if ($from_qr && $promo_active):
+                $days_left = ceil(($promo_end - time()) / 86400);
+            ?>
+                <div class="promo-banner" style="background: #2ecc71; color: white; text-align: center; padding: 10px; font-weight: bold;">
+                    10% de descuento por escanear nuestro QR — Código: QR2026 — Válido por <?php echo $days_left; ?> días
+                </div>
+            <?php endif; ?>
         </header>
