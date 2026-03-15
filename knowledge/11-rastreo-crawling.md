@@ -69,6 +69,72 @@ Desktop app that simulates Googlebot. Free version crawls up to 500 URLs.
 
 Finds: broken links, missing meta tags, duplicate content, redirect chains, missing alt text, slow pages, orphan pages.
 
+## HTTP Response Codes (Códigos de Respuesta)
+
+Reference: https://carlos.sanchezdonate.com/articulo/codigos-de-respuesta/
+
+Every HTTP request returns a status code. The server tells the browser (or Googlebot) what happened.
+
+### 1xx — Informational
+| Code | Name | Notes |
+|------|------|-------|
+| 100 | Continue | Processing continues |
+| 103 | Early Hints | Resource precaching (Googlebot doesn't support yet) |
+
+### 2xx — Success
+| Code | Name | SEO use |
+|------|------|---------|
+| **200** | **OK** | Ideal response — page is indexable |
+| 201 | Created | Resource created |
+| 204 | No Content | Success but no content returned |
+
+### 3xx — Redirection
+| Code | Name | SEO use |
+|------|------|---------|
+| **301** | **Moved Permanently** | Best for permanent redirects — passes SEO authority |
+| 302 | Found | Temporary redirect — does NOT pass authority |
+| **304** | **Not Modified** | Browser uses cached version — saves crawl budget |
+| 307 | Temporary Redirect | Same as 302 |
+| 308 | Moved Permanently | Same as 301 |
+
+### 4xx — Client Errors
+| Code | Name | SEO use |
+|------|------|---------|
+| 400 | Bad Request | Invalid request |
+| 401 | Unauthorized | Requires login (good for dev environments) |
+| 403 | Forbidden | Access blocked (can block specific user-agents) |
+| **404** | **Not Found** | Page doesn't exist — `core.php` returns this |
+| **410** | **Gone** | Permanently removed — tells Google "stop looking forever" |
+| **418** | **I'm a teapot** | Joke code — used in `core.php` as demo |
+| 429 | Too Many Requests | Rate limiting (anti-scraping) |
+
+### 5xx — Server Errors
+| Code | Name | SEO use |
+|------|------|---------|
+| **500** | **Internal Server Error** | Server crashed — very bad for SEO |
+| 502 | Bad Gateway | Upstream server failed |
+| **503** | **Service Unavailable** | Temporary downtime — Google retries later |
+| 504 | Gateway Timeout | Upstream server timeout |
+
+### Used in our project
+```php
+// core.php
+header("HTTP/1.0 418 I'm a teapot");  // /error4xx route
+header("HTTP/1.0 404 Not Found");      // unknown routes
+
+// .htaccess
+[R=301]  // permanent redirects (trailing slashes, HTTPS, clean URLs)
+```
+
+### Apache example from professor's article
+```apache
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-s
+RewriteRule ^ - [R=500,L]
+```
+Returns 500 for empty files on the server.
+
 ## Connection to our project
 - `.htaccess` cache/GZIP → faster server → better crawl budget
 - `robots.txt` → controls what Googlebot accesses
