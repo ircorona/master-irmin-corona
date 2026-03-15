@@ -1,9 +1,10 @@
+<?php include __DIR__ . '/variables.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style.css<?php echo constant("var_param_monthly") . constant("css_version"); ?>">
        <?php 
         $uri = $_SERVER['REQUEST_URI'];
 
@@ -29,7 +30,7 @@
         ?>
 
         <!-- CUSTOM FONTS -->
-        <link href="/css/fonts.css" rel="stylesheet">
+        <link href="/css/fonts.css<?php echo constant("var_param_monthly") . constant("css_version"); ?>" rel="stylesheet">
 
 
         <!-- GOOGLE FONTS -->

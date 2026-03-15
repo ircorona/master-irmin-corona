@@ -15,3 +15,8 @@ RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_URI} \.php$
 RewriteCond %{REQUEST_URI} !/enviar_correo\.php$ [NC] # Nueva condición para excluir enviar_correo.php
 RewriteRule ^(.*)\.php$ /$1 [R=301,L,NE]
+
+# Front controller - solo se activa cuando no existe el archivo o directorio
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ assets/core.php [L]
