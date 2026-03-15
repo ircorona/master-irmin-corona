@@ -18,4 +18,5 @@ Applied in two projects:
 | [07-auramip-applied.md](07-auramip-applied.md) | How these concepts apply in the Auramip production project | Cross-project |
 | [08-url-buenas-practicas.md](08-url-buenas-practicas.md) | URL best practices: no caps, no spaces, no prepositions, hyphens | URL: Buenas Prácticas |
 | [09-url-qr-codes.md](09-url-qr-codes.md) | QR codes: tracking with parameters, timed promotions | URL: QR (Extra) |
-| [10-url-resumen.md](10-url-resumen.md) | Complete URL anatomy: all 7 parts, subdomains, TLDs | URL: Resumen |
+| [10-url-resumen.md](10-url-resumen.md) | Complete URL anatomy: all 8 parts (incl. port), subdomains, TLDs | URL: Resumen |
+| [11-rastreo-crawling.md](11-rastreo-crawling.md) | Crawling, crawl budget, DoS/DDoS, Screaming Frog, robots.txt | Rastreo |

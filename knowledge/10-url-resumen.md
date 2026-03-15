@@ -1,11 +1,11 @@
 # URL: Resumen (Complete URL Anatomy)
 
-## The 7 parts of a URL
+## The 8 parts of a URL
 
 ```
-https://carlos.sanchezdonate.com/articulo/codigos-de-respuesta/?parametro#Bibliografia
-  ↑       ↑        ↑         ↑              ↑                      ↑          ↑
-  1       2        3         4              5                      6          7
+https://carlos.sanchezdonate.com:443/articulo/codigos-de-respuesta/?parametro#Bibliografia
+  ↑       ↑        ↑         ↑   ↑            ↑                        ↑          ↑
+  1       2        3         4   5            6                        7          8
 ```
 
 | # | Part | Example | Knowledge file |
@@ -14,9 +14,10 @@ https://carlos.sanchezdonate.com/articulo/codigos-de-respuesta/?parametro#Biblio
 | 2 | Subdominio | `carlos` | This file |
 | 3 | Dominio | `sanchezdonate` | This file |
 | 4 | Extensión de dominio | `.com` | This file |
-| 5 | Ruta (Path) | `/articulo/codigos-de-respuesta/` | [01-ruta](01-url-sintaxis-ruta.md) |
-| 6 | Parámetro (Query) | `?parametro=value` | [02-parametros](02-url-sintaxis-parametros.md) |
-| 7 | Ancla (Hash/Fragment) | `#Bibliografia` | [03-hash](03-url-sintaxis-hash.md) |
+| 5 | Puerto (Port) | `:443` | This file |
+| 6 | Ruta (Path) | `/articulo/codigos-de-respuesta/` | [01-ruta](01-url-sintaxis-ruta.md) |
+| 7 | Parámetro (Query) | `?parametro=value` | [02-parametros](02-url-sintaxis-parametros.md) |
+| 8 | Ancla (Hash/Fragment) | `#Bibliografia` | [03-hash](03-url-sintaxis-hash.md) |
 
 ---
 
@@ -89,15 +90,39 @@ Also called TLD (Top-Level Domain).
 - `españa.com` → `xn--espaa-rta.com`
 See: [08-url-buenas-practicas.md](08-url-buenas-practicas.md)
 
-## 5. Ruta — See [01-url-sintaxis-ruta.md](01-url-sintaxis-ruta.md)
+## 5. Puerto (Port) — `:443`
+
+The port number tells the server WHICH service to use. It goes right after the domain.
+
+```
+domain.com:443    ← HTTPS (port 443)
+domain.com:80     ← HTTP (port 80)
+domain.com:8080   ← Common for development/testing
+localhost:3000    ← Node.js dev server
+localhost:8888    ← Laragon default
+```
+
+| Port | Protocol | Notes |
+|------|----------|-------|
+| `80` | HTTP | Default — browser hides it (`domain.com` = `domain.com:80`) |
+| `443` | HTTPS | Default — browser hides it (`domain.com` = `domain.com:443`) |
+| `3306` | MySQL | Database connections (never exposed to browser) |
+| `8080` | HTTP alt | Common for dev servers and proxies |
+
+**Why you never see ports in URLs:**
+Browsers hide the default ports. `https://domain.com` is actually `https://domain.com:443` — the browser just doesn't show `:443` because it's the default for HTTPS. You only see a port when it's non-standard (like `localhost:8888`).
+
+**SEO impact:** None directly, but if your site is accessible on a non-standard port (e.g., `:8080`), Google might index it as a separate site. Always serve production on standard ports (80/443).
+
+## 6. Ruta — See [01-url-sintaxis-ruta.md](01-url-sintaxis-ruta.md)
 
 The path to the specific page. Handled by the front controller or served as a static file.
 
-## 6. Parámetro — See [02-url-sintaxis-parametros.md](02-url-sintaxis-parametros.md)
+## 7. Parámetro — See [02-url-sintaxis-parametros.md](02-url-sintaxis-parametros.md)
 
 Query string sent to the server. Used for cache busting, tracking (QR), content variation.
 
-## 7. Ancla — See [03-url-sintaxis-hash.md](03-url-sintaxis-hash.md)
+## 8. Ancla — See [03-url-sintaxis-hash.md](03-url-sintaxis-hash.md)
 
 Fragment identifier. Browser-only, never sent to server. Scrolls to an element by `id`.
 
