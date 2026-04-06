@@ -206,8 +206,10 @@ include __DIR__.'/assets/functions.php';
         <!-- FAQ Section -->
         <h2>FAQs</h2>
         <?php
-            ctas();
-            how_do_you_turn_this_on();
+        echo '<img src="' . $_SERVER['DOCUMENT_ROOT'] . '/images/faq-icon.png" alt="FAQ icon" width="50" height="50">';
+        echo '<img src="/images/faq-icon.png" alt="FAQ frequently asked questions icon with question mark symbol" width="50" height="50">';
+        ctas();
+        how_do_you_turn_this_on();
         ?>
         <details>
             <summary>What is this website about?</summary>
@@ -219,6 +221,102 @@ include __DIR__.'/assets/functions.php';
             <p>Just shoot me an email at <a href="mailto:irminorta@gmail.com">irminorta@gmail.com</a></p>
         </details>
         
+        <!-- EXERCISE: 5 tipos de enlaces (relativas y absolutas) -->
+        <h2>Ejercicio: URL Relativas y Absolutas</h2>
+
+        <!-- 1. Absolute URL (external) -->
+        <p>
+            <a href="https://github.com/ircorona" target="_blank" rel="noopener noreferrer">1. Absoluta: My GitHub</a>
+            <br><code>&lt;a href="https://github.com/ircorona"&gt;</code> — URL completa con protocolo + dominio
+        </p>
+
+        <!-- 2. Relative: same folder (sin /) -->
+        <p>
+            <a href="about-me">2. Relativa misma carpeta: About Me</a>
+            <br><code>&lt;a href="about-me"&gt;</code> — Busca en la misma carpeta actual (puede fallar desde subcarpetas)
+        </p>
+
+        <!-- 3. Relative: subfolder (sin /) -->
+        <p>
+            <a href="folder/file-folder">3. Relativa subcarpeta: Projects</a>
+            <br><code>&lt;a href="folder/file-folder"&gt;</code> — Entra a la carpeta folder/ desde la ubicacion actual
+        </p>
+
+        <!-- 4. Relative: from ROOT (con /) — THE BEST -->
+        <p>
+            <a href="/contact">4. Relativa desde ROOT: Contact</a>
+            <br><code>&lt;a href="/contact"&gt;</code> — Siempre desde la raiz del sitio (LA MEJOR OPCION)
+        </p>
+
+        <!-- 5. Relative: one level up (../) -->
+        <p>
+            <a href="../">5. Relativa un nivel arriba: Parent folder</a>
+            <br><code>&lt;a href="../"&gt;</code> — Sube un nivel desde la carpeta actual
+        </p>
+
+        <!-- VISUAL EXPLANATION: Building analogy -->
+        <h3>Tu proyecto (planta baja)</h3>
+        <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-size: 14px; line-height: 1.6; overflow-x: auto;">
+&#x1F3E2; ROOT (lobby / planta baja)
+&#x251C;&#x2500;&#x2500; &#x1F6AA; index.php         &#x2190; tu estas AQUI
+&#x251C;&#x2500;&#x2500; &#x1F6AA; about-me.php
+&#x251C;&#x2500;&#x2500; &#x1F6AA; contact.php
+&#x2514;&#x2500;&#x2500; &#x1F4C1; folder/ (piso 1)
+    &#x2514;&#x2500;&#x2500; &#x1F6AA; file-folder.php</pre>
+
+        <h3>Edificio con 4 pisos</h3>
+        <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-size: 14px; line-height: 1.6; overflow-x: auto;">
+&#x1F3E2; ROOT (lobby)
+&#x251C;&#x2500;&#x2500; &#x1F6AA; index.php
+&#x251C;&#x2500;&#x2500; &#x1F6AA; contact.php
+&#x2514;&#x2500;&#x2500; &#x1F4C1; floor1/
+    &#x251C;&#x2500;&#x2500; &#x1F6AA; page-a.php
+    &#x2514;&#x2500;&#x2500; &#x1F4C1; floor2/
+        &#x251C;&#x2500;&#x2500; &#x1F6AA; page-b.php
+        &#x2514;&#x2500;&#x2500; &#x1F4C1; floor3/
+            &#x2514;&#x2500;&#x2500; &#x1F6AA; page-c.php  &#x2190; estas en el piso 3</pre>
+
+        <h3>Desde page-c.php (piso 3) quieres llegar a contact.php (lobby)</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
+            <thead>
+                <tr style="background: #2d2d2d; color: #fff;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #444;">Tu dices...</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #444;">El navegador busca...</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #444;">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #ffebee;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>href="contact"</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">floor1/floor2/floor3/contact</td>
+                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red; font-weight: bold;">&#x2717; No existe</td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>href="/contact"</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">/contact (desde el lobby)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: green; font-weight: bold;">&#x2713; Siempre funciona</td>
+                </tr>
+                <tr style="background: #ffebee;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>href="../contact"</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">floor1/floor2/contact</td>
+                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red; font-weight: bold;">&#x2717; Piso equivocado</td>
+                </tr>
+                <tr style="background: #ffebee;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>href="../../contact"</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">floor1/contact</td>
+                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: red; font-weight: bold;">&#x2717; Piso equivocado</td>
+                </tr>
+                <tr style="background: #fff8e1;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>href="../../../contact"</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">/contact (lobby)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center; color: orange; font-weight: bold;">&#x2713; Funciona, pero tienes que contar pisos...</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid green; font-size: 16px;">
+            <strong>Regla:</strong> <code>../</code> = escaleras (tienes que contar pisos) | <code>/</code> = elevador al lobby (siempre correcto) &#x1F6D7;
+        </p>
+
         <h2>HTML Reference</h2>
         <img src="images/ultimate-html-cheatsheet.jpg" alt="HTML cheatsheet" width="600" height="450">
         
