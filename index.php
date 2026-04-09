@@ -317,6 +317,46 @@ include __DIR__.'/assets/functions.php';
             <strong>Regla:</strong> <code>../</code> = escaleras (tienes que contar pisos) | <code>/</code> = elevador al lobby (siempre correcto) &#x1F6D7;
         </p>
 
+        <!-- EXERCISE: Ofuscación de enlaces -->
+        <h2>Ejercicio: Ofuscación de Enlaces</h2>
+        <style>
+            .enl {
+                cursor: pointer;
+                color: blue;
+                text-decoration: none;
+            }
+            .enl:hover {
+                text-decoration: underline;
+            }
+        </style>
+
+        <!-- Enlace normal sin ofuscar -->
+        <p>Esto es un texto y <a class="enl" href="https://github.com/ircorona">Esto es un enlace normal y corriente</a> el de toda la vida. Si haces hover, veras en la parte baja de tu navegador que se muestra visible la URL de destino.</p>
+        <code>&lt;a href="https://github.com/ircorona"&gt;</code> — Google SI sigue este enlace
+        <hr>
+
+        <!-- Onclick (ya no es efectivo) -->
+        <p>Esto es un texto y <span class="enl" onclick="location.href='https://github.com/ircorona'" title="https://github.com/ircorona">Esto es un enlace ofuscado con onclick (YA NO EFECTIVO)</span> que se inserta inline. He agregado un title para mejorar el UX.</p>
+        <code>&lt;span onclick="location.href='...'"&gt;</code> — Google YA puede leer onclick
+        <hr>
+
+        <!-- addEventListener (metodo recomendado) -->
+        <p>Esto es un texto y <span id="ofc" class="enl">Esto es un enlace ofuscado con addEventListener</span> que necesita un script fuera del parrafo. He agregado un UTM para saber de donde viene el enlace.</p>
+        <code>&lt;span id="ofc"&gt;</code> + addEventListener en JS — Google NO puede leer esto
+
+        <script>
+        const ofcElement = document.getElementById("ofc");
+        ofcElement.addEventListener("click", ofcFunction);
+
+        function ofcFunction() {
+            location.href = 'https://github.com/ircorona?utm_source=master-irmin&utm_medium=referrer&utm_campaign=ofuscacion&utm_id=ofuscacion';
+        }
+        </script>
+
+        <p style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 4px solid red; font-size: 14px; margin-top: 15px;">
+            <strong>Regla:</strong> Nunca uses <code>&lt;a&gt;</code> para ofuscar. Nunca uses <code>onclick</code> (Google ya lo lee). Usa <strong>addEventListener</strong> con <code>&lt;span&gt;</code>.
+        </p>
+
         <h2>HTML Reference</h2>
         <img src="images/ultimate-html-cheatsheet.jpg" alt="HTML cheatsheet" width="600" height="450">
         

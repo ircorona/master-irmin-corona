@@ -47,6 +47,8 @@
                 font-size: 1.2rem;
             }
         </style>
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="<?php echo $canonical_url; ?>" />
         <title>
             <?php 
             if (empty($titulo)) {
