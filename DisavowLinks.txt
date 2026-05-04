@@ -1,0 +1,70 @@
+# ================================================================
+# ACTIVE NEGATIVE SEO ATTACK - ONGOING 9-MONTH CAMPAIGN
+# ================================================================
+#
+# Attack Details:
+# - Period: July 2025 - April 2026 (STILL ACTIVE)
+# - Total domains: 30 spam networks (VERIFIED COUNT)
+# - Latest attack: April 4, 2026 (seoexpress.org)
+# - Pattern: Sustained, coordinated, professional sabotage
+# - Frequency: 3-4 new spam domains per month
+#
+# Legal Status: Evidence collected for potential lawsuit
+# Updated: April 8, 2026
+# Contact: Auramip Legal Department
+#
+# ================================================================
+
+# APRIL 2026 ATTACKS (NEW)
+domain:seoexpress.org
+
+# MARCH 2026 ATTACKS
+domain:optimizeflow.top
+domain:byteshort.xyz
+
+# FEBRUARY 2026 ATTACKS
+domain:quero.party
+domain:blogsphere.top
+domain:screenshots.wiki
+domain:atomizelink.icu
+domain:creativeposts.top
+
+# JANUARY 2026 ATTACKS
+domain:jake.eu
+
+# DECEMBER 2025 ATTACKS
+domain:rankongoogle.agency
+domain:rankyour.website
+domain:bye.fyi
+
+# AUTUMN 2025 CAMPAIGN (September-October)
+domain:seoagency.sale
+domain:rankpilot.shop
+domain:backlinker.shop
+domain:seodaro.com
+
+# SUMMER ESCALATION (August 2025)
+domain:seozora.com
+domain:seoprobox.xyz
+domain:seolexo.com
+domain:seonexi.com
+domain:seotira.com
+domain:seoxio.com
+domain:seokuni.com
+
+# INITIAL ATTACK WAVE (July 2025)
+domain:seodali.com
+domain:linkbooster.shop
+domain:toplikevideo.com
+domain:seoboostservice.com
+domain:seozino.com
+domain:rankva.com
+
+# ADDITIONAL SPAM DETECTED
+domain:drjack.world
+
+# ================================================================
+# TOTAL DOMAINS DISAVOWED: 30
+# END OF DISAVOW FILE
+# Next review: April 15, 2026 (weekly during active attack)
+# ================================================================
