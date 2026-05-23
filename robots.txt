@@ -1,0 +1,31 @@
+# ============================================================
+# robots.txt — Ejercicio Máster SEO Técnico
+# Autor: Irmin Corona
+# ============================================================
+
+# Todos los bots de buscador, INCLUIDO Googlebot.
+# Googlebot NO tiene grupo propio, así que obedece este grupo "*"
+# (por eso queda bloqueado de /black-friday/, requisito de no-entrada de Google).
+User-agent: *
+Disallow: /black-friday/
+Disallow: /scripts/*.js?prescindible
+Disallow: /nomeves/
+Allow: /nomeves/cartagena/
+Allow: /nomeves/sources/*.css
+
+# Google Ads. AdsBot-Google IGNORA el grupo "*" por diseño, así que necesita
+# su propio grupo. NO le ponemos el Disallow de /black-friday/ -> SÍ puede
+# rastrear la oferta. Mantiene las reglas comunes de JS y /nomeves/.
+User-agent: AdsBot-Google
+Disallow: /scripts/*.js?prescindible
+Disallow: /nomeves/
+Allow: /nomeves/cartagena/
+Allow: /nomeves/sources/*.css
+
+# Yandex: bloqueo total del sitio (politica de empresa — no rastreable
+# por el buscador ruso).
+User-agent: Yandex
+Disallow: /
+
+# Sitemap (URL absoluta y completa, como exige la especificacion).
+Sitemap: https://example.com/sitemap.xml
