@@ -5,6 +5,14 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L,QSA]
 </IfModule>
 
+# Eliminar el sitemap por defecto de WordPress (clase 09 sitemaps).
+# functions.php ya impide generarlo, pero WP redirige 301 a la home; esto fuerza
+# un 404 real en la URL antigua (wp-sitemap.xml y todos sus sub-sitemaps).
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^wp-sitemap.*\.xml$ - [R=404,L]
+</IfModule>
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
