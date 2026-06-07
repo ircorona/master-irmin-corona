@@ -1,0 +1,119 @@
+/*
+  sitemap.css — estilo ORIGINAL para la vista humana de los sitemaps (clase 08).
+  Paleta verde/teal propia + fuente Catamaran (la del proyecto). NO minificado,
+  para poder editarlo fácil. Solo afecta a cómo lo ve una persona; Google lo ignora.
+*/
+:root {
+  --bg: #0f1720;
+  --panel: #16212e;
+  --row: #1b2735;
+  --border: #243446;
+  --text: #e6edf3;
+  --muted: #8b9bb0;
+  --accent: #2ecc71;
+  --accent-2: #1f9d8f;
+  --accent-3: #f4b61c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Catamaran", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.sm-header {
+  padding: 32px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.sm-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.sm-sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.sm-main {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.sm-table th,
+.sm-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.sm-table thead th {
+  background: var(--row);
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.sm-table tbody tr:hover { background: var(--row); }
+.sm-table tbody tr:last-child td { border-bottom: 0; }
+
+.sm-num { color: var(--muted); width: 48px; }
+.sm-date {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.sm-table a {
+  color: var(--text);
+  text-decoration: none;
+  word-break: break-all;
+}
+.sm-table a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.sm-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.sm-badges { white-space: nowrap; }
+.sm-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 0 4px 4px 0;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.sm-img  { background: rgba(46, 204, 113, 0.15); color: var(--accent); }
+.sm-vid  { background: rgba(31, 157, 143, 0.18); color: var(--accent-2); }
+.sm-news { background: rgba(244, 182, 28, 0.15); color: var(--accent-3); }
+
+.sm-footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+::selection { background: var(--accent); color: #0f1720; }
