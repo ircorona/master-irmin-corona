@@ -28,4 +28,4 @@ User-agent: Yandex
 Disallow: /
 
 # Sitemap (URL absoluta y completa, como exige la especificacion).
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://master-irmin-corona.test/sitemap.xml
