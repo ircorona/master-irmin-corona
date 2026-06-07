@@ -16,7 +16,17 @@
       <video:title>Technology demo video</video:title>
       <video:description>Vídeo de demostración incrustado en la home del proyecto de prácticas del máster.</video:description>
       <video:content_loc>https://master-irmin-corona.test/video/technology%20video.mp4</video:content_loc>
+      <video:duration>5</video:duration>
+      <video:publication_date>2026-06-06T09:00:00+07:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:restriction relationship="allow">ES US GB</video:restriction>
+      <video:platform relationship="allow">web mobile tv</video:platform>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:uploader info="https://github.com/ircorona">Irmin Corona</video:uploader>
+      <video:live>no</video:live>
+      <video:tag>technology</video:tag>
+      <video:tag>demo</video:tag>
+      <video:tag>master-seo</video:tag>
     </video:video>
   </url>
   <url>
