@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://master-irmin-corona.test/</loc>
     <lastmod>2026-06-06</lastmod>
@@ -44,5 +45,17 @@
   <url>
     <loc>https://master-irmin-corona.test/folder/file-folder</loc>
     <lastmod>2026-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://master-irmin-corona.test/noticia-google-ping-sitemaps</loc>
+    <lastmod>2026-06-06</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>My PHP Website</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-06T09:30:00-06:00</news:publication_date>
+      <news:title>Google elimina definitivamente el endpoint de ping de sitemaps</news:title>
+    </news:news>
   </url>
 </urlset>

@@ -24,6 +24,9 @@
             case $uri_clean == '/' || strpos($uri_clean, '/index') !== false:
                 $titulo = "Home - My PHP Website";
                 break;
+            case strpos($uri_clean, '/noticia') !== false:
+                $titulo = "Google elimina el ping de sitemaps - Noticias SEO";
+                break;
             default:
                 $titulo = "My PHP Website";
         }
