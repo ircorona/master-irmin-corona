@@ -11,13 +11,15 @@
     <body <?php body_class(); ?>>
         <header>
             <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about-me">About Me</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/folder/file-folder">Projects</a></li>
-                    <li><a href="https://github.com/ircorona">My GitHub</a></li>
-                    <li><a href="/ejemplo2">Time Demo</a></li>
-                </ul>
+                <?php
+                // Menú dinámico de WordPress. Si aún no has creado un menú en
+                // Apariencia > Menús, el fallback (wp_page_menu) lista tus páginas reales.
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'container'      => false,
+                    'fallback_cb'    => 'wp_page_menu',
+                    'show_home'      => true,
+                ));
+                ?>
             </nav>
         </header>
