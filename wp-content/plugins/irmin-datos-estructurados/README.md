@@ -95,7 +95,11 @@ validadores sin necesidad de levantar WordPress:
 
 ## Nota sobre FAQPage
 
-Desde agosto de 2023 Google **restringe el resultado enriquecido de FAQ** a webs de
-gobierno y sanidad. El marcado sigue siendo válido, lo siguen leyendo buscadores y
-LLMs, y sigue siendo correcto emitirlo — pero no esperes ver las preguntas
-desplegables en la SERP de un blog.
+**El resultado enriquecido de FAQ ya no existe.** Google lo restringió a webs de
+gobierno y sanidad en agosto de 2023 y lo **retiró por completo el 7 de mayo de
+2026**; en junio de 2026 borró la documentación y el tipo ya no aparece en la
+galería de resultados enriquecidos.
+
+El marcado se mantiene igualmente: sigue siendo schema.org válido, lo leen otros
+buscadores y los LLMs, y describe la entidad de la página. Lo que no hace es
+generar ninguna apariencia especial en Google.

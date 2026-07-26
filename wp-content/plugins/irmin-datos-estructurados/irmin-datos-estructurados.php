@@ -305,10 +305,11 @@ class Irmin_Datos_Estructurados {
 	/**
 	 * Emite FAQPage si el contenido tiene al menos dos preguntas reales.
 	 *
-	 * Nota de actualidad: desde agosto de 2023 Google restringe el resultado
-	 * enriquecido de FAQ a webs de gobierno y sanidad. El marcado sigue siendo
-	 * válido y lo siguen leyendo los buscadores y los LLMs, pero no esperes las
-	 * preguntas desplegables en la SERP de un blog.
+	 * Nota de actualidad: el resultado enriquecido de FAQ ya NO existe. Google lo
+	 * restringió a gobierno y sanidad en agosto de 2023 y lo retiró por completo
+	 * el 7 de mayo de 2026 (documentación borrada en junio de 2026). El marcado
+	 * FAQPage sigue siendo schema.org válido y lo leen otros buscadores y los
+	 * LLMs, así que se mantiene — pero no genera ninguna apariencia en Google.
 	 */
 	public function print_faq() {
 		if ( ! is_singular() || $this->omitido( 'faq' ) ) {
