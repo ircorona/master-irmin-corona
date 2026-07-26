@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://climbthesearches.com/auditoria-seo-tecnica/#producto-1",
+  "name": "Auditoría SEO técnica completa",
+  "description": "Revisión de rastreo, indexación, arquitectura de enlazado, sitemaps y datos estructurados, con plan de acción priorizado.",
+  "image": [
+    "https://climbthesearches.com/img/auditoria-seo-tecnica.jpg"
+  ],
+  "sku": "CTS-AUD-01",
+  "brand": {
+    "@type": "Brand",
+    "name": "Climb The Searches"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://climbthesearches.com/auditoria-seo-tecnica/",
+    "price": "890.00",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "priceValidUntil": "2026-12-31",
+    "seller": {
+      "@type": "Organization",
+      "name": "Climb The Searches",
+      "url": "https://climbthesearches.com/"
+    }
+  }
+}

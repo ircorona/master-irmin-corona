@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://climbthesearches.com/datos-estructurados-wordpress/#faq",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué son los datos estructurados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son un vocabulario estándar (schema.org) que describe de forma explícita el contenido de una página, para que un buscador no tenga que deducirlo del texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué formato hay que escribirlos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En JSON-LD, dentro de un bloque <script type=\"application/ld+json\">. Es el formato recomendado por Google porque va separado del HTML y no obliga a ensuciar el marcado de la página."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo marcar contenido que no se ve en la página?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Marcar contenido oculto incumple las directrices de spam de Google y puede acabar en una acción manual. Todo lo que se declara tiene que estar visible para el usuario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Un error de sintaxis invalida solo esa propiedad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: invalida el bloque entero. Un JSON mal formado no se parsea a medias, se descarta completo y en silencio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sigue habiendo resultado enriquecido de FAQ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde agosto de 2023 Google lo limita a webs de gobierno y sanidad. El marcado sigue siendo válido y lo leen los buscadores y los modelos de lenguaje, pero un blog ya no verá las preguntas desplegables en la SERP."
+      }
+    }
+  ]
+}

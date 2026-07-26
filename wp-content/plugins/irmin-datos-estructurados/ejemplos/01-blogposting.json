@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://climbthesearches.com/datos-estructurados-wordpress/#article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://climbthesearches.com/datos-estructurados-wordpress/"
+  },
+  "headline": "Cómo generar datos estructurados en WordPress sin plugins de terceros",
+  "description": "Un plugin propio que emite JSON-LD desde los datos reales del post: BlogPosting, FAQPage y Product, sin duplicar valores ni marcar contenido invisible.",
+  "image": [
+    "https://climbthesearches.com/img/datos-estructurados-16x9.jpg",
+    "https://climbthesearches.com/img/datos-estructurados-4x3.jpg",
+    "https://climbthesearches.com/img/datos-estructurados-1x1.jpg"
+  ],
+  "datePublished": "2026-07-26T10:00:00+02:00",
+  "dateModified": "2026-07-26T10:00:00+02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Irmin Corona",
+    "url": "https://climbthesearches.com/sobre-mi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Climb The Searches",
+    "url": "https://climbthesearches.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://climbthesearches.com/img/logo.png"
+    }
+  },
+  "inLanguage": "es-ES",
+  "articleSection": "SEO técnico",
+  "keywords": [
+    "datos estructurados",
+    "JSON-LD",
+    "WordPress",
+    "schema.org"
+  ]
+}
