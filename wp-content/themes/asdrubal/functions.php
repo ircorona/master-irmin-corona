@@ -69,6 +69,16 @@ add_action('wp_enqueue_scripts', 'asdrubal_enqueue_styles');
 
 
 
+// Datos estructurados (clase 07): el TEMA emite Organization y el artículo/coche
+// desde components/datos-estructurados.php, porque solo él conoce los campos ACF
+// del coche. Se le dice al plugin de la clase 06 que no los duplique: dos marcados
+// del mismo tipo en la misma página son dos entidades contradictorias.
+// El plugin sigue encargándose de FAQPage, Product y BreadcrumbList.
+add_filter('irmin_datos_estructurados_omitir', function ($omitir, $tipo) {
+    return in_array($tipo, array('organization', 'article'), true) ? true : $omitir;
+}, 10, 2);
+
+
 // Borrar el Sitemap por defecto de WordPress (clase 09 sitemaps).
 // 1) El filtro impide que el core genere wp-sitemap.xml.
 // 2) Por si acaso, retiramos también la acción que monta el servidor de sitemaps.

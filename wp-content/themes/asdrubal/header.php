@@ -5,6 +5,11 @@
         <?php  
 
         include 'components/metas-seo.php';
+
+        // Datos estructurados automáticos (clase 07). get_template_part lo carga
+        // en su propio ámbito, así no comparte variables con metas-seo.php.
+        get_template_part('components/datos-estructurados');
+
         wp_head();
         ?>
     </head>

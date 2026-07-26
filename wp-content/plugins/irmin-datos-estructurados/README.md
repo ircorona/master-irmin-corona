@@ -31,6 +31,23 @@ Genera datos estructurados **JSON-LD** desde los datos reales del sitio, nunca e
 - **Nada oculto**: cada dato marcado se ve en la página. Es requisito duro de Google,
   no una buena práctica.
 
+## Convivencia con el tema (clase 07)
+
+El tema `asdrubal` emite su propio `Car` y su `Organization` desde
+`components/datos-estructurados.php`, porque solo él conoce sus campos ACF. Para
+que no haya dos bloques del mismo tipo en la misma página —dos entidades
+contradictorias— el plugin expone un filtro:
+
+```php
+add_filter( 'irmin_datos_estructurados_omitir', function ( $omitir, $tipo ) {
+    return in_array( $tipo, array( 'organization', 'article' ), true ) ? true : $omitir;
+}, 10, 2 );
+```
+
+Tipos que acepta: `organization`, `article`, `faq`, `product`, `breadcrumb`.
+Con el tema asdrubal activo, el plugin sigue encargándose de FAQPage, Product y
+BreadcrumbList; el tema se encarga del artículo/coche y de Organization.
+
 ## Uso del shortcode de producto
 
 ```

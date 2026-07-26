@@ -101,6 +101,25 @@ class Irmin_Datos_Estructurados {
 		return wp_strip_all_tags( get_bloginfo( 'name' ) );
 	}
 
+	/**
+	 * ¿Se ha pedido desde fuera que el plugin NO emita este tipo?
+	 *
+	 * Existe para que un TEMA que ya emite ese marcado (el caso de asdrubal, que
+	 * conoce sus campos ACF y publica Car + Organization) pueda desactivarlo aquí.
+	 * Dos bloques del mismo tipo en una página son dos entidades contradictorias,
+	 * y Google no tiene forma de saber cuál es la buena.
+	 *
+	 *     add_filter( 'irmin_datos_estructurados_omitir', function ( $omitir, $tipo ) {
+	 *         return 'organization' === $tipo ? true : $omitir;
+	 *     }, 10, 2 );
+	 *
+	 * @param string $tipo Identificador del bloque: organization|article|faq|product|breadcrumb.
+	 * @return bool
+	 */
+	private function omitido( $tipo ) {
+		return (bool) apply_filters( 'irmin_datos_estructurados_omitir', false, $tipo );
+	}
+
 	/* ---------------------------------------------------------------------
 	 * 0. Organization + WebSite (identidad del sitio, en todas las páginas)
 	 * ------------------------------------------------------------------ */
@@ -110,6 +129,10 @@ class Irmin_Datos_Estructurados {
 	 * El @id evita repetir la organización dentro de cada artículo: se referencia.
 	 */
 	public function print_sitio() {
+		if ( $this->omitido( 'organization' ) ) {
+			return; // lo emite el tema.
+		}
+
 		$org = array(
 			'@type' => 'Organization',
 			'@id'   => $this->org_id,
@@ -164,7 +187,7 @@ class Irmin_Datos_Estructurados {
 	 * no una cadena suelta — que es lo que conecta el artículo con la entidad autor.
 	 */
 	public function print_article() {
-		if ( ! is_singular( 'post' ) ) {
+		if ( ! is_singular( 'post' ) || $this->omitido( 'article' ) ) {
 			return;
 		}
 
@@ -288,7 +311,7 @@ class Irmin_Datos_Estructurados {
 	 * preguntas desplegables en la SERP de un blog.
 	 */
 	public function print_faq() {
-		if ( ! is_singular() ) {
+		if ( ! is_singular() || $this->omitido( 'faq' ) ) {
 			return;
 		}
 
@@ -439,7 +462,7 @@ class Irmin_Datos_Estructurados {
 
 	/** Emite en el footer los productos declarados en esta página. */
 	public function print_product() {
-		if ( empty( $this->productos ) ) {
+		if ( empty( $this->productos ) || $this->omitido( 'product' ) ) {
 			return;
 		}
 
@@ -468,7 +491,7 @@ class Irmin_Datos_Estructurados {
 	 * Cada ListItem lleva su "position" empezando en 1, sin saltos.
 	 */
 	public function print_breadcrumbs() {
-		if ( ! is_singular() ) {
+		if ( ! is_singular() || $this->omitido( 'breadcrumb' ) ) {
 			return;
 		}
 
