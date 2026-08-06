@@ -28,4 +28,7 @@ User-agent: Yandex
 Disallow: /
 
 # Sitemap (URL absoluta y completa, como exige la especificacion).
-Sitemap: https://master-irmin-corona.test/sitemap.xml
+# Se declara el INDICE, no el sitemap suelto: el indice ya apunta a
+# sitemap.xml, asi que basta una linea y los futuros sitemaps se anaden
+# ahi dentro sin volver a tocar este fichero.
+Sitemap: https://master-irmin-corona.test/sitemap-index.xml
