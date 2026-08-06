@@ -1,0 +1,224 @@
+/* =============================================================
+   diferido.css — todo lo que NO hace falta para el primer pintado
+
+   Se carga sin bloquear el render:
+       <link rel="stylesheet" href="diferido.css" media="print" onload="this.media='all'">
+
+   Criterio para meter algo aquí: ¿afecta a lo que se ve mientras la
+   página carga? Un :hover no, porque nadie tiene el ratón encima
+   todavía. Una transición tampoco, porque no hay nada de lo que
+   transicionar. El footer tampoco: está debajo del pliegue.
+
+   Del original entran aquí los dos bloques <style> del plugin de
+   suscripción (Brevo/Sendinblue), que estaban en el <head> bloqueando
+   el pintado de TODAS las páginas para un formulario que vive en el
+   footer de una.
+   ============================================================= */
+
+/* ------------------------------------------------------------------
+   Estados de interacción
+   ------------------------------------------------------------------ */
+
+.sib-sms-field ul.sib-country-list li.sib-country-prefix:hover {
+    background-color: #dbdbdb;
+}
+
+/* ------------------------------------------------------------------
+   Widget de teléfono del formulario de suscripción
+   Estaba en línea en el <head>. Aquí, diferido y cacheable.
+   ------------------------------------------------------------------ */
+
+div.sib-sms-field {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.sib-sms-field .sib-country-block {
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    box-sizing: border-box;     /* FIX: los prefijos -webkit-/-moz- fuera */
+}
+
+.sib-country-block .sib-toggle.sib-country-flg {
+    z-index: 1;
+    position: relative;
+    width: 46px;
+    height: 100%;
+    padding: 0 0 0 8px;
+    box-sizing: border-box;
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
+
+.sib-country-block .sib-toggle .sib-cflags {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 15px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-color: #dbdbdb;
+    box-sizing: border-box;
+    /* FIX: en el original era url('../img/flags/fr.png') dentro de un <style>
+       del documento, así que se resolvía contra la URL de la página y daba
+       404. Desde un CSS externo, la ruta relativa sí apunta al plugin. */
+    background-image: url(../../wp-content/plugins/mailin/img/flags/fr.png);
+}
+
+.sib-country-block .sib-toggle .sib-icon-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 6px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid;
+}
+
+.sib-sms-field ul.sib-country-list {
+    position: absolute;
+    z-index: 2;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px;
+    background-color: #fff;
+    border: 1px solid rgb(204, 204, 204);
+    white-space: nowrap;
+    max-height: 150px;
+    overflow-y: auto;           /* FIX: era `scroll`, que pinta la barra siempre */
+    overflow-x: hidden;
+    top: 50px;
+    width: 250px;
+}
+
+.sib-sms-field ul.sib-country-list li.sib-country-prefix {
+    font-size: 14px;
+    padding: 1px 10px;
+    cursor: pointer;
+}
+
+.sib-sms-field ul.sib-country-list li .sib-flag-box {
+    width: 20px;
+}
+
+.sib-sms-field ul.sib-country-list li .sib-flag-box .sib-flag {
+    height: 18px;
+    width: 20px;
+    background-image: url(../../wp-content/plugins/mailin/img/flags/ad.png);
+    vertical-align: middle;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.sib-sms-field ul.sib-country-list li .sib-flag-box .sib-dial-code {
+    margin-left: 20px;
+}
+
+.sib-sms-field .sib-sms {
+    padding-right: 6px;
+    padding-left: 52px;
+    margin: 0;                  /* FIX: eran cuatro márgenes, dos con !important */
+    position: relative;
+    z-index: 0;
+}
+
+.sib-multi-lists.sib_error {
+    color: #a94442;
+}
+
+/* ------------------------------------------------------------------
+   Mensajes del formulario
+   Estaban en un <style> suelto dentro del propio <footer>.
+   Solo aparecen después de enviar: no pueden ser críticos.
+   ------------------------------------------------------------------ */
+
+.sib_signup_form p.sib-alert-message {
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sib_signup_form p.sib-alert-message-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
+.sib_signup_form p.sib-alert-message-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.sib_signup_form p.sib-alert-message-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+}
+
+.sib_signup_box_inside_1 p {
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   Contenido de artículo: tablas, código e imágenes alineadas
+   Nunca están en el primer pantallazo.
+   ------------------------------------------------------------------ */
+
+#post-display table {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    border-spacing: 0;
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+#post-display thead,
+#post-display th {
+    background-color: var(--main);
+    color: var(--white);
+    padding: 8px;
+    border: 1px solid var(--main);
+}
+
+#post-display td {
+    padding: 4px 8px;
+    border: 1px solid var(--grey);
+}
+
+.ficha-post,
+section#post-display {
+    max-width: 1000px;
+}
+
+img.aligncenter,
+img.alignnone,
+section#post-display iframe {
+    border-radius: 8px;
+    filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.15));
+}
+
+img.aligncenter {
+    display: block;
+}
+
+.lwptoc {
+    padding: 16px;
+    border: var(--secondary) 1px solid;
+    border-radius: 8px;
+    box-shadow: #00000021 -1px 3px 10px 0;
+}
+
+/* .codigo-post y el resto del bloque quedaron fuera del código pegado
+   en clase — ver la nota final de principal.css. */
