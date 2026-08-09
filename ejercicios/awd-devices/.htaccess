@@ -1,0 +1,70 @@
+# =============================================================================
+# AWD — dynamic serving por User-Agent
+# Ejercicio de SEO para móviles, clase 08 (CÓDIGO AWD)
+#
+# Sirve un HTML distinto según el dispositivo SIN cambiar la URL: la
+# reescritura es INTERNA (flag [L], nunca [R]). El navegador y Google siguen
+# viendo /ejercicios/awd-devices/ — por eso esto es "adaptive" y no
+# "URLs independientes", y por eso NO hace falta canonical/alternate.
+#
+# Este fichero está deliberadamente en una subcarpeta: en la raíz del sitio
+# rompería WordPress, porque reescribiría también /wp-admin/ y /wp-json/.
+#
+# OJO: mod_rewrite NO hereda las reglas del .htaccess padre en cuanto se
+# escribe "RewriteEngine On" aquí. Dentro de esta carpeta, las reglas de la
+# raíz (forzar HTTPS, front controller de WordPress) quedan desactivadas.
+# =============================================================================
+
+<IfModule mod_headers.c>
+    # OBLIGATORIO en adaptive. Le dice a cachés, CDNs y a Google que el HTML
+    # de esta URL depende del User-Agent. Sin esta cabecera, un proxy puede
+    # guardar la versión móvil y servírsela a un escritorio, y Google no sabe
+    # que tiene que rastrear la URL con sus dos agentes.
+    # "append", no "set": no queremos pisar un Vary: Accept-Encoding previo.
+    Header append Vary "User-Agent"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /ejercicios/awd-devices/
+
+# --- Guardia anti-bucle -------------------------------------------------------
+# Si la petición ya está dentro de /devices/, no se toca. Sin esto, la regla se
+# vuelve a aplicar sobre su propio resultado hasta que Apache corta con un 500.
+# Es el fallo que tiene la versión de nginx del código de auxilio.
+RewriteCond %{REQUEST_URI} /devices/ [NC]
+RewriteRule ^ - [L]
+
+# Los recursos compartidos (CSS, imágenes) se sirven tal cual.
+RewriteCond %{REQUEST_URI} /assets/ [NC]
+RewriteRule ^ - [L]
+
+# La demo de la variante mixta hace su propia detección en PHP, así que se
+# excluye de estas reglas. Sin esta línea, un móvil pidiendo deteccion-css.php
+# acaba reescrito a devices/movil/deteccion-css.php, que no existe: 404.
+RewriteRule ^deteccion-css\.php$ - [L]
+
+# --- 1. Tablets declaradas ----------------------------------------------------
+# Va PRIMERO: el UA de un iPad contiene "Mobile", así que si se comprobase
+# antes la regla de móvil, ninguna tablet llegaría nunca hasta aquí.
+RewriteCond %{HTTP_USER_AGENT} "ipad|tablet|kindle|playbook|silk" [NC]
+RewriteRule ^(.*)$ devices/tablet/$1 [L]
+
+# --- 2. Tablets Android -------------------------------------------------------
+# Un móvil Android lleva "Android" Y "Mobile". Una tablet Android lleva
+# "Android" y NO lleva "Mobile". Es la única forma fiable de separarlas.
+RewriteCond %{HTTP_USER_AGENT} "android" [NC]
+RewriteCond %{HTTP_USER_AGENT} !mobile [NC]
+RewriteRule ^(.*)$ devices/tablet/$1 [L]
+
+# --- 3. Móviles ---------------------------------------------------------------
+# Aquí ya solo llegan teléfonos: las tablets se han desviado arriba.
+# "googlebot-mobile" del código de auxilio se ha quitado: ese agente está
+# retirado desde 2016. El Googlebot smartphone actual se identifica como
+# Android + Mobile, así que esta misma línea ya lo captura.
+RewriteCond %{HTTP_USER_AGENT} "android|iphone|ipod|blackberry|iemobile|opera mini|opera mobi|palmos|webos|windows phone" [NC]
+RewriteRule ^(.*)$ devices/movil/$1 [L]
+
+# --- 4. Todo lo demás ---------------------------------------------------------
+# Sin regla: escritorio es el caso por defecto y se sirve index.php.
+</IfModule>

@@ -1,0 +1,26 @@
+/* Versión MÓVIL — una columna, márgenes cortos, áreas táctiles amplias */
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background: #052e16;
+    color: #dcfce7;
+}
+main { padding: 2rem 1.25rem; }
+.etiqueta {
+    display: inline-block;
+    background: #4ade80;
+    color: #052e16;
+    font-weight: 700;
+    padding: .4rem 1rem;
+    border-radius: 999px;
+    letter-spacing: .05em;
+    font-size: .75rem;
+}
+h1 { font-size: 2.25rem; margin: 1.25rem 0 1rem; line-height: 1.1; }
+p { line-height: 1.6; }
+code { background: #022c22; padding: .15rem .4rem; border-radius: .25rem; color: #86efac;
+       word-break: break-all; }
+.nota { border-left: 3px solid #4ade80; padding-left: .75rem; color: #86efac; font-size: .9rem; }
+dl { background: #022c22; border-radius: .75rem; padding: 1rem; margin-top: 2rem; font-size: .8rem; }
+dt { color: #86efac; text-transform: uppercase; letter-spacing: .05em; }
+dd { margin: .25rem 0 .75rem; word-break: break-all; }

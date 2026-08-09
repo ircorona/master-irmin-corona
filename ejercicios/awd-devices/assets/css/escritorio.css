@@ -1,0 +1,24 @@
+/* Versión de ESCRITORIO — dos columnas, tipografía grande */
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+main { max-width: 60rem; margin: 0 auto; padding: 4rem 2rem; }
+.etiqueta {
+    display: inline-block;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: 700;
+    padding: .4rem 1rem;
+    border-radius: 999px;
+    letter-spacing: .05em;
+}
+h1 { font-size: 3rem; margin: 1.5rem 0 1rem; }
+p { line-height: 1.7; font-size: 1.05rem; }
+code { background: #020617; padding: .15rem .4rem; border-radius: .25rem; color: #7dd3fc; }
+.nota { border-left: 3px solid #38bdf8; padding-left: 1rem; color: #94a3b8; }
+dl { background: #1e293b; border-radius: .75rem; padding: 1.5rem; margin-top: 2.5rem; }
+dt { color: #94a3b8; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+dd { margin: .25rem 0 1rem; word-break: break-all; }
