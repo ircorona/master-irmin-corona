@@ -37,6 +37,21 @@ html, body {
     padding: 0;
 }
 
+/* ============================================
+   RWD - Medios flexibles
+   Sin esto, cualquier imagen mas ancha que la
+   pantalla provoca scroll horizontal en movil.
+   ============================================ */
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cajas de demostracion con ancho fijo: que no desborden */
+.px, #imagen-falsa {
+    max-width: 100%;
+}
+
 body {
     font-family: 'Roboto Mono', sans-serif;
     background: var(--main);
