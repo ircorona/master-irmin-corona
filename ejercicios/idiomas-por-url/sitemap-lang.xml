@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap con declaracion de idiomas para el ejercicio.
+
+  Las dos entradas llevan EL MISMO bloque de <xhtml:link>: eso es la
+  reciprocidad, y en un sitemap se ve a simple vista porque el bloque
+  se repite literalmente bajo cada <loc>.
+
+  Cada <url> se incluye tambien a si misma. No es opcional.
+
+  Nota: estas paginas YA declaran el hreflang en el <head>. Este fichero
+  esta aqui para practicar la via del sitemap; en produccion se elige
+  una de las dos, no las dos a la vez.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>http://master-irmin-corona.test/ejercicios/idiomas-por-url/</loc>
+    <xhtml:link rel="alternate" hreflang="es"        href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/"/>
+  </url>
+
+  <url>
+    <loc>http://master-irmin-corona.test/ejercicios/idiomas-por-url/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es"        href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://master-irmin-corona.test/ejercicios/idiomas-por-url/"/>
+  </url>
+
+</urlset>

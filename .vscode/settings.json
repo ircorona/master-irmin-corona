@@ -4,13 +4,20 @@
         "**/templates/*.php": "php"
     },
     "cSpell.words": [
+        "ABSPATH",
+        "bloginfo",
         "cómo",
+        "despublicar",
         "dudas",
         "elemento",
+        "irmin",
         "metas",
         "Modelo",
+        "paginación",
         "podemos",
         "pruebas",
-        "tienes"
+        "tienes",
+        "wpseo",
+        "Yoast"
     ]
 }
