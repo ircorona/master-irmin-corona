@@ -1,0 +1,4 @@
+# Sintaxis válida, pero ".ht" solo casa con un fichero llamado exactamente .ht
+<Files ".ht">
+   Require all denied
+</Files>

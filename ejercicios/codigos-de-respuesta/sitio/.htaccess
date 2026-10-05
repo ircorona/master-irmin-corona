@@ -1,0 +1,23 @@
+# Servidores (Avanzado) — clase 06 Generar códigos de respuesta
+# Ejercicio: las tres reglas, con RedirectMatch (mod_alias).
+# RedirectMatch compara contra la ruta, nunca contra la query string.
+
+# 1. Redireccionar un directorio a otro, con todo lo que cuelga.
+#    /blog -> /noticias/ ; /blog/articulo-1/ -> /noticias/articulo-1/
+#    /blog a secas va directo a /noticias/ (con barra): si fuera a /noticias,
+#    mod_dir añadiría la barra con otro 301 y habría cadena de dos saltos.
+#    (?:/(.*))? evita que /blogger también case.
+RedirectMatch 301 ^/blog(?:/(.*))?$ /noticias/$1
+
+# 2. Un 503 en una página concreta (mantenimiento de esa URL, no de toda la web).
+#    Retry-After le dice a Google cuándo volver. "always" porque es una respuesta de error.
+RedirectMatch 503 ^/mantenimiento/?$
+<IfModule mod_headers.c>
+Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"
+</IfModule>
+ErrorDocument 503 /errores/503.html
+
+# 3. 302 de todo un directorio (y lo que cuelga) a UNA página concreta.
+#    Sin $1 en el destino: todo cae en la misma URL. El destino está fuera
+#    de /promociones/, así que no hay bucle.
+RedirectMatch 302 ^/promociones(/.*)?$ /oferta-san-valentin/

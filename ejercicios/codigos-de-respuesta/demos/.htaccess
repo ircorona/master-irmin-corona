@@ -1,0 +1,24 @@
+# Demos de la clase 06. NO es para producción: incluye un bucle a propósito.
+
+# --- El bucle eterno de la foto de clase -----------------------------------
+# A manda a B y B manda a A. El navegador corta con ERR_TOO_MANY_REDIRECTS.
+RedirectMatch 301 ^/sobre-mi$ /carpeta/archivo-carpeta
+RedirectMatch 301 ^/carpeta/archivo-carpeta$ /sobre-mi
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# --- QR de las servilletas, tal cual se vio en clase ------------------------
+# Sin anclar: también casa con ?xqr=servilletas2 o ?nqr=servilletas-viejas.
+RewriteCond %{QUERY_STRING} qr=servilletas
+RewriteRule ^qr-clase/ /oferta-san-valentin/ [R=302,L,QSD]
+
+# --- QR de las servilletas, anclado ----------------------------------------
+# Solo el parámetro qr con valor exacto servilletas, esté donde esté.
+RewriteCond %{QUERY_STRING} (^|&)qr=servilletas(&|$)
+RewriteRule ^qr-anclado/ /oferta-san-valentin/ [R=302,L,QSD]
+
+# --- Quitar la barra final si no es un directorio ---------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(sin-barra/.*)/$ /$1 [R=301,L,QSA]
+</IfModule>

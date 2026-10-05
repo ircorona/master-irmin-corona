@@ -1,0 +1,4 @@
+# La versión que trae el httpd.conf de Apache: comodín, cubre .htaccess, .htpasswd...
+<Files ".ht*">
+   Require all denied
+</Files>
