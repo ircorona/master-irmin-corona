@@ -1,0 +1,40 @@
+# Demos de la clase 07: el código de la foto, tal cual, para ver qué hace.
+# NO es para producción.
+
+# Cabecera en todas las respuestas (como el X-Recruiting de booking.com)
+Header set X-Asdrubal "Pagina con el SEO revisado por Asdrubal SEO SL"
+
+# Condicional de clase: THE_REQUEST sin anclar, flag i y comillas simples
+<If "%{THE_REQUEST} =~ m# /sobre-mi#i">
+Header set Link "<https://carlos.sanchezdonate.com>; rel='canonical'"
+Header set X-Robots-Tag "noindex"
+</If>
+
+# La trampa de REQUEST_URI: anclado parece más limpio, pero cuando Apache
+# añade las cabeceras la ruta ya es /contacto/index.html (DirectoryIndex).
+<If "%{REQUEST_URI} =~ m#^/contacto/?$#">
+Header set X-Robots-Tag "noindex"
+</If>
+# La prueba: esta sí casa al pedir /contacto/
+<If "%{REQUEST_URI} == '/contacto/index.html'">
+Header set X-Uri-Real "/contacto/index.html"
+</If>
+
+# El mismo problema en WordPress: las URLs bonitas se reescriben por dentro a
+# index.php (aquí wp.html). La regla de la nota 05 (REQUEST_URI, /tag/) no casa;
+# la de THE_REQUEST sí.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^tag/ /wp.html [L]
+</IfModule>
+<If "%{REQUEST_URI} =~ m#^/tag/.+/#">
+Header set X-Robots-Tag "noindex"
+</If>
+<If "%{THE_REQUEST} =~ m#^[A-Z]+ /tag/.+/#">
+Header set X-Tag-The-Request "noindex"
+</If>
+
+# Ejemplo del artículo de Carlos: X-Robots-Tag por tipo de fichero
+<Files ~ "\.(avif|webp|svg)$">
+Header set X-Robots-Tag "unavailable_after: 27 Jun 2045 15:00:00 PST"
+</Files>

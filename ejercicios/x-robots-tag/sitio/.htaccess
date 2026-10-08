@@ -1,0 +1,29 @@
+# Servidores (Avanzado) — clase 07 X-Robots
+# Ejercicio: metaetiquetas enviadas como cabeceras HTTP, con mod_headers.
+# <If> evalúa una expresión de Apache en cada petición (variables en
+# httpd.apache.org/docs/2.4/expr.html#vars).
+#
+# Por qué THE_REQUEST y no REQUEST_URI: THE_REQUEST es la línea original
+# ("GET /sobre-mi/?x=1 HTTP/1.1"). REQUEST_URI cambia en las redirecciones
+# internas: /sobre-mi/ pasa a ser /sobre-mi/index.html (DirectoryIndex), y en
+# WordPress todo pasa a ser /index.php. Un patrón anclado sobre REQUEST_URI
+# deja de casar justo cuando se añaden las cabeceras (ver demos/).
+
+<IfModule mod_headers.c>
+
+# 1. Canonical en una página concreta, por cabecera Link.
+#    El canonical no es una directiva de X-Robots-Tag: va en su propia cabecera.
+#    Anclado: método, espacio, la ruta, barra opcional y luego espacio o "?".
+#    /sobre-mi-equipo/ y /sobre-mi/otra/ no casan. URL absoluta, comillas dobles.
+<If "%{THE_REQUEST} =~ m#^[A-Z]+ /sobre-mi/?[ ?]#">
+Header set Link "<https://master-irmin-corona.test/sobre-mi/>; rel=\"canonical\""
+</If>
+
+# 2. noindex en un directorio y todo lo que cuelga, PDFs incluidos.
+#    (/|[ ?]) evita que /privados o /privado-old también casen.
+#    /privado/ no puede estar bloqueado en robots.txt: Google no vería la cabecera.
+<If "%{THE_REQUEST} =~ m#^[A-Z]+ /privado(/|[ ?])#">
+Header set X-Robots-Tag "noindex"
+</If>
+
+</IfModule>
