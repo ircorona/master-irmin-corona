@@ -1,0 +1,40 @@
+# Servidores (Avanzado) — clase 08 Bloqueos
+# Ejercicio: bloquear por IP, por contraseña y por user-agent.
+# Sintaxis de Apache 2.4 (Require). La de clase (Order/Deny/Allow) es la de
+# Apache 2.2 y depende de mod_access_compat: ver demos/.
+
+ErrorDocument 403 /errores/403.html
+ErrorDocument 401 /errores/401.html
+
+# 1. Bloqueo por IP: el sitemap de idiomas solo para una IP.
+#    203.0.113.10 es una IP de documentación (RFC 5737): en un sitio real,
+#    la IP fija de la oficina. Detrás de Cloudflare o de un proxy, Apache ve
+#    la IP del proxy, no la del visitante (hace falta mod_remoteip).
+<Files "sitemap-lang.xml">
+    Require ip 203.0.113.10
+</Files>
+
+# 2. Bloqueo por contraseña: toda la web, solo en el host de staging.
+#    El mismo .htaccess sube a producción sin pedir contraseña allí.
+#    .htpasswd FUERA de la carpeta pública. La ruta la pone prueba.py con
+#    Define; en un hosting real va escrita: AuthUserFile "/home/usuario/pass/.htpasswd"
+#    Sin <IfModule>: si falta el módulo, mejor un 500 que una web abierta.
+<If "%{HTTP_HOST} =~ m#^staging\.#">
+    AuthType Basic
+    AuthName "Staging"
+    AuthUserFile "${PASSFILE}"
+    Require valid-user
+</If>
+
+# 3. Bloqueo por user-agent.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 3a. Herramientas y bots fuera de toda la web. [NC] = sin distinguir mayúsculas.
+RewriteCond %{HTTP_USER_AGENT} (SemrushBot-BA|SemrushBot-SI|ChatGPT-User|Screaming\ Frog\ SEO\ Spider) [NC]
+RewriteRule ^ - [F]
+
+# 3b. Buscadores fuera de un directorio.
+RewriteCond %{HTTP_USER_AGENT} (Googlebot|Bingbot) [NC]
+RewriteRule ^seo-avanzado(/|$) - [F]
+</IfModule>

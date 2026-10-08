@@ -1,0 +1,9 @@
+# Demo de la clase 08, tal cual se vio en clase. NO es para producción.
+
+# --- Bloqueo por IP, sintaxis de Apache 2.2 (mod_access_compat) -------------
+# La IP de clase cambiada por una de documentación (RFC 5737).
+<Files sitemap-lang.xml>
+order deny,allow
+deny from all
+allow from 203.0.113.10
+</Files>

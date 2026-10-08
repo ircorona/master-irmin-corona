@@ -1,0 +1,13 @@
+# Demo de la clase 08, tal cual se vio en clase. NO es para producción.
+
+# --- Bloqueo por contraseña, como en clase ----------------------------------
+# <IfModule> alrededor de la autenticación: si falta el módulo, la web queda ABIERTA.
+<If "%{HTTP_HOST} == 'master-testing.test'">
+<IfModule mod_authn_file.c>
+AuthUserFile "${PASSFILE}"
+AuthName "Iniciar sesión requerido"
+AuthType Basic
+Require valid-user
+</IfModule>
+</If>
+ERRORDOCUMENT 401 '<!DOCTYPE HTML><HTML LANG="ES"><HEAD><META CHARSET="UTF-8"><TITLE>401 NO AUTORIZADO</TITLE></HEAD><H1 STYLE="FONT-SIZE: 40PX;COLOR:#8D096B;">ERROR 401 NO AUTORIZADO</H1><P>NO EST&AACUTES AUTORIZADO PARA ACCEDER A ESTA P&AACUTEGINA Y LO SABES, MALA SUERTE.</P></BODY></HTML>'

@@ -1,0 +1,6 @@
+# Demo de la clase 08, tal cual se vio en clase. NO es para producción.
+
+# --- Bloqueo por user-agent, tal cual llegó pegado (todo en mayúsculas) -----
+REWRITEENGINE ON
+REWRITECOND %{HTTP_USER_AGENT} ^.*(INVENTADO|SEMRUSHBOT-BA|SEMRUSHBOT-SI|CHATGPT-USER|SCREAMING.*FROG.*SEO.*SPIDER).*$ [NC]
+REWRITERULE ^.*$ - [F,L]
