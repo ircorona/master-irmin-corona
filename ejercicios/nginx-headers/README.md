@@ -17,10 +17,10 @@ Hecho sobre WordPress: nginx con `try_files` a `index.php` y un WordPress mínim
 
 ```bash
 python prueba.py            # 22 comprobaciones, sale con 0 si todo pasa
-python prueba.py --servir   # y probar: curl -I http://127.0.0.1:8042/servicios-seo/
+python prueba.py --servir   # y probar: curl -I http://127.0.0.1:8022/servicios-seo/
 ```
 
-Puertos 8041, 8042 y 9141. No toca el nginx ni el Apache de Laragon.
+Puertos 8021, 8022 y 9121. No toca el nginx ni el Apache de Laragon.
 
 ## El ejercicio
 

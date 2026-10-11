@@ -3,12 +3,12 @@ WordPress mínimo detrás (php-cgi) y comprueba las cabeceras de respuesta con
 peticiones reales. Sale con 0 si todo pasa.
 
     python prueba.py            # las comprobaciones
-    python prueba.py --servir   # deja nginx arrancado: curl -I http://127.0.0.1:8042/servicios-seo/
+    python prueba.py --servir   # deja nginx arrancado: curl -I http://127.0.0.1:8022/servicios-seo/
 
 Puertos (no toca el nginx ni el Apache de Laragon):
-  8041  clase.conf       el código de clase, tal cual
-  8042  ejercicio.conf   X-Mensaje, X-Robots-Tag y Link con map, sin if
-  9141  php-cgi.exe de Laragon en modo FastCGI
+  8021  clase.conf       el código de clase, tal cual
+  8022  ejercicio.conf   X-Mensaje, X-Robots-Tag y Link con map, sin if
+  9121  php-cgi.exe de Laragon en modo FastCGI
 """
 import glob
 import http.client
@@ -22,8 +22,8 @@ import time
 AQUI = os.path.dirname(os.path.abspath(__file__)).replace("\\", "/")
 NGINX = sorted(glob.glob("C:/laragon/bin/nginx/nginx-*"))[-1].replace("\\", "/")
 PHP_CGI = sorted(glob.glob("C:/laragon/bin/php/php-*/php-cgi.exe"))[-1]
-FCGI = 9141
-CLASE, EJ = 8041, 8042
+FCGI = 9121
+CLASE, EJ = 8021, 8022
 FOTO = "/wp-content/themes/sanchezdonate/images/sobre-mi/sobre-carlos.png"
 WP_LINK = '<https://mi-web.test/wp-json/>; rel="https://api.w.org/"'
 CANONICAL_PDF = '<https://mi-web.test/guia-seo/>; rel="canonical"'
