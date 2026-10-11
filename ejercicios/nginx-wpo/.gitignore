@@ -1,0 +1,4 @@
+__pycache__/
+# Los precomprimidos los genera prueba.py
+sitio/**/*.gz
+sitio/*.gz
