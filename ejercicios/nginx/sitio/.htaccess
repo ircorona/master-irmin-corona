@@ -1,0 +1,4 @@
+# Si nginx leyera este fichero, /viejo redirigiría a /nuevo y
+# todas las respuestas llevarían X-Desde-Htaccess. No lo lee.
+Redirect 301 /viejo /nuevo
+Header set X-Desde-Htaccess "si"
