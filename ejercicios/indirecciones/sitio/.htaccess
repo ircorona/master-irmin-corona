@@ -1,0 +1,26 @@
+# Ejercicio clase 10 (Servidores avanzado): indirección en código normal
+# /indireccion/asdrubal/... muestra el contenido de /ejemplo/... sin cambiar
+# la URL, y /ejemplo/ pedido directamente da 404 (una sola URL indexable).
+# Probado con python prueba.py en el Apache 2.4.62 de Laragon.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 0. Directorios sin barra final -> con barra, con 301 a la URL pública.
+#    Si no, mod_dir añade la barra a la URL ya reescrita y redirige a
+#    /ejemplo/ (o /ejemplo/sub/), que enseña la URL interna y da 404.
+RewriteRule ^indireccion/asdrubal$ /indireccion/asdrubal/ [R=301,L]
+RewriteCond %{DOCUMENT_ROOT}/ejemplo/$1 -d
+RewriteRule ^indireccion/asdrubal/(.*[^/])$ /indireccion/asdrubal/$1/ [R=301,L]
+
+# 1. La indirección. La barra tras "asdrubal" es obligatoria: así
+#    /indireccion/asdrubalXYZ no entra. [END] corta aquí también la segunda
+#    pasada del .htaccess que provoca la reescritura interna.
+RewriteRule ^indireccion/asdrubal/(.*)$ /ejemplo/$1 [END]
+
+# 2. /ejemplo pedido directamente: 404. THE_REQUEST es la línea original
+#    ("GET /ejemplo/ HTTP/1.1"): no cambia con la reescritura de arriba.
+#    Anclado con (/|\s|\?) para no tocar /ejemplos-de-uso/.
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s/ejemplo(/|\s|\?) [NC]
+RewriteRule ^ - [R=404]
+</IfModule>

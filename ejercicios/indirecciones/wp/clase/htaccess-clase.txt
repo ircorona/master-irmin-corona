@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+# Activar el motor de reescritura
+RewriteEngine On
+# Redireccionar /articulo/* a /articulo-seo/* y que se genere el duplicado
+RewriteCond %{REQUEST_URI} !^/articulo/ [NC]
+RewriteRule ^articulo-seo/(.*)$ /articulo/$1 [L]
+# Redireccionar para evitar duplicados
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/articulo/ [NC]
+RewriteRule ^articulo/(.*)$ /articulo-seo/$1 [R=301,L]
+</IfModule>

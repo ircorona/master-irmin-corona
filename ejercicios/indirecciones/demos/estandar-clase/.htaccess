@@ -1,0 +1,10 @@
+# Código de clase, tal cual
+# Indirección estándar
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/ejemplo [NC]
+RewriteRule ^indireccion/asdrubal(.*)$ /ejemplo$1 [L]
+## Devolver un error 404 para /ejemplo
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/ejemplo [NC]
+RewriteRule ^ - [R=404,L]
+</IfModule>
