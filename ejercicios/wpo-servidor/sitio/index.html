@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WPO desde el servidor: caché, compresión y HTTP/2</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preload" href="/fuentes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/estilo.css?v=1">
+</head>
+<body>
+<header class="cabecera">
+  <h1>WPO desde el servidor</h1>
+  <p>Página de prueba del ejercicio de la clase 09 de Servidores (Avanzado).</p>
+</header>
+<main>
+  <section class="nota">
+    <h2>Caché de usuario</h2>
+    <p>El HTML se revalida en cada visita; el CSS, el JS, las imágenes y las fuentes se guardan un año.
+    Para publicar un CSS nuevo se cambia el parámetro de versión: <code>estilo.css?v=2</code>.</p>
+  </section>
+  <section class="nota">
+    <h2>Compresión</h2>
+    <p>Brotli para los navegadores que lo aceptan, gzip para el resto, y nada para los formatos que ya vienen comprimidos:
+    JPEG, WebP y WOFF2.</p>
+  </section>
+  <section class="nota">
+    <h2>Caché de servidor</h2>
+    <p>La página de <a href="/dinamico/hora.php">/dinamico/hora.php</a> se genera en cada petición
+    salvo que la sirva la caché del servidor.</p>
+  </section>
+  <picture>
+    <source srcset="/img/foto.webp" type="image/webp">
+    <img src="/img/foto.jpg" alt="Imagen de prueba" width="600" height="600">
+  </picture>
+</main>
+<footer class="pie"><p>master-irmin-corona · ejercicio wpo-servidor</p></footer>
+<script src="/js/app.js?v=1" defer></script>
+</body>
+</html>

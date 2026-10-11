@@ -1,0 +1,11 @@
+# Caché de servidor para lo dinámico (el CacheEnable está en el httpd.conf).
+# El navegador revalida siempre (max-age=0); las cachés compartidas
+# (mod_cache, un CDN) guardan la respuesta 60 s (s-maxage).
+# Sin esto, el max-age=0 del HTML del .htaccess raíz hace que mod_cache
+# considere la respuesta ya caducada y no la guarde nunca.
+<IfModule mod_expires.c>
+ExpiresActive Off
+</IfModule>
+<IfModule mod_headers.c>
+Header set Cache-Control "max-age=0, s-maxage=60"
+</IfModule>

@@ -1,0 +1,31 @@
+# Código de clase, tal cual (mod_expires + "Otra forma" con Header)
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 4 months"
+ExpiresByType image/webp "access plus 4 months"
+ExpiresByType image/gif "access plus 4 months"
+ExpiresByType image/png "access plus 4 months"
+ExpiresByType image/jpg "access plus 4 months"
+ExpiresByType image/jpeg "access plus 4 months"
+ExpiresByType video/mp4 "access plus 4 months"
+ExpiresByType image/ico "access plus 11 months"
+ExpiresByType image/svg+xml "access plus 4 months"
+ExpiresByType text/css "access plus 4 months"
+ExpiresByType text/javascript "access plus 4 months"
+ExpiresByType application/javascript "access plus 4 months"
+ExpiresByType application/x-javascript "access plus 4 months"
+ExpiresByType application/font-woff "access plus 1 year"
+ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+#Otra forma
+<FilesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=31449600, public"
+</FilesMatch>
+# 2 DIAS
+<FilesMatch ".(xml|txt)$">
+Header set Cache-Control "max-age=172800, public, must-revalidate"
+</FilesMatch>
+# 4 Horas
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=14400, must-revalidate"
+</FilesMatch>

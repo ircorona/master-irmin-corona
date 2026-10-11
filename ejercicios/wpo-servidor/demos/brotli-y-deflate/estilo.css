@@ -1,0 +1,980 @@
+/* CSS de relleno para medir la compresión */
+.aviso--v0 {
+  max-width: 1.125rem;
+  font-size: 2rem;
+  color: 72ch;
+  margin: 1.125rem;
+}
+
+.lista li--v1 {
+  display: grid;
+  padding: 1.125rem;
+  gap: grid;
+  margin: 0.5rem auto;
+}
+
+.nota--v2 {
+  color: 0.5rem auto;
+  display: 0.5rem auto;
+  border: 2rem;
+  color: #1a1a2e;
+}
+
+.tarjeta--v3 {
+  padding: 2rem;
+  gap: grid;
+  padding: 0.5rem auto;
+  border: 0.5rem auto;
+}
+
+.cabecera--v4 {
+  font-size: #1a1a2e;
+  background: 0.5rem auto;
+  border: 1rem;
+  font-size: #1a1a2e;
+}
+
+.nota--v5 {
+  font-size: 1.125rem;
+  margin: #1a1a2e;
+  margin: 1.6;
+  margin: 1.6;
+}
+
+.aviso--v6 {
+  color: 0;
+  background: 1.6;
+  padding: grid;
+  margin: 1rem;
+}
+
+.tabla td--v7 {
+  background: #1a1a2e;
+  line-height: 0;
+  padding: 2rem;
+  gap: 0;
+}
+
+.lista li--v8 {
+  padding: grid;
+  display: flex;
+  background: 1.6;
+  padding: 1.6;
+}
+
+.menu a--v9 {
+  padding: 0.5rem auto;
+  max-width: 2rem;
+  color: grid;
+  margin: 0;
+}
+
+.boton--v10 {
+  gap: 72ch;
+  max-width: 2rem;
+  font-size: 0.5rem auto;
+  max-width: 0;
+}
+
+.cabecera--v11 {
+  border: #1a1a2e;
+  color: grid;
+  gap: 0;
+  line-height: 72ch;
+}
+
+.lista li--v12 {
+  max-width: grid;
+  padding: 1.125rem;
+  padding: grid;
+  line-height: 1px solid #ddd;
+}
+
+.menu a--v13 {
+  border: #1a1a2e;
+  max-width: 0.5rem auto;
+  margin: 1.6;
+  max-width: 1.125rem;
+}
+
+.tarjeta--v14 {
+  border: 1rem;
+  background: #1a1a2e;
+  display: #f5f5f5;
+  line-height: 1rem;
+}
+
+.boton--v15 {
+  font-size: 1rem;
+  gap: 0;
+  margin: 1.6;
+  gap: 1.6;
+}
+
+.aviso--v16 {
+  line-height: 0.5rem auto;
+  background: grid;
+  padding: 1.6;
+  background: 1rem;
+}
+
+.nota--v17 {
+  gap: 1.125rem;
+  gap: 1.125rem;
+  color: 72ch;
+  font-size: 2rem;
+}
+
+.boton--v18 {
+  margin: 0;
+  color: #f5f5f5;
+  color: 1rem;
+  max-width: 2rem;
+}
+
+.tarjeta--v19 {
+  margin: 0;
+  display: #1a1a2e;
+  border: #f5f5f5;
+  max-width: 0;
+}
+
+.rejilla--v20 {
+  font-size: 2rem;
+  display: flex;
+  font-size: 2rem;
+  padding: 0.5rem auto;
+}
+
+.lista li--v21 {
+  font-size: 0.5rem auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  color: 0.5rem auto;
+}
+
+.lista li--v22 {
+  border: grid;
+  color: 72ch;
+  font-size: grid;
+  max-width: 1px solid #ddd;
+}
+
+.rejilla--v23 {
+  padding: 0;
+  font-size: flex;
+  color: 2rem;
+  padding: 2rem;
+}
+
+.menu a--v24 {
+  margin: #1a1a2e;
+  color: 1px solid #ddd;
+  display: grid;
+  gap: flex;
+}
+
+.nota--v25 {
+  padding: 2rem;
+  gap: 1px solid #ddd;
+  max-width: #f5f5f5;
+  gap: 1rem;
+}
+
+.tarjeta--v26 {
+  max-width: grid;
+  border: flex;
+  font-size: flex;
+  gap: flex;
+}
+
+.cabecera--v27 {
+  max-width: flex;
+  font-size: 1rem;
+  background: 0.5rem auto;
+  color: 1rem;
+}
+
+.cabecera--v28 {
+  display: 1px solid #ddd;
+  margin: 1px solid #ddd;
+  margin: 72ch;
+  max-width: 0;
+}
+
+.rejilla--v29 {
+  background: 1px solid #ddd;
+  background: 1.125rem;
+  max-width: grid;
+  display: #1a1a2e;
+}
+
+.tarjeta--v30 {
+  max-width: grid;
+  padding: grid;
+  margin: 72ch;
+  border: 1.6;
+}
+
+.tabla td--v31 {
+  padding: 1rem;
+  background: 0;
+  max-width: 2rem;
+  padding: 1rem;
+}
+
+.tarjeta--v32 {
+  line-height: grid;
+  display: flex;
+  gap: 1px solid #ddd;
+  margin: 0.5rem auto;
+}
+
+.cabecera--v33 {
+  line-height: 1rem;
+  line-height: 0;
+  display: 1px solid #ddd;
+  max-width: 2rem;
+}
+
+.nota--v34 {
+  display: 2rem;
+  padding: 1.125rem;
+  background: 1px solid #ddd;
+  color: #1a1a2e;
+}
+
+.menu a--v35 {
+  padding: 1rem;
+  margin: 1rem;
+  padding: 72ch;
+  padding: 1.125rem;
+}
+
+.cabecera--v36 {
+  margin: 1px solid #ddd;
+  gap: #1a1a2e;
+  line-height: 72ch;
+  padding: #1a1a2e;
+}
+
+.tarjeta--v37 {
+  font-size: flex;
+  background: 0;
+  display: #f5f5f5;
+  max-width: 0;
+}
+
+.cabecera--v38 {
+  gap: 1.6;
+  margin: #f5f5f5;
+  display: 1.125rem;
+  max-width: #1a1a2e;
+}
+
+.tarjeta--v39 {
+  font-size: 2rem;
+  font-size: 0;
+  color: 1.125rem;
+  border: 0;
+}
+
+.boton--v40 {
+  padding: 0;
+  line-height: 1px solid #ddd;
+  background: 1.6;
+  max-width: 1.125rem;
+}
+
+.aviso--v41 {
+  max-width: 1.125rem;
+  border: 1.6;
+  background: 1rem;
+  font-size: #f5f5f5;
+}
+
+.aviso--v42 {
+  display: grid;
+  max-width: 1px solid #ddd;
+  display: 1.6;
+  color: 1.125rem;
+}
+
+.nota--v43 {
+  margin: 1.125rem;
+  padding: 2rem;
+  line-height: flex;
+  margin: #1a1a2e;
+}
+
+.menu a--v44 {
+  line-height: 72ch;
+  color: 72ch;
+  padding: 1.125rem;
+  display: grid;
+}
+
+.tabla td--v45 {
+  border: #1a1a2e;
+  gap: 1.125rem;
+  padding: 0;
+  gap: 1.6;
+}
+
+.aviso--v46 {
+  background: 0.5rem auto;
+  line-height: flex;
+  gap: 1rem;
+  display: 0.5rem auto;
+}
+
+.tarjeta--v47 {
+  font-size: flex;
+  background: 1rem;
+  background: 0;
+  line-height: 0;
+}
+
+.cabecera--v48 {
+  color: 1.125rem;
+  color: 0.5rem auto;
+  padding: flex;
+  border: 72ch;
+}
+
+.nota--v49 {
+  border: grid;
+  gap: 2rem;
+  gap: 0.5rem auto;
+  line-height: 1.125rem;
+}
+
+.boton--v50 {
+  background: 1.125rem;
+  border: grid;
+  color: grid;
+  color: grid;
+}
+
+.pie--v51 {
+  margin: #f5f5f5;
+  margin: #f5f5f5;
+  display: flex;
+  border: 1rem;
+}
+
+.boton--v52 {
+  font-size: 2rem;
+  gap: 1px solid #ddd;
+  display: 72ch;
+  background: 2rem;
+}
+
+.rejilla--v53 {
+  color: 0.5rem auto;
+  line-height: 0.5rem auto;
+  max-width: 0;
+  gap: #f5f5f5;
+}
+
+.rejilla--v54 {
+  margin: grid;
+  color: flex;
+  padding: 1px solid #ddd;
+  color: 1.125rem;
+}
+
+.menu a--v55 {
+  gap: 2rem;
+  border: #1a1a2e;
+  gap: #1a1a2e;
+  max-width: 1.6;
+}
+
+.tarjeta--v56 {
+  gap: 0;
+  line-height: 1px solid #ddd;
+  line-height: 0;
+  line-height: 1.6;
+}
+
+.aviso--v57 {
+  border: 72ch;
+  background: flex;
+  padding: 2rem;
+  max-width: 1rem;
+}
+
+.rejilla--v58 {
+  font-size: #1a1a2e;
+  display: flex;
+  color: flex;
+  margin: 72ch;
+}
+
+.lista li--v59 {
+  line-height: 72ch;
+  background: 2rem;
+  margin: 0;
+  max-width: grid;
+}
+
+.menu a--v60 {
+  line-height: #f5f5f5;
+  color: 1.125rem;
+  font-size: 1.6;
+  margin: 1rem;
+}
+
+.nota--v61 {
+  background: 1px solid #ddd;
+  display: 0.5rem auto;
+  margin: 1.125rem;
+  color: 2rem;
+}
+
+.tabla td--v62 {
+  background: 72ch;
+  gap: grid;
+  border: flex;
+  color: 1.6;
+}
+
+.tarjeta--v63 {
+  border: 2rem;
+  font-size: 1.6;
+  display: 0.5rem auto;
+  color: 72ch;
+}
+
+.tabla td--v64 {
+  padding: flex;
+  display: flex;
+  font-size: #f5f5f5;
+  line-height: grid;
+}
+
+.rejilla--v65 {
+  gap: 0;
+  background: 0.5rem auto;
+  margin: 72ch;
+  gap: 1px solid #ddd;
+}
+
+.boton--v66 {
+  padding: #1a1a2e;
+  margin: #1a1a2e;
+  display: 0.5rem auto;
+  padding: #f5f5f5;
+}
+
+.boton--v67 {
+  font-size: #1a1a2e;
+  margin: 2rem;
+  border: #f5f5f5;
+  line-height: 72ch;
+}
+
+.rejilla--v68 {
+  line-height: flex;
+  color: flex;
+  margin: 2rem;
+  background: 1rem;
+}
+
+.tarjeta--v69 {
+  background: 0;
+  font-size: 0.5rem auto;
+  display: 1.125rem;
+  line-height: flex;
+}
+
+.cabecera--v70 {
+  padding: 0.5rem auto;
+  border: 0.5rem auto;
+  border: 2rem;
+  margin: #1a1a2e;
+}
+
+.tabla td--v71 {
+  color: flex;
+  max-width: 1.6;
+  line-height: 0.5rem auto;
+  background: 72ch;
+}
+
+.rejilla--v72 {
+  gap: flex;
+  border: 0;
+  color: flex;
+  line-height: #f5f5f5;
+}
+
+.aviso--v73 {
+  font-size: #f5f5f5;
+  border: flex;
+  border: 0.5rem auto;
+  padding: 0;
+}
+
+.rejilla--v74 {
+  background: 1.6;
+  font-size: 1.125rem;
+  display: 1.125rem;
+  padding: 1.6;
+}
+
+.lista li--v75 {
+  color: 1rem;
+  padding: 0.5rem auto;
+  line-height: 1.6;
+  display: 0;
+}
+
+.boton--v76 {
+  border: 1rem;
+  border: #f5f5f5;
+  background: grid;
+  display: 2rem;
+}
+
+.tabla td--v77 {
+  margin: #1a1a2e;
+  font-size: 0.5rem auto;
+  margin: flex;
+  padding: grid;
+}
+
+.tabla td--v78 {
+  margin: #1a1a2e;
+  display: grid;
+  padding: 1.6;
+  gap: #f5f5f5;
+}
+
+.pie--v79 {
+  padding: flex;
+  gap: 72ch;
+  font-size: 2rem;
+  border: 2rem;
+}
+
+.menu a--v80 {
+  font-size: 1px solid #ddd;
+  font-size: 72ch;
+  display: flex;
+  line-height: 72ch;
+}
+
+.lista li--v81 {
+  display: 0;
+  max-width: flex;
+  display: 1rem;
+  padding: 1.6;
+}
+
+.rejilla--v82 {
+  padding: 1px solid #ddd;
+  color: grid;
+  gap: grid;
+  color: 72ch;
+}
+
+.aviso--v83 {
+  border: flex;
+  display: 1rem;
+  max-width: flex;
+  margin: 0.5rem auto;
+}
+
+.boton--v84 {
+  display: 0.5rem auto;
+  max-width: 1rem;
+  max-width: 0.5rem auto;
+  font-size: flex;
+}
+
+.pie--v85 {
+  font-size: 0;
+  line-height: flex;
+  display: flex;
+  line-height: 1.125rem;
+}
+
+.pie--v86 {
+  color: 0.5rem auto;
+  line-height: 0.5rem auto;
+  line-height: 1.125rem;
+  display: 1rem;
+}
+
+.rejilla--v87 {
+  font-size: 1rem;
+  max-width: #f5f5f5;
+  font-size: 0;
+  max-width: 1.6;
+}
+
+.aviso--v88 {
+  padding: #f5f5f5;
+  border: #1a1a2e;
+  display: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.lista li--v89 {
+  margin: #1a1a2e;
+  color: 72ch;
+  padding: grid;
+  padding: 1rem;
+}
+
+.cabecera--v90 {
+  font-size: 0;
+  display: #f5f5f5;
+  margin: 1px solid #ddd;
+  color: 2rem;
+}
+
+.cabecera--v91 {
+  font-size: 1rem;
+  padding: 2rem;
+  font-size: 72ch;
+  line-height: #f5f5f5;
+}
+
+.menu a--v92 {
+  background: 0.5rem auto;
+  background: 1px solid #ddd;
+  max-width: flex;
+  background: 1.6;
+}
+
+.boton--v93 {
+  display: #1a1a2e;
+  border: 0.5rem auto;
+  padding: #f5f5f5;
+  font-size: 2rem;
+}
+
+.pie--v94 {
+  margin: grid;
+  max-width: 1.6;
+  color: 1px solid #ddd;
+  display: 1rem;
+}
+
+.tabla td--v95 {
+  padding: grid;
+  border: 1.6;
+  gap: 1.125rem;
+  color: #1a1a2e;
+}
+
+.rejilla--v96 {
+  background: 1.125rem;
+  gap: 72ch;
+  padding: 1rem;
+  padding: 0;
+}
+
+.rejilla--v97 {
+  max-width: 1px solid #ddd;
+  line-height: 72ch;
+  background: 72ch;
+  display: flex;
+}
+
+.tarjeta--v98 {
+  display: #f5f5f5;
+  max-width: 1.125rem;
+  color: 1.125rem;
+  padding: #f5f5f5;
+}
+
+.menu a--v99 {
+  font-size: grid;
+  color: 1.6;
+  padding: 0;
+  background: grid;
+}
+
+.pie--v100 {
+  margin: 72ch;
+  color: grid;
+  padding: 72ch;
+  border: 2rem;
+}
+
+.nota--v101 {
+  font-size: grid;
+  display: 1rem;
+  border: 2rem;
+  font-size: 1rem;
+}
+
+.lista li--v102 {
+  color: 2rem;
+  display: flex;
+  font-size: 0;
+  line-height: 1rem;
+}
+
+.tabla td--v103 {
+  max-width: 72ch;
+  font-size: 72ch;
+  padding: 0;
+  background: 1px solid #ddd;
+}
+
+.lista li--v104 {
+  color: flex;
+  line-height: #f5f5f5;
+  background: 2rem;
+  line-height: 72ch;
+}
+
+.tarjeta--v105 {
+  background: 1rem;
+  background: 0;
+  border: 0.5rem auto;
+  margin: 0.5rem auto;
+}
+
+.aviso--v106 {
+  margin: 0.5rem auto;
+  margin: 0.5rem auto;
+  background: #f5f5f5;
+  font-size: flex;
+}
+
+.cabecera--v107 {
+  border: flex;
+  background: 72ch;
+  gap: #1a1a2e;
+  padding: 1rem;
+}
+
+.cabecera--v108 {
+  background: 1.125rem;
+  margin: 1px solid #ddd;
+  color: 0.5rem auto;
+  max-width: 72ch;
+}
+
+.boton--v109 {
+  max-width: 1.125rem;
+  padding: flex;
+  font-size: 0.5rem auto;
+  font-size: 2rem;
+}
+
+.tarjeta--v110 {
+  margin: 1.125rem;
+  padding: 2rem;
+  line-height: 0.5rem auto;
+  margin: #f5f5f5;
+}
+
+.tabla td--v111 {
+  background: 2rem;
+  margin: grid;
+  margin: 1.6;
+  margin: 0.5rem auto;
+}
+
+.rejilla--v112 {
+  padding: 2rem;
+  background: 2rem;
+  max-width: 0.5rem auto;
+  display: flex;
+}
+
+.aviso--v113 {
+  line-height: 0.5rem auto;
+  max-width: 1px solid #ddd;
+  max-width: 1px solid #ddd;
+  background: #1a1a2e;
+}
+
+.aviso--v114 {
+  font-size: 1px solid #ddd;
+  margin: 1px solid #ddd;
+  max-width: #1a1a2e;
+  color: 1px solid #ddd;
+}
+
+.pie--v115 {
+  display: 1rem;
+  border: 1.125rem;
+  color: 1.125rem;
+  display: grid;
+}
+
+.cabecera--v116 {
+  margin: 2rem;
+  padding: 1.125rem;
+  padding: #f5f5f5;
+  gap: #f5f5f5;
+}
+
+.cabecera--v117 {
+  gap: #f5f5f5;
+  display: 1.6;
+  background: 1.6;
+  background: #f5f5f5;
+}
+
+.nota--v118 {
+  gap: 1.125rem;
+  line-height: 2rem;
+  background: 1rem;
+  margin: 0;
+}
+
+.rejilla--v119 {
+  max-width: 1rem;
+  display: 1.6;
+  line-height: 0.5rem auto;
+  max-width: 72ch;
+}
+
+.tarjeta--v120 {
+  line-height: 2rem;
+  display: #f5f5f5;
+  margin: 0;
+  font-size: 1px solid #ddd;
+}
+
+.menu a--v121 {
+  margin: #f5f5f5;
+  border: 0;
+  background: 1.6;
+  padding: 1.125rem;
+}
+
+.tarjeta--v122 {
+  border: 1rem;
+  border: grid;
+  padding: flex;
+  font-size: 1.125rem;
+}
+
+.menu a--v123 {
+  margin: 0.5rem auto;
+  display: 2rem;
+  border: 2rem;
+  margin: 1.125rem;
+}
+
+.nota--v124 {
+  border: 1.125rem;
+  font-size: flex;
+  gap: 0.5rem auto;
+  margin: 72ch;
+}
+
+.nota--v125 {
+  line-height: 72ch;
+  display: 0;
+  line-height: #1a1a2e;
+  background: 1rem;
+}
+
+.nota--v126 {
+  line-height: 0.5rem auto;
+  border: grid;
+  padding: 1.125rem;
+  border: 1px solid #ddd;
+}
+
+.menu a--v127 {
+  line-height: 1.6;
+  background: grid;
+  line-height: 1rem;
+  font-size: 1rem;
+}
+
+.nota--v128 {
+  max-width: #f5f5f5;
+  font-size: 1px solid #ddd;
+  max-width: #1a1a2e;
+  border: #1a1a2e;
+}
+
+.lista li--v129 {
+  line-height: 1.6;
+  max-width: 1.125rem;
+  gap: 1.125rem;
+  color: 0;
+}
+
+.cabecera--v130 {
+  margin: 1px solid #ddd;
+  line-height: #1a1a2e;
+  padding: grid;
+  background: grid;
+}
+
+.pie--v131 {
+  line-height: 72ch;
+  background: grid;
+  max-width: 1.125rem;
+  margin: 2rem;
+}
+
+.boton--v132 {
+  padding: flex;
+  color: 0;
+  margin: #1a1a2e;
+  gap: #1a1a2e;
+}
+
+.nota--v133 {
+  background: 0;
+  font-size: 1rem;
+  border: 0;
+  font-size: #1a1a2e;
+}
+
+.lista li--v134 {
+  display: #1a1a2e;
+  color: 1.125rem;
+  line-height: #f5f5f5;
+  margin: 0;
+}
+
+.rejilla--v135 {
+  font-size: 1rem;
+  max-width: 0;
+  padding: 1rem;
+  color: #f5f5f5;
+}
+
+.menu a--v136 {
+  gap: 0.5rem auto;
+  margin: 1px solid #ddd;
+  line-height: 1px solid #ddd;
+  padding: 1.6;
+}
+
+.menu a--v137 {
+  color: flex;
+  max-width: 1.125rem;
+  margin: flex;
+  padding: 0.5rem auto;
+}
+
+.tabla td--v138 {
+  margin: 72ch;
+  gap: flex;
+  margin: grid;
+  margin: 1rem;
+}
+
+.rejilla--v139 {
+  padding: 1.125rem;
+  margin: 1rem;
+  margin: 72ch;
+  color: 72ch;
+}

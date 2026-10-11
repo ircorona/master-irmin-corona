@@ -1,0 +1,32 @@
+# Código de clase, tal cual (las rutas /ruta/tudominio.com son las del ejemplo)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Salida de emergencia #1: Añadir ?dontreplace a una URL puede usarse para evitar la redirección
+RewriteCond %{QUERY_STRING} dontreplace$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . - [L]
+# Salida de emergencia #2: Colocar un archivo vacío en la misma carpeta que el jpeg/png que tiene el mismo nombre de archivo, pero con ".dontreplace" añadido evitará la redirección
+RewriteCond %{REQUEST_FILENAME} (?i)(.*)(\.jpe?g|\.png)$
+RewriteCond %1%2\.dontreplace -f
+RewriteRule . - [L]
+# Salida de emergencia obsoleta: Añadir ?original a una URL puede usarse para evitar la redirección
+RewriteCond %{QUERY_STRING} original$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . - [L]
+# Salida de emergencia obsoleta: Colocar un archivo vacío en la misma carpeta que el jpeg/png que tiene el mismo nombre de archivo, pero con ".do-not-convert" añadido evitará la redirección
+RewriteCond %{REQUEST_FILENAME} (?i)(.*)(\.jpe?g|\.png)$
+RewriteCond %1%2\.do-not-convert -f
+RewriteRule . - [L]
+# Evitar redireccionar a archivos webp que sean más grandes que el original
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} (?i)(/ruta/tudominio.com/wp-content/themes/)(.*)(\.jpe?g|\.png)$
+RewriteCond /ruta/tudominio.com/wp-content/webp/webp-images-bigger-than-source/themes/%2%3.webp -f
+RewriteRule . - [L]
+# Asegurarse de que los navegadores que no soportan webp también reciban el encabezado Vary:Accept
+# al solicitar imágenes que serían redirigidas a webp en navegadores que sí lo hacen.
+<IfModule mod_headers.c>
+<FilesMatch "(?i)\.(jpe?g|png)$">
+Header append "Vary" "Accept"
+</FilesMatch>
+</IfModule>
+</IfModule>

@@ -1,0 +1,2 @@
+# Bloqueo por IP de la clase 08: solo entra 127.0.0.1
+Require ip 127.0.0.1

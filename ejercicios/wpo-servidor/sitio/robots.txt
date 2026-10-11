@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://localhost:8443/sitemap.xml

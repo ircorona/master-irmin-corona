@@ -1,0 +1,7 @@
+# Los dos bloques de clase juntos: primero Brotli, luego Deflate
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/css
+</IfModule>
