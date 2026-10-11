@@ -1,0 +1,3 @@
+__pycache__/
+# Las contraseñas de prueba las genera prueba.py en cada ejecución
+sitio/pass/.htpasswd
