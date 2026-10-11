@@ -1,0 +1,8 @@
+# Código de clase, tal cual
+<FilesMatch "\.txt$">
+Header set Content-Disposition "attachment"
+</FilesMatch>
+
+<Files "robots.txt">
+Header set Content-Disposition "inline"
+</Files>

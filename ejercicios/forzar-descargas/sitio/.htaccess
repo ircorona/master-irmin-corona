@@ -1,0 +1,18 @@
+# Ejercicio clase 12 (Servidores avanzado): forzar descargas
+# Probado con python prueba.py en el Apache 2.4.62 de Laragon.
+
+<IfModule mod_headers.c>
+# 1. Los .txt se descargan, salvo los ficheros de texto públicos que la gente
+#    abre en el navegador (robots, llms, ads, sitemap). Un solo bloque con la
+#    excepción dentro de la regex: no depende del orden de dos bloques.
+#    (?i) para que LEEME.TXT también cuente.
+<FilesMatch "(?i)^(?!(robots|llms|ads|sitemap)\.txt$).+\.txt$">
+    Header set Content-Disposition "attachment"
+</FilesMatch>
+
+# 2. El PDF del artículo de Apache de Carlos, con nombre de fichero: el
+#    navegador propone "Catalogo 2026.pdf" en vez de catalogo-2026.pdf.
+<Files "catalogo-2026.pdf">
+    Header set Content-Disposition "attachment; filename=\"Catalogo 2026.pdf\""
+</Files>
+</IfModule>

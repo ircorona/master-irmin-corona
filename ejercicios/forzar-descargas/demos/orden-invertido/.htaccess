@@ -1,0 +1,8 @@
+# Los mismos dos bloques de clase, en el orden contrario
+<Files "robots.txt">
+Header set Content-Disposition "inline"
+</Files>
+
+<FilesMatch "\.txt$">
+Header set Content-Disposition "attachment"
+</FilesMatch>
