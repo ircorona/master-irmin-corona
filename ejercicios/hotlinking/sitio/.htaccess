@@ -1,0 +1,27 @@
+# Ejercicio clase 11 (Servidores avanzado): evitar el hotlinking
+# Probado con python prueba.py en el Apache 2.4.62 de Laragon.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1. Google Imágenes (opt-out de los enlaces insertados, documentado por
+#    Google): si la imagen la pide una página de Google, 204 sin contenido.
+#    Google sigue rastreándola (Googlebot no manda Referer) y enseña su
+#    miniatura; para verla grande hay que entrar en la web.
+#    ([^/]+\.)? cubre www., images., lens. y cualquier subdominio; el final
+#    acepta .com, .es, .co.uk, .com.mx... pero no google.otraweb.com.
+RewriteCond %{HTTP_REFERER} ^https?://([^/]+\.)?google\.(com|[a-z]{2,3}|com?\.[a-z]{2})(/|:|$) [NC]
+RewriteRule \.(jpe?g|png|gif|webp|avif)$ - [R=204,NC]
+
+# 2. Hotlinking del resto de dominios: 403.
+#    Se deja pasar el Referer vacío (visitas directas, Googlebot-Image,
+#    lectores RSS, navegadores que no lo envían) y el propio dominio, que se
+#    compara con HTTP_HOST para no escribirlo a mano: si el dominio cambia,
+#    la regla sigue funcionando.
+#    Los demás buscadores también pasan: no documentan un opt-out como el de
+#    Google, y un 403 les dejaría la vista previa rota.
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER}@@%{HTTP_HOST} !^https?://([^/]+)(/.*)?@@\1$ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://([^/]+\.)?(bing\.com|duckduckgo\.com|yandex\.[a-z]+)(/|$) [NC]
+RewriteRule \.(jpe?g|png|gif|webp|avif)$ - [F,NC]
+</IfModule>

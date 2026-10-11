@@ -1,0 +1,8 @@
+# "Prevenir Hotlinking" del artículo de Carlos, tal cual (en la carpeta de
+# imágenes, como el wp-content/uploads del artículo)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^https://carlos.sanchezdonate\.com/ [NC]
+RewriteRule ^.*$ - [R=204,NC,L]
+ErrorDocument 204 '<!DOCTYPE html><html lang="es" xmlns="http://www.w3.org/1999/xhtml"></html>'
+</IfModule>
