@@ -1,0 +1,7 @@
+{
+  "name": "vue-seo",
+  "private": true,
+  "type": "module",
+  "scripts": { "prueba": "node prueba.mjs" },
+  "dependencies": { "vue": "3.5.44", "vue-router": "5.4.0" }
+}
