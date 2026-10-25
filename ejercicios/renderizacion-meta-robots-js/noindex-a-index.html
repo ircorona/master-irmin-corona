@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="none">
+<title>noindex → index con JavaScript</title>
+</head>
+<body>
+<p>El servidor manda <code>none</code> (= noindex, nofollow). El script de clase lo cambia a <code>all</code>.</p>
+<!-- El script de clase, tal cual (carlos.sanchezdonate.com/aviso-legal/) -->
+<script>var metaTag = document.querySelector('meta[name="robots"]');if (metaTag) {var contentValue = metaTag.getAttribute('content');var newContentValue = contentValue.replace('none', 'all');metaTag.setAttribute('content', newContentValue);}</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="all">
+<title>index → noindex con JavaScript</title>
+</head>
+<body>
+<p>El servidor manda <code>all</code>. El script lo cambia a <code>noindex</code>: la dirección contraria a la de clase.</p>
+<script>var metaTag = document.querySelector('meta[name="robots"]');if (metaTag) {metaTag.setAttribute('content', 'noindex');}</script>
+</body>
+</html>
