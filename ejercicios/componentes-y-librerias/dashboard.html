@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard por componentes</title>
+<style>
+  body { font-family: system-ui, sans-serif; display: grid; gap: 12px; padding: 16px; }
+  section { border: 1px solid #ccc; border-radius: 6px; padding: 12px; }
+  .error { border-color: #b23a2c; color: #b23a2c; }
+</style>
+</head>
+<body>
+  <!-- El dashboard de clase: estadísticas arriba, dos cuadros abajo.
+       ?aislado=1 monta cada componente con su propia "frontera de error". -->
+  <div id="app"></div>
+
+  <script>
+    // Cada componente es una función independiente que devuelve su HTML.
+    function Estadisticas() {
+      return '<section id="estadisticas"><h2>Estadísticas</h2><p>1.240 visitas hoy</p></section>';
+    }
+    function UltimosPosts() {
+      return '<section id="posts"><h2>Últimos posts</h2><ul><li>Post 1</li><li>Post 2</li></ul></section>';
+    }
+    function UltimosComentarios() {
+      // Simula que la API de comentarios devuelve basura y el componente revienta
+      const comentarios = null;
+      return '<section id="comentarios"><h2>Comentarios</h2><ul>'
+        + comentarios.map(c => '<li>' + c + '</li>').join('') + '</ul></section>';
+    }
+
+    // Lo que hace React con un Error Boundary: si un componente falla,
+    // se pinta un aviso en su hueco y el resto sigue.
+    function conFrontera(componente) {
+      try {
+        return componente();
+      } catch (e) {
+        return '<section class="error" id="' + componente.name + '-error">'
+          + componente.name + ' no ha podido cargarse</section>';
+      }
+    }
+
+    const aislado = new URLSearchParams(location.search).has('aislado');
+    const componentes = [Estadisticas, UltimosPosts, UltimosComentarios];
+    const montar = aislado ? conFrontera : (c => c());
+
+    // Sin aislar, un error en un componente tumba el render de toda la página
+    document.getElementById('app').innerHTML = componentes.map(montar).join('');
+  </script>
+</body>
+</html>
