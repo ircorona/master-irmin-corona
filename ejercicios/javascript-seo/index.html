@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript y SEO</title>
+</head>
+<body>
+  <!-- Seis formas de "enlazar". Google solo sigue <a> con href. -->
+  <nav>
+    <a id="A" href="/productos/">Productos</a>
+    <a id="B" onclick="ir('/servicios/')">Servicios</a>
+    <span id="C" data-href="/contacto/" onclick="ir(this.dataset.href)">Contacto</span>
+    <a id="D" href="#/blog">Blog</a>
+  </nav>
+
+  <main id="contenido"><h1>Inicio</h1></main>
+
+  <!-- El enlace de ejemplo del artículo de Carlos «JS para mejorar tu contenido» -->
+  <p><a href="https://example.com" class="example-link" target="_blank" rel="nofollow">Haz clic aquí</a></p>
+
+  <script>
+    // Router con History API: el <a href> sigue siendo un enlace real para Google,
+    // y para el usuario la navegación es instantánea (sin recargar).
+    const paginas = { '/': 'Inicio', '/productos/': 'Productos', '/servicios/': 'Servicios', '/contacto/': 'Contacto' };
+    function pintar(ruta) {
+      document.getElementById('contenido').innerHTML = '<h1>' + (paginas[ruta] || 'No encontrada') + '</h1>';
+      document.title = (paginas[ruta] || 'No encontrada') + ' | JavaScript y SEO';
+    }
+    function ir(ruta) { history.pushState({}, '', ruta); pintar(ruta); }
+    document.getElementById('A').addEventListener('click', function (e) {
+      e.preventDefault();
+      ir(this.getAttribute('href'));
+    });
+    window.addEventListener('popstate', function () { pintar(location.pathname); });
+    pintar(location.pathname);
+
+    // E: enlace insertado por JS. Con <a href> vale para Google (tras renderizar),
+    // pero un bot que no ejecuta JS no lo ve.
+    const e = document.createElement('a');
+    e.id = 'E'; e.href = '/insertado/'; e.textContent = 'Insertado con JS';
+    document.querySelector('nav').appendChild(e);
+  </script>
+
+  <script>
+    // Carlos, técnica 1: cambiar el anchor text (tal cual el artículo)
+    // Seleccionamos el enlace con la clase "example-link"
+    const link = document.querySelector('.example-link');
+    // Modificamos el texto usando innerHTML
+    link.innerHTML = 'Este es el nuevo Anchor Text';
+  </script>
+
+  <script>
+    // Carlos, técnica 5: cambiar nofollow por noopener (tal cual el artículo)
+    // Seleccionamos el enlace con la clase "example-link"
+    const link5 = document.querySelector('.example-link');
+    if (newLink.rel === 'nofollow') { newLink.rel = 'noopener'; }
+  </script>
+
+  <script>
+    // Testigo: si la técnica 5 hubiera funcionado, rel ya no sería "nofollow".
+    document.body.dataset.relFinal = document.querySelector('.example-link').rel;
+  </script>
+</body>
+</html>
