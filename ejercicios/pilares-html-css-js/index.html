@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilares: HTML, CSS y JS</title>
+<style>
+  .oculto  { display: none; }
+  .antes::before { content: "TEXTO-CSS-BEFORE"; }
+  .titulo-falso { font-size: 32px; font-weight: bold; display: block; }
+  .fondo   { background-image: url(foto-fondo.png); width: 200px; height: 100px; }
+</style>
+</head>
+<body>
+  <!-- 1. HTML: el esqueleto. Esto lo ve cualquiera. -->
+  <h1>TEXTO-H1</h1>
+  <p>TEXTO-HTML</p>
+
+  <!-- 2. Parece un título, pero para el HTML es un span -->
+  <span class="titulo-falso">TEXTO-SPAN-GRANDE</span>
+
+  <!-- 3. CSS que oculta: sigue en el HTML -->
+  <p class="oculto">TEXTO-DISPLAY-NONE</p>
+
+  <!-- 4. CSS que genera texto: no está en el HTML -->
+  <p class="antes"></p>
+
+  <!-- 5. Imagen como fondo CSS frente a <img> -->
+  <div class="fondo"></div>
+  <img src="foto.png" alt="TEXTO-ALT" width="200" height="100">
+
+  <!-- 6. JS que añade texto: solo existe tras ejecutarlo -->
+  <div id="js"></div>
+  <script>
+    document.getElementById('js').textContent = 'TEXTO-JS';
+  </script>
+</body>
+</html>
