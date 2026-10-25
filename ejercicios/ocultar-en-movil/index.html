@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocultar en móvil</title>
+<style>
+  /* Dos menús: uno por breakpoint. Es lo habitual en temas y maquetadores. */
+  .nav-movil { display: none; }
+  @media (max-width: 600px) {
+    .nav-escritorio { display: none; }
+    .nav-movil { display: block; }
+    .solo-escritorio { display: none; }
+  }
+  /* Fondo solo en escritorio: el CSS decide si se pide */
+  @media (min-width: 601px) {
+    .banner { background-image: url(img/d-fondo.png); min-height: 40px; }
+  }
+</style>
+</head>
+<body>
+  <nav class="nav-escritorio">
+    <a href="/servicios/">Servicios</a> <a href="/blog/">Blog</a> <a href="/contacto/">Contacto</a>
+  </nav>
+  <nav class="nav-movil">
+    <a href="/servicios/">Servicios</a> <a href="/blog/">Blog</a> <a href="/contacto/">Contacto</a>
+  </nav>
+
+  <h1>Qué ocultamos y cómo lo ocultamos</h1>
+
+  <!-- A: <img> oculta con display:none -->
+  <img class="solo-escritorio" src="img/a-oculta.png" alt="A">
+
+  <!-- B: igual, pero con loading="lazy" -->
+  <img class="solo-escritorio" src="img/b-oculta-lazy.png" alt="B" loading="lazy">
+
+  <!-- C: <picture> elige una imagen por media query -->
+  <picture>
+    <source media="(min-width: 601px)" srcset="img/c-escritorio.png">
+    <img src="img/c-movil.png" alt="C">
+  </picture>
+
+  <!-- D: fondo CSS dentro de una media query de escritorio -->
+  <div class="banner"></div>
+
+  <!-- E: control. Lazy y visible, pero 9000px por debajo: un navegador real no la pide al cargar -->
+  <div style="height: 9000px"></div>
+  <img src="img/e-lejos-lazy.png" alt="E" loading="lazy">
+</body>
+</html>
