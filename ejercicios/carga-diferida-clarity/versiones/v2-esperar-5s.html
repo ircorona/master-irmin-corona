@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>v2 · Esperar 5 segundos</title>
+<!-- Código de clase: «ESPERAR 5 SEGUNDOS» -->
+<script>
+setTimeout(function() {
+    var script = document.createElement('script');
+    // script.type = 'text/javascript';
+    script.text = `
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "TU-ID");
+    `;
+    document.head.appendChild(script);
+}, 5000);
+</script>
+</head>
+<body>
+<h1>v2 · Esperar 5 segundos</h1>
+</body>
+</html>

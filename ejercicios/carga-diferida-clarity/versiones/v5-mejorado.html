@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>v5 · Mejorado: tras la carga o a la primera interacción</title>
+<!--
+  Propuesta del ejercicio (no es código de clase):
+  - Cola de Clarity desde el principio: las llamadas a clarity() hechas antes de cargar no se pierden.
+  - El script se pide en cuanto la página ha terminado de cargar y el navegador está libre,
+    o antes si el usuario interactúa. Sin espera fija, sin localStorage y sin mirar el user-agent.
+-->
+<script>
+(function (w, d, id) {
+    w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+    var hecho = false;
+    function cargar() {
+        if (hecho) return;
+        hecho = true;
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://www.clarity.ms/tag/' + id;
+        d.head.appendChild(s);
+    }
+    ['pointerdown', 'keydown', 'scroll'].forEach(function (ev) {
+        w.addEventListener(ev, cargar, { once: true, passive: true });
+    });
+    function enReposo() {
+        (w.requestIdleCallback || function (f) { setTimeout(f, 1); })(cargar, { timeout: 1500 });
+    }
+    if (d.readyState === 'complete') enReposo();
+    else w.addEventListener('load', enReposo, { once: true });
+})(window, document, 'TU-ID');
+</script>
+</head>
+<body>
+<h1>v5 · Mejorado</h1>
+</body>
+</html>
