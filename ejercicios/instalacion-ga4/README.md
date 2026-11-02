@@ -38,7 +38,7 @@ OK
 == https://www.simoahava.com/
    gtag/js  G-L7ZN1XEEW4
    gtm.js   GTM-PZ7GMV9
-   -> GTM con etiqueta de Google (gtm.js + gtag.js)
+   -> GTM con etiqueta de Google clásica (gtm.js + gtag.js)
 == https://auramip.com/
    gtag/js  G-5ZSYYZWBC5
    -> Etiqueta nativa o plugin (solo gtag.js)
@@ -49,7 +49,8 @@ OK
 ## Qué enseña
 
 - **GTM no es gratis en peso.** La etiqueta de Google dentro de GTM sigue descargando `gtag.js`: GTM añade su propio `gtm.js` encima (+86 KB transferidos, +238 KB de JS que analizar con el contenedor vacío). La clase lo recomienda por gestión (versiones, permisos, etiquetas sin tocar código), no por rendimiento.
-- **simoahava.com** confirma el patrón real: `gtm.js` y después `gtag/js?id=G-...`.
+- **simoahava.com** confirma el patrón clásico: `gtm.js` y después `gtag/js?id=G-...`.
+- **Desde el 12-10-2026 hay contenedores optimizados** (voluntario, según las notas de la versión de Tag Manager): envían a GA4 sin cargar `gtag.js`, así que una web con GTM puede pedir solo `gtm.js` y aun así medir. `red.py` lo marca como «solo gtm.js» y pide mirar si hay hits a `/g/collect`. El peso de un contenedor optimizado no está medido aquí (haría falta uno real).
 - **auramip.com** lleva GA4 con etiqueta nativa en el `<head>` y `gtag('config')` directo, sin modo de consentimiento.
 
 ## Límites

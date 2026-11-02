@@ -6,8 +6,9 @@ Uso:
 
 Abre cada URL en Chrome headless con registro de red (--log-net-log), espera 15 s
 de tiempo virtual y lista los scripts pedidos a googletagmanager.com:
-  - solo gtm.js            -> GTM (GA4 dentro, o bloqueado hasta el consentimiento)
-  - gtm.js + gtag/js G-... -> GTM con etiqueta de Google: el método recomendado en clase
+  - solo gtm.js            -> GTM optimizado (desde el 12-10-2026 el contenedor envía a GA4
+                              sin gtag.js), o GA4 bloqueado hasta el consentimiento, o sin GA4
+  - gtm.js + gtag/js G-... -> GTM con etiqueta de Google clásica (contenedor sin optimizar)
   - solo gtag/js G-...     -> etiqueta nativa o plugin
   - nada                   -> sin GA4 en el navegador (o detrás del banner de cookies)
 Lo que esté bloqueado hasta aceptar cookies no aparece: headless no acepta el banner.
@@ -43,9 +44,9 @@ def diagnostico(encontrados):
     gtm = [i for s, i in encontrados if s == "gtm.js"]
     gtag = [i for s, i in encontrados if s == "gtag/js" and i.startswith("G-")]
     if gtm and gtag:
-        return "GTM con etiqueta de Google (gtm.js + gtag.js)"
+        return "GTM con etiqueta de Google clásica (gtm.js + gtag.js)"
     if gtm:
-        return "Solo GTM (GA4 no cargado o detrás del consentimiento)"
+        return "Solo gtm.js: contenedor optimizado, GA4 tras el consentimiento o sin GA4 (mirar /g/collect)"
     if gtag:
         return "Etiqueta nativa o plugin (solo gtag.js)"
     return "Sin scripts de Google en el navegador"
