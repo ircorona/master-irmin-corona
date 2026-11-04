@@ -1,0 +1,8 @@
+# Lo que recomienda Google al desactivar una web: 503 en las páginas, robots.txt normal.
+# Sustituir 203\.0\.113\.5 por tu IP, para seguir validando con la web a la vista.
+RewriteEngine On
+RewriteCond %{REMOTE_ADDR} !^203\.0\.113\.5$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteRule ^ - [R=503,L]
+ErrorDocument 503 "Volvemos enseguida"
+Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"

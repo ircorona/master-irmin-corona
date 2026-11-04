@@ -1,0 +1,10 @@
+# La diapositiva: 503 en las páginas y 404 en robots.txt.
+# Ojo: el 404 no frena nada. Para Google significa «sin restricciones de rastreo».
+# Sustituir 203\.0\.113\.5 por tu IP, para seguir validando con la web a la vista.
+RewriteEngine On
+RewriteCond %{REMOTE_ADDR} !^203\.0\.113\.5$
+RewriteRule ^robots\.txt$ - [R=404,L]
+RewriteCond %{REMOTE_ADDR} !^203\.0\.113\.5$
+RewriteRule ^ - [R=503,L]
+ErrorDocument 503 "Volvemos enseguida"
+Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"

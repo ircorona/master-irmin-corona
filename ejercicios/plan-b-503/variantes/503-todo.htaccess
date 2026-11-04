@@ -1,0 +1,7 @@
+# Freno fuerte: 503 en todo, también en robots.txt. Google para de rastrear el sitio.
+# Sustituir 203\.0\.113\.5 por tu IP, para seguir validando con la web a la vista.
+RewriteEngine On
+RewriteCond %{REMOTE_ADDR} !^203\.0\.113\.5$
+RewriteRule ^ - [R=503,L]
+ErrorDocument 503 "Volvemos enseguida"
+Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"
