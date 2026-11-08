@@ -1,0 +1,6 @@
+# Sintaxis de Apache 2.2 que sigue en muchos .htaccess viejos (también en el de Auramip).
+# En Apache 2.4 solo funciona si el servidor carga mod_access_compat.
+<FilesMatch "^\.(htpasswd|htaccess)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>

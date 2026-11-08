@@ -1,0 +1,10 @@
+# Bloque de la clase (líneas 22-29): contraseña solo cuando el Host es el de staging.
+# La ruta de AuthUserFile la pone prueba.py.
+<If "%{HTTP_HOST} == 'test-carlos.sanchezdonate.com'">
+    <IfModule mod_authn_file.c>
+        AuthUserFile "{HTPASSWD}"
+        AuthName "Iniciar sesión requerido"
+        AuthType Basic
+        Require valid-user
+    </IfModule>
+</If>

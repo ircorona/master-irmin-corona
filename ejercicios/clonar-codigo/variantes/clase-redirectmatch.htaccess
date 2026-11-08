@@ -1,0 +1,2 @@
+# Línea 1 del .htaccess de la clase, tal cual.
+RedirectMatch 301 ^(.*)$ https://migracion.test/$1

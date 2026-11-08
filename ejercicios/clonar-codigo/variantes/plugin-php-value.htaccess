@@ -1,0 +1,3 @@
+# Lo que escriben algunos plugins de seguridad o caché (cortafuegos de aplicación, por ejemplo):
+# una directiva de PHP con una ruta absoluta del servidor viejo, sin <IfModule>.
+php_value auto_prepend_file '/var/www/vhosts/sanchezdonate.com/carlos.sanchezdonate.com/waf.php'

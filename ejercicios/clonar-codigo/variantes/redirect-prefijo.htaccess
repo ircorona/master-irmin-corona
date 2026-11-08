@@ -1,0 +1,2 @@
+# mod_alias por prefijo: conserva la ruta sin duplicar la barra.
+Redirect 301 / https://migracion.test/

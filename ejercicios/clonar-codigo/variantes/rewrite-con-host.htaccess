@@ -1,0 +1,5 @@
+# Redirige todo lo que NO llegue ya al dominio nuevo. Sirve aunque los dos dominios
+# apunten a la misma carpeta (alias en el hosting): el nuevo no se redirige a sí mismo.
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^migracion\.test$ [NC]
+RewriteRule ^(.*)$ https://migracion.test/$1 [R=301,L]

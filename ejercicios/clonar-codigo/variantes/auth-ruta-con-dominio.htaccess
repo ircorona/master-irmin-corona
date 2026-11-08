@@ -1,0 +1,8 @@
+# Como en los hostings con una carpeta por dominio (/var/www/vhosts/<dominio>/..., /home/<usuario>/domains/<dominio>/...):
+# el dominio forma parte de una RUTA del disco. prueba.py la escribe antes y después de «Reemplazar todo».
+<Files "privado.html">
+    AuthType Basic
+    AuthName "Zona privada"
+    AuthUserFile "{RAIZ}/carlos.sanchezdonate.com/.htpasswd"
+    Require valid-user
+</Files>
