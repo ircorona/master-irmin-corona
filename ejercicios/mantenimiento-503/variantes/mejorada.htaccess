@@ -1,0 +1,13 @@
+# Mantenimiento: 503 para todos menos las IP del equipo.
+# Cambios frente a la clase: robots.txt sigue en 200, Retry-After,
+# IPv6 del equipo, sin caché y la página en un fichero aparte.
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{REQUEST_URI} !^/mantenimiento\.html$
+RewriteCond %{REMOTE_ADDR} !^203\.0\.113\.5$
+RewriteCond %{REMOTE_ADDR} !^2001:db8::5$
+RewriteRule ^ - [R=503,L]
+
+ErrorDocument 503 /mantenimiento.html
+Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"
+Header always set Cache-Control "no-store" "expr=%{REQUEST_STATUS} == 503"
