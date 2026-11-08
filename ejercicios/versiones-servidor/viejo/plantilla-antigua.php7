@@ -1,0 +1,18 @@
+<?php
+// Código de una plantilla antigua que funcionaba en PHP 7.x.
+// En PHP 8 no llega ni a ejecutarse: el acceso con llaves de la línea 10 es un error de compilación,
+// y aunque se quitara, each() y create_function() ya no existen.
+
+$menu = ['inicio' => '/', 'servicios' => '/servicios/', 'contacto' => '/contacto/'];
+
+function inicial($texto)
+{
+    return strtoupper($texto{0});   // PHP 8: Fatal error (llaves eliminadas)
+}
+
+while (list($nombre, $url) = each($menu)) {   // PHP 8: Call to undefined function each()
+    echo '<a href="' . $url . '">' . inicial($nombre) . substr($nombre, 1) . "</a>\n";
+}
+
+$mayus = create_function('$s', 'return strtoupper($s);');   // PHP 8: undefined function
+echo $mayus('fin'), "\n";
