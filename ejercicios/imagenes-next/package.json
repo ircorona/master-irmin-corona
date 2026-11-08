@@ -1,0 +1,15 @@
+{
+  "name": "imagenes-next",
+  "private": true,
+  "version": "1.0.0",
+  "description": "URLs de imagen que genera next/image por defecto, con el loader de Carlos, con overrideSrc y sin optimizar",
+  "scripts": {
+    "build": "next build",
+    "start": "next start -p 8136"
+  },
+  "dependencies": {
+    "next": "16.4.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}
