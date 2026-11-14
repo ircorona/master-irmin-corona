@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Camiseta técnica | Tienda Ejemplo</title>
+<!-- Errores típicos de auditoría: precio con símbolo y coma, availability sin URL,
+     sin image, sin moneda, reseñas sin recuento, migas de un solo elemento,
+     estrellas sobre la propia empresa y un bloque con JSON roto. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Camiseta técnica",
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9"},
+  "offers": {
+    "@type": "Offer",
+    "price": "19,95 €",
+    "availability": "InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{"@type": "ListItem", "name": "Camisetas"}]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tienda Ejemplo",
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "320"}
+}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "Tienda Ejemplo", }
+</script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage"><h1>Camiseta técnica</h1></body>
+</html>
